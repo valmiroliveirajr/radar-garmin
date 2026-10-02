@@ -1,0 +1,11 @@
+{
+  "updated": "2026-10-02",
+  "scope": "Forerunner",
+  "models": [
+    {"id":"forerunner-970","name":"Forerunner 970","generation":"premium","active":true},
+    {"id":"forerunner-570","name":"Forerunner 570","generation":"advanced","active":true},
+    {"id":"forerunner-965","name":"Forerunner 965","generation":"premium","active":true},
+    {"id":"forerunner-265","name":"Forerunner 265","generation":"advanced","active":true},
+    {"id":"forerunner-165","name":"Forerunner 165","generation":"entry","active":true}
+  ]
+}
