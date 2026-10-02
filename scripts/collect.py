@@ -13,8 +13,24 @@ SOURCES=[
  {"model":"venu-4","name":"Venu 4 45 mm","sku":"010-03014-00","store":"Compras Paraguai","url":"https://www.comprasparaguai.com.br/garmin-smartwatch-venu-4-45mm-black__5257596/","country":"PY"}
 ]
 def fetch(url):
- req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 RadarGarmin/1.0"})
+ req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 RadarGarmin/1.0","Accept":"application/json,text/html;q=0.9,*/*;q=0.8"})
  with urllib.request.urlopen(req,timeout=25) as r:return r.read().decode("utf-8","ignore")
+def ml_item(item_id):
+ # Para ofertas do Mercado Livre, consulta o item_id da oferta em vez de raspar a pagina do catalogo.
+ data=json.loads(fetch(f"https://api.mercadolibre.com/items/{item_id}"))
+ p=data.get("price")
+ return {
+  "price":float(p) if p is not None else None,
+  "title":data.get("title"),
+  "seller_id":data.get("seller_id"),
+  "official_store_id":data.get("official_store_id"),
+  "condition":data.get("condition"),
+  "status":data.get("status"),
+  "permalink":data.get("permalink"),
+  "currency_id":data.get("currency_id"),
+  "free_shipping":(data.get("shipping") or {}).get("free_shipping"),
+  "warranty":next((x.get("value_name") for x in data.get("sale_terms",[]) if x.get("id") in ("WARRANTY_TYPE","WARRANTY_TIME")),None)
+ }
 def price_from_html(html):
  pats=[r'"price"\s*:\s*"?([0-9]+(?:[.,][0-9]+)?)',r'R\$\s*([0-9\.]+,[0-9]{2})']
  vals=[]
@@ -30,9 +46,13 @@ offers=[]
 for src in SOURCES:
  o={**src,"collected_at":now.isoformat(),"price":None,"effective_price":None,"available":None,"error":None}
  try:
-  html=fetch(src["url"]); p=price_from_html(html); o["price"]=p; o["available"]=p is not None
+  if src["store"]=="Mercado Livre" and src.get("item_id"):
+   ml=ml_item(src["item_id"]); p=ml.pop("price"); o.update(ml)
+   o["price"]=p; o["available"]=p is not None and o.get("status")=="active"
+  else:
+   html=fetch(src["url"]); p=price_from_html(html); o["price"]=p; o["available"]=p is not None
   if p is not None:o["effective_price"]=round(p+(TRIP if src["country"]=="PY" else 0),2)
- except Exception as e:o["error"]=type(e).__name__
+ except Exception as e:o["error"]=f"{type(e).__name__}: {e}"
  offers.append(o)
 models=[]
 for mid in sorted(set(x["model"] for x in SOURCES)):
