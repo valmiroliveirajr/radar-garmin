@@ -1,11 +1,28 @@
 {
-  "updated": "2026-10-02",
-  "scope": "Forerunner",
-  "models": [
-    {"id":"forerunner-970","name":"Forerunner 970","generation":"premium","active":true},
-    {"id":"forerunner-570","name":"Forerunner 570","generation":"advanced","active":true},
-    {"id":"forerunner-965","name":"Forerunner 965","generation":"premium","active":true},
-    {"id":"forerunner-265","name":"Forerunner 265","generation":"advanced","active":true},
-    {"id":"forerunner-165","name":"Forerunner 165","generation":"entry","active":true}
+  "updated":"2026-10-02",
+  "source":"Garmin Brasil",
+  "scope":{"price_tracking":["forerunner","fenix>=8","hrm"],"reference_catalog":true},
+  "models":[
+    {"id":"venu-4","name":"Venu 4","family":"Venu","garmin_id":"1614061","url":"https://www.garmin.com/pt-BR/p/1614061/","track":false},
+    {"id":"forerunner-970","name":"Forerunner 970","family":"Forerunner","garmin_id":"1462801","url":"https://www.garmin.com/pt-BR/p/1462801/","track":true},
+    {"id":"venu-x1","name":"Venu X1","family":"Venu","garmin_id":"1510465","url":"https://www.garmin.com/pt-BR/p/1510465/","track":false},
+    {"id":"forerunner-570","name":"Forerunner 570","family":"Forerunner","garmin_id":"1463821","url":"https://www.garmin.com/pt-BR/p/1463821/","track":true},
+    {"id":"forerunner-70-170","name":"Forerunner 70/170","family":"Forerunner","garmin_id":"1941179","url":"https://www.garmin.com/pt-BR/p/1941179/","track":true},
+    {"id":"instinct-3","name":"Instinct 3","family":"Instinct","garmin_id":"1316397","url":"https://www.garmin.com/pt-BR/p/1316397/","track":false},
+    {"id":"vivoactive-6","name":"vívoactive 6","family":"vívoactive","garmin_id":"1555457","url":"https://www.garmin.com/pt-BR/p/1555457/","track":false},
+    {"id":"instinct-crossover","name":"Instinct Crossover","family":"Instinct","garmin_id":"1800201","url":"https://www.garmin.com/pt-BR/p/1800201/","track":false},
+    {"id":"tactix-8","name":"tactix 8","family":"tactix","garmin_id":"1828641","url":"https://www.garmin.com/pt-BR/p/1828641/","track":false},
+    {"id":"lily-2","name":"Lily 2","family":"Lily","garmin_id":"1196650","url":"https://www.garmin.com/pt-BR/p/1196650/","track":false},
+    {"id":"bounce-2","name":"Bounce 2","family":"Bounce","garmin_id":"1815501","url":"https://www.garmin.com/pt-BR/p/1815501/","track":false},
+    {"id":"marq-gen-2","name":"MARQ (Gen 2)","family":"MARQ","garmin_id":"783467","url":"https://www.garmin.com/pt-BR/p/783467/","track":false},
+    {"id":"fenix-8","name":"fēnix 8","family":"fēnix","garmin_id":"1701921","url":"https://www.garmin.com/pt-BR/p/1701921/","track":true},
+    {"id":"vivomove","name":"vívomove","family":"vívomove","garmin_id":"785411","url":"https://www.garmin.com/pt-BR/p/785411/","track":false},
+    {"id":"descent-mk3","name":"Descent Mk3","family":"Descent","garmin_id":"852159","url":"https://www.garmin.com/pt-BR/p/852159/","track":false},
+    {"id":"quatix-8","name":"quatix 8","family":"quatix","garmin_id":"1908596","url":"https://www.garmin.com/pt-BR/p/1908596/","track":false},
+    {"id":"vivosmart-5","name":"vívosmart 5","family":"vívosmart","garmin_id":"782585","url":"https://www.garmin.com/pt-BR/p/782585/","track":false},
+    {"id":"vivofit-jr-3","name":"vívofit jr. 3","family":"vívofit","garmin_id":"711538","url":"https://www.garmin.com/pt-BR/p/711538/","track":false},
+    {"id":"d2-mach-2","name":"D2 Mach 2","family":"D2","garmin_id":"1388769","url":"https://www.garmin.com/pt-BR/p/1388769/","track":false},
+    {"id":"d2-air-x15","name":"D2 Air X15","family":"D2","garmin_id":"1957609","url":"https://www.garmin.com/pt-BR/p/1957609/","track":false},
+    {"id":"approach-s12","name":"Approach S12","family":"Approach","garmin_id":"721216","url":"https://www.garmin.com/pt-BR/p/721216/","track":false}
   ]
 }
