@@ -43,5 +43,21 @@ snapshot={"collected_at":now.isoformat(),"trip_cost_py":TRIP,"models":models}
 (DATA/"snapshots"/f"{day}.json").write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding="utf-8")
 (DATA/"latest.json").write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding="utf-8")
 hist=DATA/"history.json"; arr=json.loads(hist.read_text(encoding="utf-8")) if hist.exists() else []
+previous={}
+for entry in arr:
+ for model in entry.get("models",[]):
+  for offer in model.get("offers",[]):
+   key=(offer.get("model"),offer.get("store"),offer.get("url"))
+   if offer.get("price") is not None: previous[key]=offer
+# Falha de coleta nunca vira preço zero nem apaga o último valor válido.
+for model in snapshot["models"]:
+ for offer in model["offers"]:
+  key=(offer.get("model"),offer.get("store"),offer.get("url"))
+  if offer.get("price") is None and key in previous:
+   old=previous[key]
+   offer["last_valid_price"]=old.get("price")
+   offer["last_valid_effective_price"]=old.get("effective_price")
+   offer["last_valid_collected_at"]=old.get("collected_at")
 arr=[x for x in arr if x.get("date")!=day]; arr.append({"date":day,**snapshot})
+arr.sort(key=lambda x:x.get("date",""))
 hist.write_text(json.dumps(arr,ensure_ascii=False,indent=2),encoding="utf-8")
