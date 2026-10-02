@@ -195,7 +195,7 @@ specs:{
 'Saúde':{'ecg_app':'Sim','body_battery':'Sim','hrv_status':'Sim','sleep_advanced':'Sim','sleep_coach':'Sim','nap_detection':'Sim','skin_temperature':'Sim','health_snapshot':'Sim','meditation':'Sim','jet_lag_advisor':'Sim','pulse_ox':'Não'}
 }},
 {id:'fenix8pro51',nome:'fēnix 8 Pro 51 mm',linha:'Multiesporte · aventura',galeria:[],lojas:[],recursos:[{ico:'mountain',txt:'Multiesporte e aventura'},{ico:'radar',txt:'inReach LTE e satélite'},{ico:'watch',txt:'AMOLED · 51 mm'},{ico:'heart',txt:'Saúde e recuperação'}],fichaUrl:'https://www.garmin.com/pt-BR/p/1703902/'},
-{id:'fenix9-51',nome:'fēnix 9 51 mm',linha:'Multiesporte · aventura',galeria:[],lojas:[],recursos:[],fichaUrl:'https://www.garmin.com/pt-BR/'},
+
 {id:'hrm600',nome:'HRM 600',linha:'Monitor cardíaco',galeria:[],lojas:[],recursos:[{ico:'heart',txt:'Frequência cardíaca e HRV'},{ico:'footprints',txt:'Dinâmica de corrida'},{ico:'timer',txt:'Gravação independente'},{ico:'radar',txt:'ANT+ e Bluetooth'}],fichaUrl:'https://www.garmin.com/pt-BR/'}
 ]};
 const $=s=>document.querySelector(s),brl=v=>v.toLocaleString('pt-BR'),pct=v=>v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1}),I=(id,cls='')=>'<svg class="ico '+cls+'" aria-hidden="true"><use href="#i-'+id+'"/></svg>',esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));let atual=new URLSearchParams(location.search).get('m')||RADAR.modelos[0].id;
