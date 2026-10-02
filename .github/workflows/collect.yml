@@ -1,4 +1,4 @@
-name: Coleta diaria Forerunner
+name: Coleta diaria Radar Garmin
 on:
   schedule:
     - cron: "0 11 * * *"
@@ -19,5 +19,5 @@ jobs:
           git config user.name "radar-garmin-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "coleta diaria Forerunner"
+          git diff --cached --quiet || git commit -m "coleta diaria Radar Garmin"
           git push
