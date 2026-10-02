@@ -4,6 +4,7 @@ ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/"data"; DATA.mkdir(exist_ok=
 TZ=datetime.timezone(datetime.timedelta(hours=-3)); now=datetime.datetime.now(TZ); day=now.date().isoformat()
 TRIP=1200.0
 SOURCES=[
+ {"model":"forerunner-570","name":"Forerunner 570 47 mm","sku":"010-02971-00","store":"Mercado Livre","url":"https://www.mercadolivre.com.br/garmin-forerunner-570-preto-47mm/p/MLB51160740?wid=MLB5145446199","country":"BR","product_id":"MLB51160740","item_id":"MLB5145446199"},
  {"model":"forerunner-970","name":"Forerunner 970","sku":"010-02969-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/collections/forerunner/products/relogio-garmin-forerunner-970-cinza-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
  {"model":"forerunner-970","name":"Forerunner 970","sku":"010-02969-00","store":"Compras Paraguai","url":"https://www.comprasparaguai.com.br/relogio-smartwatch-garmin-forerunner-970-47-mm-pretocinza-carbono-dlc-titanio-010-02969-00__4906340/","country":"PY"},
  {"model":"forerunner-570","name":"Forerunner 570 47 mm","sku":"010-02971-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/collections/produtos-prudential-fully/products/relogio-garmin-forerunner-570-cinza-ardosia-translucido-preto-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
