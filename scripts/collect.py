@@ -1,25 +1,46 @@
-import json, os, urllib.request, datetime
+import json, re, datetime, urllib.request
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/"data"; DATA.mkdir(exist_ok=True)
-# Catálogo inicial oficial. A coleta de lojas deve usar APIs/endpoints permitidos por cada fonte.
-models=[
- {"id":"forerunner-970","name":"Forerunner 970","status":"current"},
- {"id":"forerunner-570","name":"Forerunner 570","status":"current"},
- {"id":"forerunner-965","name":"Forerunner 965","status":"track"},
- {"id":"forerunner-265","name":"Forerunner 265","status":"track"},
- {"id":"forerunner-165","name":"Forerunner 165","status":"track"}
+ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/"data"; DATA.mkdir(exist_ok=True)
+TZ=datetime.timezone(datetime.timedelta(hours=-3)); now=datetime.datetime.now(TZ); day=now.date().isoformat()
+TRIP=1200.0
+SOURCES=[
+ {"model":"forerunner-970","name":"Forerunner 970","sku":"010-02969-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/collections/forerunner/products/relogio-garmin-forerunner-970-cinza-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
+ {"model":"forerunner-970","name":"Forerunner 970","sku":"010-02969-00","store":"Compras Paraguai","url":"https://www.comprasparaguai.com.br/relogio-smartwatch-garmin-forerunner-970-47-mm-pretocinza-carbono-dlc-titanio-010-02969-00__4906340/","country":"PY"},
+ {"model":"forerunner-570","name":"Forerunner 570 47 mm","sku":"010-02971-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/collections/produtos-prudential-fully/products/relogio-garmin-forerunner-570-cinza-ardosia-translucido-preto-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
+ {"model":"forerunner-570","name":"Forerunner 570 47 mm","sku":"010-02971-01","store":"Compras Paraguai","url":"https://www.comprasparaguai.com.br/relogio-smartwatch-garmin-forerunner-570-47-mm-amp-yellow-010-02971-01__4906335/","country":"PY"},
+ {"model":"venu-4","name":"Venu 4 45 mm","sku":"010-03014-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/products/relogio-garmin-venu-4-ardosia-e-preto-45-mm-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
+ {"model":"venu-4","name":"Venu 4 45 mm","sku":"010-03014-00","store":"Compras Paraguai","url":"https://www.comprasparaguai.com.br/garmin-smartwatch-venu-4-45mm-black__5257596/","country":"PY"}
 ]
-today=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).isoformat()
-snapshot={"collected_at":today,"models":[],"note":"Estrutura pronta. Preços só entram após integração autorizada com cada fonte."}
-for m in models:
-    snapshot["models"].append({**m,"offers":[],"summary":{"min":None,"max":None,"avg":None}})
-day=today[:10]
+def fetch(url):
+ req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 RadarGarmin/1.0"})
+ with urllib.request.urlopen(req,timeout=25) as r:return r.read().decode("utf-8","ignore")
+def price_from_html(html):
+ pats=[r'"price"\s*:\s*"?([0-9]+(?:[.,][0-9]+)?)',r'R\$\s*([0-9\.]+,[0-9]{2})']
+ vals=[]
+ for p in pats:
+  for x in re.findall(p,html,re.I):
+   try:
+    v=float(x.replace(".","").replace(",","."))
+    if 300<=v<=20000: vals.append(v)
+   except: pass
+  if vals:return vals[0]
+ return None
+offers=[]
+for src in SOURCES:
+ o={**src,"collected_at":now.isoformat(),"price":None,"effective_price":None,"available":None,"error":None}
+ try:
+  html=fetch(src["url"]); p=price_from_html(html); o["price"]=p; o["available"]=p is not None
+  if p is not None:o["effective_price"]=round(p+(TRIP if src["country"]=="PY" else 0),2)
+ except Exception as e:o["error"]=type(e).__name__
+ offers.append(o)
+models=[]
+for mid in sorted(set(x["model"] for x in SOURCES)):
+ xs=[x for x in offers if x["model"]==mid]; valid=[x["effective_price"] for x in xs if x["effective_price"] is not None]
+ models.append({"id":mid,"name":xs[0]["name"],"offers":xs,"summary":{"min":min(valid) if valid else None,"max":max(valid) if valid else None,"avg":round(sum(valid)/len(valid),2) if valid else None}})
+snapshot={"collected_at":now.isoformat(),"trip_cost_py":TRIP,"models":models}
 (DATA/"snapshots").mkdir(exist_ok=True)
 (DATA/"snapshots"/f"{day}.json").write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding="utf-8")
 (DATA/"latest.json").write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding="utf-8")
-hist=DATA/"history.json"
-arr=json.loads(hist.read_text(encoding="utf-8")) if hist.exists() else []
-arr=[x for x in arr if x.get("date")!=day]
-arr.append({"date":day,"collected_at":today,"models":snapshot["models"]})
+hist=DATA/"history.json"; arr=json.loads(hist.read_text(encoding="utf-8")) if hist.exists() else []
+arr=[x for x in arr if x.get("date")!=day]; arr.append({"date":day,**snapshot})
 hist.write_text(json.dumps(arr,ensure_ascii=False,indent=2),encoding="utf-8")
