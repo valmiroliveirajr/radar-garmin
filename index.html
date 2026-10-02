@@ -196,7 +196,25 @@ specs:{
 }},
 
 
-{id:'hrm600',nome:'HRM 600',linha:'Monitor cardíaco',galeria:[],lojas:[],recursos:[{ico:'heart',txt:'Frequência cardíaca e HRV'},{ico:'footprints',txt:'Dinâmica de corrida'},{ico:'timer',txt:'Gravação independente'},{ico:'radar',txt:'ANT+ e Bluetooth'}],fichaUrl:'https://www.garmin.com/pt-BR/'}
+{id:'hrm600',nome:'HRM 600',linha:'Monitor cardíaco · dinâmica de corrida',galeria:['https://www.garminbrasil.com.br/cdn/shop/files/Monitor-Cardiaco-Peitoral-Garmin-HRM-600-M-GG-010-13383-00.jpg'],min30:1899,media30:1899,max30:1899,lojas:[{nome:'Mercado Livre',preco:1899,url:'https://lista.mercadolivre.com.br/garmin-hrm-600'},{nome:'Garmin Brasil · oficial',preco:1899,ate:1899,oficial:true,url:'https://www.garminbrasil.com.br/products/monitor-cardiaco-peitoral-garmin-hrm-600-m-gg'}],recursos:[{ico:'heart',txt:'Frequência cardíaca e HRV em tempo real'},{ico:'footprints',txt:'Dinâmica de corrida'},{ico:'timer',txt:'Gravação independente de atividade'},{ico:'radar',txt:'ANT+ · Bluetooth · Garmin Connect'},{ico:'shield',txt:'5 ATM'},{ico:'timer',txt:'Bateria recarregável · até 2 meses'},{ico:'watch',txt:'Módulo removível · 18 g'},{ico:'list',txt:'M/GG · tórax 80–119 cm'}],fichaUrl:'https://www.garmin.com/pt-BR/p/1473393/#specs',features:[
+{sec:'TREINE COM DADOS PRECISOS',items:[
+{ico:'heart',t:'FREQUÊNCIA CARDÍACA E HRV',d:'Transmite dados de frequência cardíaca e variabilidade da frequência cardíaca para dispositivos e aplicativos compatíveis.'},
+{ico:'footprints',t:'DINÂMICA DE CORRIDA',d:'Registra métricas de dinâmica de corrida quando usado com um relógio Garmin compatível.'},
+{ico:'timer',t:'GRAVAÇÃO DE ATIVIDADE',d:'Pode registrar dados de atividade sem a necessidade de usar um relógio durante toda a sessão.'},
+{ico:'radar',t:'CONECTIVIDADE',d:'Compatível com ANT+, Bluetooth e emparelhamento com o aplicativo Garmin Connect.'},
+{ico:'shield',t:'RESISTÊNCIA À ÁGUA',d:'Classificação de resistência à água de 5 ATM.'}
+]},
+{sec:'FEITO PARA O TREINO',items:[
+{ico:'timer',t:'BATERIA RECARREGÁVEL',d:'Até 2 meses de autonomia considerando uso de aproximadamente uma hora por dia.'},
+{ico:'watch',t:'MÓDULO REMOVÍVEL',d:'O módulo eletrônico pode ser removido da cinta para facilitar os cuidados e a lavagem.'},
+{ico:'info',t:'LED DE STATUS',d:'LED tricolor informa o estado do monitor e do carregamento.'},
+{ico:'watch',t:'BOTÃO FÍSICO',d:'Botão integrado para controle e interação com o monitor.'}
+]}],specs:{
+'Geral':{'dimensoes_modulo':'68,0 × 31,6 × 10,0 mm','peso_modulo':'18 g','peso_com_cinta_m_gg':'61 g','tamanho_m_gg':'Cinta 72–106 cm · tórax 80–119 cm','botao':'Sim','led_status':'Sim · tricolor','resistencia_agua':'5 ATM','modulo_removivel':'Sim'},
+'Bateria':{'tipo_bateria':'Íons de lítio recarregável','autonomia':'Até 2 meses · uso de 1 h/dia','carregamento':'Conector proprietário Garmin'},
+'Conectividade':{'garmin_connect':'Sim','ant_plus':'Sim','bluetooth':'Sim'},
+'Produto':{'pn_m_gg':'010-13383-00','preco_oficial_br':'R$ 1.899,00'}
+}}
 ]};
 const $=s=>document.querySelector(s),brl=v=>v.toLocaleString('pt-BR'),pct=v=>v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1}),I=(id,cls='')=>'<svg class="ico '+cls+'" aria-hidden="true"><use href="#i-'+id+'"/></svg>',esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));let atual=new URLSearchParams(location.search).get('m')||RADAR.modelos[0].id;
 
