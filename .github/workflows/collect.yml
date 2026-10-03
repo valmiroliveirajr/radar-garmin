@@ -32,12 +32,9 @@ jobs:
         run: |
           git config user.name "radar-garmin-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet || git commit -m "coleta diaria Radar Garmin"
-          # Evita conflito com outro run: atualiza a base antes de criar o commit.
-          git reset --soft HEAD~1 2>/dev/null || true
-          git reset
+          git stash push -u -m radar-garmin-data -- data/ || true
           git pull --rebase origin main
+          git stash pop || true
           git add data/
           git diff --cached --quiet || git commit -m "coleta diaria Radar Garmin"
           git push origin main
