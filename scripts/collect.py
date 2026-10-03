@@ -1,5 +1,5 @@
 import os
-import json, re, datetime, urllib.request
+import json, re, datetime, urllib.request, urllib.parse
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/"data"; DATA.mkdir(exist_ok=True)
 TZ=datetime.timezone(datetime.timedelta(hours=-3)); now=datetime.datetime.now(TZ); day=now.date().isoformat()
@@ -17,13 +17,9 @@ def fetch(url):
  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 RadarGarmin/1.0","Accept":"application/json,text/html;q=0.9,*/*;q=0.8"})
  with urllib.request.urlopen(req,timeout=25) as r:return r.read().decode("utf-8","ignore")
 def ml_token():
- cid=os.environ.get("ML_CLIENT_ID")
- sec=os.environ.get("ML_CLIENT_SECRET")
- if not cid or not sec: raise RuntimeError("Credenciais ML nao configuradas")
- body=urllib.parse.urlencode({"grant_type":"client_credentials","client_id":cid,"client_secret":sec}).encode()
- req=urllib.request.Request("https://api.mercadolibre.com/oauth/token",data=body,headers={"Content-Type":"application/x-www-form-urlencoded"})
- with urllib.request.urlopen(req,timeout=25) as r:
-  return json.loads(r.read().decode())["access_token"]
+ token=os.environ.get("ML_ACCESS_TOKEN")
+ if not token: raise RuntimeError("ML_ACCESS_TOKEN nao configurado")
+ return token
 def ml_item(item_id):
  # Para ofertas do Mercado Livre, consulta o item_id da oferta em vez de raspar a pagina do catalogo.
  token=ml_token()
