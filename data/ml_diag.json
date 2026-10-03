@@ -740,9 +740,9 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "dynamic_standard_price",
-            "kvs_primary",
             "user_product_unify",
+            "kvs_primary",
+            "dynamic_standard_price",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -881,8 +881,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "user_product_unify",
             "kvs_primary",
+            "user_product_unify",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -1092,8 +1092,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "kvs_primary",
             "user_product_unify",
+            "kvs_primary",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -1163,8 +1163,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "user_product_unify",
             "kvs_primary",
+            "user_product_unify",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -1375,8 +1375,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "kvs_primary",
             "user_product_unify",
+            "kvs_primary",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -4078,9 +4078,87 @@
       "cause": []
     }
   },
+  "seller_low": {
+    "http": 200,
+    "body": {
+      "id": 3522739042,
+      "nickname": "SI20260705222046",
+      "country_id": "BR",
+      "address": {
+        "city": "Guarulhos",
+        "state": "BR-SP"
+      },
+      "user_type": "normal",
+      "site_id": "MLB",
+      "permalink": "http://perfil.mercadolivre.com.br/SI20260705222046",
+      "seller_reputation": {
+        "level_id": "5_green",
+        "power_seller_status": null,
+        "transactions": {
+          "period": "historic",
+          "total": 122
+        }
+      },
+      "status": {
+        "site_status": "active"
+      }
+    }
+  },
+  "seller_original": {
+    "http": 200,
+    "body": {
+      "id": 3505494627,
+      "nickname": "HMGECOM",
+      "country_id": "BR",
+      "address": {
+        "city": "São Paulo",
+        "state": "BR-SP"
+      },
+      "user_type": "normal",
+      "site_id": "MLB",
+      "permalink": "http://perfil.mercadolivre.com.br/HMGECOM",
+      "seller_reputation": {
+        "level_id": "5_green",
+        "power_seller_status": null,
+        "transactions": {
+          "period": "historic",
+          "total": 34
+        }
+      },
+      "status": {
+        "site_status": "active"
+      }
+    }
+  },
+  "seller_alt": {
+    "http": 200,
+    "body": {
+      "id": 3344523174,
+      "nickname": "PETERELETRO",
+      "country_id": "BR",
+      "address": {
+        "city": "São Bernardo do Campo",
+        "state": "BR-SP"
+      },
+      "user_type": "normal",
+      "site_id": "MLB",
+      "permalink": "http://perfil.mercadolivre.com.br/PETERELETRO",
+      "seller_reputation": {
+        "level_id": "3_yellow",
+        "power_seller_status": null,
+        "transactions": {
+          "period": "historic",
+          "total": 431
+        }
+      },
+      "status": {
+        "site_status": "active"
+      }
+    }
+  },
   "public_product_page": {
     "http": 200,
-    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=b89529fa-8a75-4b50-8d95-5cabbd9e6921",
+    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=0c067f56-5e8a-41b9-9a70-5eec1fb2b3d7",
     "title": "Mercado Libre",
     "html_bytes": 41637,
     "price_candidates": [],
