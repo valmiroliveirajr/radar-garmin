@@ -9,6 +9,7 @@ on:
       - "data/watchlist.json"
       - "scripts/collect_watchlist.py"
       - "scripts/apply_watchlist_preferences.py"
+      - "scripts/rebuild_history.py"
       - "scripts/validate_ml_selection.py"
       - ".github/workflows/collect.yml"
 permissions:
@@ -24,6 +25,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Sincronizar main antes da coleta
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
       - name: Coletar produtos monitorados
         env:
           RADAR_ML_API: https://radar-ml-api.valmirvalray.workers.dev
@@ -35,15 +40,19 @@ jobs:
         run: python scripts/collect_watchlist.py
       - name: Aplicar preferencias da watchlist
         run: python scripts/apply_watchlist_preferences.py
+      - name: Reconstruir historico por snapshots
+        run: python scripts/rebuild_history.py
       - name: Validar selecao Mercado Livre
         run: python scripts/validate_ml_selection.py
+      - name: Validar JSON gerado
+        run: |
+          python -m json.tool data/latest.json >/dev/null
+          python -m json.tool data/history.json >/dev/null
+          python -m json.tool data/snapshots/$(date -u -d '3 hours ago' +%F).json >/dev/null
       - name: Commit historico
         run: |
           git config user.name "radar-precos-bot"
           git config user.email "actions@users.noreply.github.com"
-          git stash push -u -m radar-precos-data -- data/ || true
-          git pull --rebase origin main
-          git stash pop || true
           git add data/
           git diff --cached --quiet || git commit -m "coleta diaria Radar de Precos"
           git push origin main
