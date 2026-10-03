@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - "scripts/collect.py"
+      - "scripts/collect_ml_catalog_all.py"
       - "scripts/validate_ml_selection.py"
       - ".github/workflows/collect.yml"
 permissions:
@@ -28,7 +29,9 @@ jobs:
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
           ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
-        run: python scripts/collect.py
+        run: |
+          python scripts/collect.py
+          python scripts/collect_ml_catalog_all.py
       - name: Validar selecao Mercado Livre
         run: python scripts/validate_ml_selection.py
       - name: Commit historico
