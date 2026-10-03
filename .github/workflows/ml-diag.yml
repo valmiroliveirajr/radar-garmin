@@ -1,0 +1,30 @@
+name: Diagnostico Mercado Livre
+on:
+  push:
+    paths:
+      - "scripts/ml_diag.py"
+      - ".github/workflows/ml-diag.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Diagnosticar API Mercado Livre
+        env:
+          ML_CLIENT_ID: ${{ vars.ML_CLIENT_ID }}
+          ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
+        run: python scripts/ml_diag.py
+      - name: Salvar diagnostico
+        run: |
+          git config user.name "radar-garmin-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ml_diag.json
+          git diff --cached --quiet || git commit -m "diagnostico API Mercado Livre"
+          git pull --rebase origin main
+          git push origin main
