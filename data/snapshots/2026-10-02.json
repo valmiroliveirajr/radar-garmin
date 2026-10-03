@@ -2,7 +2,7 @@
   "schema_version": 2,
   "source": "Mercado Livre",
   "site_id": "MLB",
-  "collected_at": "2026-10-02T23:04:29.530071-03:00",
+  "collected_at": "2026-10-02T23:04:59.957727-03:00",
   "products": [
     {
       "id": "forerunner-570",
@@ -139,8 +139,8 @@
           "value_name": "CERTIFIED_MEASUREMENT"
         }
       ],
-      "added_at": "2026-10-03",
-      "collected_at": "2026-10-02T23:04:29.530071-03:00",
+      "added_at": "2026-10-02",
+      "collected_at": "2026-10-02T23:04:59.957727-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -757,8 +757,8 @@
           "value_name": "CERTIFIED_MEASUREMENT"
         }
       ],
-      "added_at": "2026-10-03",
-      "collected_at": "2026-10-02T23:04:29.530071-03:00",
+      "added_at": "2026-10-02",
+      "collected_at": "2026-10-02T23:04:59.957727-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1696,8 +1696,8 @@
           "value_name": "CERTIFIED_MEASUREMENT"
         }
       ],
-      "added_at": "2026-10-03",
-      "collected_at": "2026-10-02T23:04:29.530071-03:00",
+      "added_at": "2026-10-02",
+      "collected_at": "2026-10-02T23:04:59.957727-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -2002,8 +2002,8 @@
           "value_name": "Garmin HRM 600"
         }
       ],
-      "added_at": "2026-10-03",
-      "collected_at": "2026-10-02T23:04:29.530071-03:00",
+      "added_at": "2026-10-02",
+      "collected_at": "2026-10-02T23:04:59.957727-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
