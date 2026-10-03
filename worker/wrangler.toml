@@ -7,7 +7,15 @@ ALLOWED_ORIGIN = "https://valmiroliveirajr.github.io"
 GITHUB_REPOSITORY = "valmiroliveirajr/radar-garmin"
 ML_SITE_ID = "MLB"
 
-# Segredos obrigatórios (não versionar valores):
+# Segredos obrigatorios (nao versionar valores):
 # wrangler secret put ADMIN_KEY
-# wrangler secret put ML_ACCESS_TOKEN
 # wrangler secret put GITHUB_TOKEN
+# wrangler secret put ML_ACCESS_TOKEN
+# wrangler secret put ML_CLIENT_ID
+# wrangler secret put ML_CLIENT_SECRET
+# wrangler secret put ML_REFRESH_TOKEN
+#
+# Para renovacao automatica, crie um namespace Cloudflare KV
+# e vincule-o ao Worker com o binding ML_TOKEN_STORE.
+# O namespace armazena o access token atual, a expiracao e o
+# refresh token rotativo do Mercado Livre.
