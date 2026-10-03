@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "0 11 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/collect.py"
+      - ".github/workflows/collect.yml"
 permissions:
   contents: write
 jobs:
