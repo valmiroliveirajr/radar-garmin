@@ -1,5 +1,5 @@
 {
   "admin_api": "",
-  "admin_api_status": "pending",
-  "notes": "Defina aqui a URL HTTPS do backend seguro de busca e manutencao da watchlist."
+  "admin_api_status": "code_ready",
+  "notes": "O backend esta implementado em worker/. Publique o Cloudflare Worker e informe a URL pelo botao Configurar API ou neste campo."
 }
