@@ -86,7 +86,7 @@ def compact_endpoint(obj):
                 keep=["id","item_id","seller_id","price","currency_id","permalink","condition","official_store_id","status"]
                 out["first_item"]={k:r.get(k) for k in keep if k in r}
         else:
-            for k in ["id","name","status","buy_box_winner","buy_box_winner_price_range"]:
+            for k in ["id","name","nickname","status","buy_box_winner","buy_box_winner_price_range","seller_reputation"]:
                 if k in body: out[k]=body.get(k)
     elif body is not None:
         out["body"]=str(body)[:1000]
@@ -106,6 +106,9 @@ product_items=get("/products/MLB51160740/items")
 product_search=get("/products/search?"+urllib.parse.urlencode({"status":"active","site_id":"MLB","q":"Garmin Forerunner 570 47mm"}))
 item=get("/items/MLB5145446199")
 search=get("/sites/MLB/search?"+urllib.parse.urlencode({"q":"Garmin Forerunner 570 47mm","limit":1}))
+seller_low=get("/users/3522739042")
+seller_original=get("/users/3505494627")
+seller_alt=get("/users/3344523174")
 page=public_page(PRODUCT_URL)
 
 diag={
@@ -118,6 +121,9 @@ diag={
     "product_search":product_search,
     "item":item,
     "search":search,
+    "seller_low":seller_low,
+    "seller_original":seller_original,
+    "seller_alt":seller_alt,
     "public_product_page":page,
 }
 summary={
@@ -126,6 +132,9 @@ summary={
     "product_search":compact_endpoint(product_search),
     "item":compact_endpoint(item),
     "legacy_search":compact_endpoint(search),
+    "seller_low":compact_endpoint(seller_low),
+    "seller_original":compact_endpoint(seller_original),
+    "seller_alt":compact_endpoint(seller_alt),
     "public_product_page":page,
 }
 (DATA/"ml_diag.json").write_text(json.dumps(diag,ensure_ascii=False,indent=2),encoding="utf-8")
