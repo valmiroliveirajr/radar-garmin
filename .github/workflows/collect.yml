@@ -1,4 +1,4 @@
-name: Coleta diaria Radar Garmin
+name: Coleta diaria Radar de Precos
 on:
   schedule:
     - cron: "0 11 * * *"
@@ -6,8 +6,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "scripts/collect.py"
-      - "scripts/collect_ml_catalog_all.py"
+      - "data/watchlist.json"
+      - "scripts/collect_watchlist.py"
       - "scripts/validate_ml_selection.py"
       - ".github/workflows/collect.yml"
 permissions:
@@ -15,7 +15,7 @@ permissions:
 jobs:
   collect:
     concurrency:
-      group: radar-garmin-collector
+      group: radar-precos-mercado-livre
       cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
@@ -23,24 +23,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Coletar precos
+      - name: Coletar produtos monitorados
         env:
           ML_CLIENT_ID: ${{ vars.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
           ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
-        run: |
-          python scripts/collect.py
-          python scripts/collect_ml_catalog_all.py
+        run: python scripts/collect_watchlist.py
       - name: Validar selecao Mercado Livre
         run: python scripts/validate_ml_selection.py
       - name: Commit historico
         run: |
-          git config user.name "radar-garmin-bot"
+          git config user.name "radar-precos-bot"
           git config user.email "actions@users.noreply.github.com"
-          git stash push -u -m radar-garmin-data -- data/ || true
+          git stash push -u -m radar-precos-data -- data/ || true
           git pull --rebase origin main
           git stash pop || true
           git add data/
-          git diff --cached --quiet || git commit -m "coleta diaria Radar Garmin"
+          git diff --cached --quiet || git commit -m "coleta diaria Radar de Precos"
           git push origin main
