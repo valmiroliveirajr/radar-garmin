@@ -72,6 +72,8 @@ app=get(f"/applications/{APP_ID}") if APP_ID else {"error":"ML_CLIENT_ID ausente
 grants=get(f"/applications/{APP_ID}/grants") if APP_ID else {"error":"ML_CLIENT_ID ausente"}
 user_apps=get(f"/users/{user_id}/applications") if user_id else {"error":"user_id ausente"}
 product=get("/products/MLB51160740")
+product_items=get("/products/MLB51160740/items")
+product_search=get("/products/search?"+urllib.parse.urlencode({"status":"active","site_id":"MLB","q":"Garmin Forerunner 570 47mm"}))
 item=get("/items/MLB5145446199")
 search=get("/sites/MLB/search?"+urllib.parse.urlencode({"q":"Garmin Forerunner 570 47mm","limit":1}))
 page=public_page(PRODUCT_URL)
@@ -81,7 +83,9 @@ diag={
     "application":pick(app,["id","site_id","active","sandbox_mode","certification_status","scopes","redirect_uri","url"]),
     "application_grants":grants,
     "user_applications":user_apps,
-    "product":pick(product,["id","status","name","buy_box_winner","children_ids","settings"]),
+    "product":pick(product,["id","status","name","buy_box_winner","buy_box_winner_price_range","children_ids","pickers","settings"]),
+    "product_items":product_items,
+    "product_search":product_search,
     "item":item,
     "search":search,
     "public_product_page":page,
