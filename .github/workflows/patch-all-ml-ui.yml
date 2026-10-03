@@ -1,0 +1,27 @@
+name: Aplicar ML vivo a todos os produtos
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/patch_all_ml_ui.py"
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Atualizar base
+        run: git pull --rebase origin main
+      - name: Aplicar integração
+        run: python scripts/patch_all_ml_ui.py
+      - name: Publicar
+        run: |
+          git config user.name "radar-garmin-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scripts/collect_ml_catalog_all.py index.html
+          git diff --cached --quiet || git commit -m "usar Mercado Livre vivo em todos os produtos"
+          git push origin main
