@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "source": "Mercado Livre",
+  "site_id": "MLB",
+  "products": [
+    {
+      "id": "forerunner-570",
+      "catalog_product_id": "MLB51160740",
+      "name": "Forerunner 570 47 mm",
+      "active": true,
+      "added_at": "2026-10-03"
+    },
+    {
+      "id": "forerunner-970",
+      "catalog_product_id": "MLB51491500",
+      "name": "Forerunner 970 47 mm",
+      "active": true,
+      "added_at": "2026-10-03"
+    },
+    {
+      "id": "venu-4",
+      "catalog_product_id": "MLB59896359",
+      "name": "Venu 4 45 mm",
+      "active": true,
+      "added_at": "2026-10-03"
+    },
+    {
+      "id": "hrm600",
+      "catalog_product_id": "MLB51759203",
+      "name": "HRM 600 M/GG",
+      "active": true,
+      "added_at": "2026-10-03"
+    }
+  ]
+}
