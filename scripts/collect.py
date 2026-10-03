@@ -48,10 +48,56 @@ def ml_seller(seller_id, token):
   "seller_rating_negative":ratings.get("negative")
  }
 
+def ml_candidate_is_exact(r, src):
+ title=(r.get("title") or "").lower()
+ product_id=r.get("catalog_product_id")
+ if product_id and product_id==src.get("product_id"):
+  return True
+ return all(x in title for x in ("garmin","forerunner","570","47"))
+
+def ml_search_candidates(src, token):
+ queries=[src.get("sku"),"Garmin Forerunner 570 47mm"]
+ seen={}
+ errors=[]
+ for q in queries:
+  if not q: continue
+  path="/sites/MLB/search?"+urllib.parse.urlencode({"q":q,"sort":"price_asc","limit":50})
+  data,err=ml_get(path,token)
+  if err:
+   errors.append(err); continue
+  for r in (data or {}).get("results",[]):
+   if not ml_candidate_is_exact(r,src): continue
+   if r.get("condition") not in (None,"new"): continue
+   price=r.get("price")
+   if price is None: continue
+   seller=r.get("seller") or {}
+   seller_id=seller.get("id") or r.get("seller_id")
+   item={
+    "item_id":r.get("id"),
+    "title":r.get("title"),
+    "price":float(price),
+    "currency_id":r.get("currency_id"),
+    "seller_id":seller_id,
+    "official_store_id":r.get("official_store_id"),
+    "condition":r.get("condition"),
+    "permalink":r.get("permalink"),
+    "catalog_product_id":r.get("catalog_product_id"),
+    "free_shipping":((r.get("shipping") or {}).get("free_shipping")),
+   }
+   item.update(ml_seller(seller_id,token))
+   level=item.get("seller_reputation_level") or ""
+   power=item.get("power_seller_status")
+   item["trusted_seller_rule"]=bool(level.startswith("5_") or level.startswith("4_") or power in ("silver","gold","platinum"))
+   seen[item.get("item_id") or item.get("permalink")]=item
+ candidates=list(seen.values())
+ candidates.sort(key=lambda x:(not x.get("trusted_seller_rule"),x.get("price",10**9)))
+ return candidates,errors
+
 def ml_offer(src):
  token=ml_token()
  me, me_error=ml_get("/users/me",token)
  product_id=src.get("product_id")
+ product=None; product_error=None
  if product_id:
   product, product_error=ml_get(f"/products/{product_id}",token)
   if not product_error and product:
@@ -59,57 +105,53 @@ def ml_offer(src):
    seller_id=winner.get("seller_id")
    item_id=winner.get("item_id")
    price=winner.get("price")
-   permalink=product.get("permalink") or src.get("url")
-   if item_id and permalink:
-    sep="&" if "?" in permalink else "?"
-    permalink=f"{permalink}{sep}wid={item_id}"
-   out={
-    "price":float(price) if price is not None else None,
-    "title":product.get("name"),
-    "seller_id":seller_id,
-    "official_store_id":winner.get("official_store_id"),
-    "condition":winner.get("condition"),
-    "status":"active" if product.get("status")=="active" and winner else product.get("status"),
-    "permalink":permalink,
-    "currency_id":winner.get("currency_id"),
-    "free_shipping":(winner.get("shipping") or {}).get("free_shipping"),
-    "warranty":None,
-    "catalog_product_id":product_id,
-    "winner_item_id":item_id,
-    "collection_source":"catalog_buy_box",
-    "auth_user_id":(me or {}).get("id"),
-    "auth_nickname":(me or {}).get("nickname"),
-    "auth_error":me_error,
-    "product_error":None
-   }
-   out.update(ml_seller(seller_id,token))
-   return out
-  product_diag=product_error
- else:
-  product_diag="product_id ausente"
+   if winner and price is not None:
+    permalink=product.get("permalink") or src.get("url")
+    if item_id and permalink:
+     sep="&" if "?" in permalink else "?"
+     permalink=f"{permalink}{sep}wid={item_id}"
+    out={
+     "price":float(price),"title":product.get("name"),"seller_id":seller_id,
+     "official_store_id":winner.get("official_store_id"),"condition":winner.get("condition"),
+     "status":"active","permalink":permalink,"currency_id":winner.get("currency_id"),
+     "free_shipping":(winner.get("shipping") or {}).get("free_shipping"),"warranty":None,
+     "catalog_product_id":product_id,"winner_item_id":item_id,"collection_source":"catalog_buy_box",
+     "auth_user_id":(me or {}).get("id"),"auth_nickname":(me or {}).get("nickname"),
+     "auth_error":me_error,"product_error":None
+    }
+    out.update(ml_seller(seller_id,token)); return out
+ candidates,search_errors=ml_search_candidates(src,token)
+ if candidates:
+  best=candidates[0]
+  return {
+   "price":best.get("price"),"title":best.get("title"),"seller_id":best.get("seller_id"),
+   "official_store_id":best.get("official_store_id"),"condition":best.get("condition"),"status":"active",
+   "permalink":best.get("permalink") or src.get("url"),"currency_id":best.get("currency_id"),
+   "free_shipping":best.get("free_shipping"),"warranty":None,"catalog_product_id":best.get("catalog_product_id") or product_id,
+   "winner_item_id":best.get("item_id"),"collection_source":"site_search","auth_user_id":(me or {}).get("id"),
+   "auth_nickname":(me or {}).get("nickname"),"auth_error":me_error,"product_error":product_error,
+   "search_errors":search_errors,"search_candidates":candidates[:10],
+   "seller_nickname":best.get("seller_nickname"),"seller_status":best.get("seller_status"),
+   "seller_reputation_level":best.get("seller_reputation_level"),"power_seller_status":best.get("power_seller_status"),
+   "seller_transactions_completed":best.get("seller_transactions_completed"),"seller_transactions_canceled":best.get("seller_transactions_canceled"),
+   "seller_rating_positive":best.get("seller_rating_positive"),"seller_rating_neutral":best.get("seller_rating_neutral"),
+   "seller_rating_negative":best.get("seller_rating_negative"),"trusted_seller_rule":best.get("trusted_seller_rule")
+  }
+ product_diag=product_error or ("buy_box_winner ausente" if product else "produto ausente")
  item_id=src.get("item_id")
- data, item_error=ml_get(f"/items/{item_id}",token) if item_id else (None,"item_id ausente")
+ data,item_error=ml_get(f"/items/{item_id}",token) if item_id else (None,"item_id ausente")
  if item_error:
-  raise RuntimeError(f"ML bloqueado; users_me={'ok' if me else me_error}; product={product_diag}; item={item_error}")
+  raise RuntimeError(f"ML bloqueado; users_me={'ok' if me else me_error}; product={product_diag}; search={search_errors}; item={item_error}")
  p=data.get("price")
  out={
-  "price":float(p) if p is not None else None,
-  "title":data.get("title"),
-  "seller_id":data.get("seller_id"),
-  "official_store_id":data.get("official_store_id"),
-  "condition":data.get("condition"),
-  "status":data.get("status"),
-  "permalink":data.get("permalink"),
-  "currency_id":data.get("currency_id"),
+  "price":float(p) if p is not None else None,"title":data.get("title"),"seller_id":data.get("seller_id"),
+  "official_store_id":data.get("official_store_id"),"condition":data.get("condition"),"status":data.get("status"),
+  "permalink":data.get("permalink"),"currency_id":data.get("currency_id"),
   "free_shipping":(data.get("shipping") or {}).get("free_shipping"),
   "warranty":next((x.get("value_name") for x in data.get("sale_terms",[]) if x.get("id") in ("WARRANTY_TYPE","WARRANTY_TIME")),None),
-  "collection_source":"item",
-  "auth_user_id":(me or {}).get("id"),
-  "auth_nickname":(me or {}).get("nickname"),
-  "product_error":product_diag
+  "collection_source":"item","auth_user_id":(me or {}).get("id"),"auth_nickname":(me or {}).get("nickname"),"product_error":product_diag
  }
- out.update(ml_seller(data.get("seller_id"),token))
- return out
+ out.update(ml_seller(data.get("seller_id"),token)); return out
 
 def price_from_html(html):
  pats=[r'"price"\s*:\s*"?([0-9]+(?:[.,][0-9]+)?)',r'R\$\s*([0-9\.]+,[0-9]{2})']
@@ -150,7 +192,6 @@ for entry in arr:
   for offer in model.get("offers",[]):
    key=(offer.get("model"),offer.get("store"),offer.get("url"))
    if offer.get("price") is not None: previous[key]=offer
-# Falha de coleta nunca vira preço zero nem apaga o último valor válido.
 for model in snapshot["models"]:
  for offer in model["offers"]:
   key=(offer.get("model"),offer.get("store"),offer.get("url"))
