@@ -29,15 +29,17 @@ for model in data.get("models",[]):
         raise SystemExit(f"FAIL {mid}: catalog_product_id ausente")
 
     catalog_name=(ml.get("catalog_product_name") or "").lower()
-    if mid=="forerunner-570" and not ("570" in catalog_name and "47" in catalog_name):
+    catalog_norm=" ".join(catalog_name.replace("-"," ").replace("/"," ").replace("("," ").replace(")"," ").split())
+    if mid=="forerunner-570" and not ("570" in catalog_norm and "47" in catalog_norm):
         raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
-    if mid=="forerunner-970" and not ("970" in catalog_name and "47" in catalog_name):
+    if mid=="forerunner-970" and not ("970" in catalog_norm and "47" in catalog_norm):
         raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
-    if mid=="venu-4" and not ("venu 4" in catalog_name and "45" in catalog_name):
+    if mid=="venu-4" and not ("venu 4" in catalog_norm and "45" in catalog_norm):
         raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
     if mid=="hrm600":
-        wrong=("pp/p","pp p","xs/s","xs s")
-        if "hrm 600" not in catalog_name or any(x in catalog_name for x in wrong):
+        wrong=("pp p","xs s")
+        right_size=("m gg" in catalog_norm or "m xl" in catalog_norm)
+        if "hrm 600" not in catalog_norm or any(x in catalog_norm for x in wrong) or not right_size:
             raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
 
     offers=ml.get("market_offers") or []
