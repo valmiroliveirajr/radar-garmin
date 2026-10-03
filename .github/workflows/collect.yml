@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - "scripts/collect.py"
+      - "scripts/validate_ml_selection.py"
       - ".github/workflows/collect.yml"
 permissions:
   contents: write
@@ -28,6 +29,8 @@ jobs:
           ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
           ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
         run: python scripts/collect.py
+      - name: Validar selecao Mercado Livre
+        run: python scripts/validate_ml_selection.py
       - name: Commit historico
         run: |
           git config user.name "radar-garmin-bot"
