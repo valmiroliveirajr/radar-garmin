@@ -26,6 +26,8 @@ jobs:
           python-version: "3.12"
       - name: Coletar produtos monitorados
         env:
+          RADAR_ML_API: https://radar-ml-api.valmirvalray.workers.dev
+          RADAR_API_ADMIN_KEY: ${{ secrets.RADAR_API_ADMIN_KEY }}
           ML_CLIENT_ID: ${{ vars.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
