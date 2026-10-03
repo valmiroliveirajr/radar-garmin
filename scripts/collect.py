@@ -8,6 +8,13 @@ TZ=datetime.timezone(datetime.timedelta(hours=-3))
 now=datetime.datetime.now(TZ); day=now.date().isoformat()
 TRIP=1200.0
 
+ML_SELECTION_POLICY=[
+ "eliminar ofertas usadas ou inativas",
+ "priorizar vendedor confiavel e ativo",
+ "entre vendedores confiaveis, priorizar garantia de fabrica",
+ "dentro do melhor grupo, escolher o menor preco"
+]
+
 SOURCES=[
  {"model":"forerunner-570","name":"Forerunner 570 47 mm","sku":"010-02971-00","store":"Mercado Livre","url":"https://www.mercadolivre.com.br/garmin-forerunner-570-preto-47mm/p/MLB51160740?wid=MLB5145446199","country":"BR","product_id":"MLB51160740","item_id":"MLB5145446199"},
  {"model":"forerunner-970","name":"Forerunner 970","sku":"010-02969-00","store":"Garmin Brasil","url":"https://www.garminbrasil.com.br/collections/forerunner/products/relogio-garmin-forerunner-970-cinza-com-monitor-cardiaco-de-pulso-e-gps","country":"BR"},
@@ -70,6 +77,22 @@ def ml_exact_url(src,item_id):
 def ml_is_factory_warranty(text):
  return isinstance(text,str) and "garantia de f" in text.lower()
 
+def ml_priority_key(c):
+ return (
+  not bool(c.get("trusted_seller_rule")),
+  not bool(c.get("factory_warranty")),
+  float(c.get("price",10**12))
+ )
+
+def ml_selection_tier(c):
+ if c.get("trusted_seller_rule") and c.get("factory_warranty"):
+  return "trusted_factory_warranty"
+ if c.get("trusted_seller_rule"):
+  return "trusted_seller"
+ if c.get("factory_warranty"):
+  return "factory_warranty_untrusted_seller"
+ return "fallback_price"
+
 def ml_catalog_candidates(src, token):
  product_id=src.get("product_id")
  if not product_id: raise RuntimeError("product_id ausente")
@@ -79,6 +102,7 @@ def ml_catalog_candidates(src, token):
  seller_cache={}; candidates=[]
  for r in results:
   if r.get("condition") not in (None,"new"): continue
+  if r.get("status") not in (None,"active"): continue
   price=r.get("price")
   item_id=r.get("item_id") or r.get("id")
   if price is None or not item_id: continue
@@ -92,6 +116,7 @@ def ml_catalog_candidates(src, token):
    "original_price":r.get("original_price"),
    "currency_id":r.get("currency_id"),
    "condition":r.get("condition"),
+   "item_status":r.get("status") or "active",
    "listing_type_id":r.get("listing_type_id"),
    "official_store_id":r.get("official_store_id"),
    "warranty":warranty,
@@ -104,16 +129,22 @@ def ml_catalog_candidates(src, token):
   c.update(ml_seller(seller_id,token,seller_cache))
   level=c.get("seller_reputation_level")
   c["trusted_seller_rule"]=bool(c.get("seller_status")=="active" and (level=="5_green" or c.get("power_seller_status") in ("silver","gold","platinum")))
+  c["selection_tier"]=ml_selection_tier(c)
   candidates.append(c)
- candidates.sort(key=lambda x:(not x.get("trusted_seller_rule"),not x.get("factory_warranty"),x.get("price",10**12)))
+ candidates.sort(key=ml_priority_key)
+ for i,c in enumerate(candidates,1):
+  c["selection_rank"]=i
  return candidates
 
 def ml_offer(src):
  token=ml_token()
  me,me_error=ml_get("/users/me",token)
  candidates=ml_catalog_candidates(src,token)
- if not candidates: raise RuntimeError("Nenhuma oferta nova encontrada no produto de catalogo")
+ if not candidates: raise RuntimeError("Nenhuma oferta nova e ativa encontrada no produto de catalogo")
  best=candidates[0]
+ market_min=min(c.get("price") for c in candidates)
+ trusted=[c for c in candidates if c.get("trusted_seller_rule")]
+ trusted_factory=[c for c in trusted if c.get("factory_warranty")]
  return {
   "price":best.get("price"),
   "title":src.get("name"),
@@ -141,7 +172,15 @@ def ml_offer(src):
   "winner_item_id":best.get("item_id"),
   "collection_source":"catalog_product_items",
   "trusted_seller_rule":best.get("trusted_seller_rule"),
+  "selection_policy":ML_SELECTION_POLICY,
+  "selection_tier":best.get("selection_tier"),
+  "selection_rank":1,
+  "selection_reason":"vendedor confiavel + garantia de fabrica + menor preco do melhor grupo" if best.get("trusted_seller_rule") and best.get("factory_warranty") else "melhor oferta segundo a politica validada",
   "market_offer_count":len(candidates),
+  "market_min_price":market_min,
+  "market_trusted_count":len(trusted),
+  "market_trusted_factory_warranty_count":len(trusted_factory),
+  "selected_price_premium_vs_market_min":round(float(best.get("price"))-float(market_min),2),
   "market_offers":candidates,
   "auth_user_id":(me or {}).get("id"),
   "auth_nickname":(me or {}).get("nickname"),
