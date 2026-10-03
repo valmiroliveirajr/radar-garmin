@@ -13,7 +13,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python scripts/collect.py
+      - name: Coletar precos
+        env:
+          ML_CLIENT_ID: ${{ vars.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python scripts/collect.py
       - name: Commit historico
         run: |
           git config user.name "radar-garmin-bot"
