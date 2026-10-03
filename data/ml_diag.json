@@ -184,6 +184,322 @@
     "name": "Garmin Forerunner 570 Preto 47mm",
     "buy_box_winner": null,
     "children_ids": [],
+    "pickers": [
+      {
+        "picker_id": "COLOR",
+        "picker_name": "Cor",
+        "products": [
+          {
+            "product_id": "MLB63134493",
+            "picker_label": "Amarelo",
+            "picture_id": "648254-MLA101246257659_122025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_648254-MLA101246257659_122025-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Amarelo"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "47mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Amarelo - 47mm",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB50872439",
+            "picker_label": "Branco",
+            "picture_id": "978318-MLA85295978730_062025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_978318-MLA85295978730_062025-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Branco"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "M/EG"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Branco - M/EG",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB63134496",
+            "picker_label": "Cinza ardósia",
+            "picture_id": "680242-MLA100750127350_122025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_680242-MLA100750127350_122025-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Cinza ardósia"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "47mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Cinza ardósia - 47mm",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB66344007",
+            "picker_label": "Creme",
+            "picture_id": "684302-MLA107594349218_032026",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_684302-MLA107594349218_032026-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Creme"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "PP/P"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Creme - PP/P",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB51327458",
+            "picker_label": "Framboesa",
+            "picture_id": "901307-MLA92173456772_092025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_901307-MLA92173456772_092025-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Framboesa"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "42 mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Framboesa - 42 mm",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB51160740",
+            "picker_label": "Preto",
+            "picture_id": "661629-MLA85723026776_062025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_661629-MLA85723026776_062025-I.jpg",
+            "tags": [
+              "selected"
+            ],
+            "changes": [],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Preto - 47 mm",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB51333593",
+            "picker_label": "Violeta-escuro",
+            "picture_id": "601344-MLA99926895615_112025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_601344-MLA99926895615_112025-I.jpg",
+            "tags": [],
+            "changes": [
+              [
+                "COLOR",
+                "Violeta-escuro"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Violeta-escuro - 47 mm",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB50872139",
+            "picker_label": "Água",
+            "picture_id": "988770-MLA99401756728_112025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_988770-MLA99401756728_112025-I.jpg",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Água"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "PP/P"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Água - PP/P",
+            "auto_completed": true
+          },
+          {
+            "product_id": "MLB63134497",
+            "picker_label": "Índigo",
+            "picture_id": "866096-MLA101246260593_122025",
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_866096-MLA101246260593_122025-I.jpg",
+            "tags": [
+              "change-multiple-pickers",
+              "no-winner",
+              "no-bids"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Índigo"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "47mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Índigo - 47mm",
+            "auto_completed": true
+          }
+        ],
+        "tags": [],
+        "attributes": [
+          {
+            "attribute_id": "COLOR",
+            "template": "",
+            "position": 1
+          }
+        ],
+        "value_name_delimiter": "",
+        "hide_extra_decoration": false,
+        "secondary_picker_name": ""
+      },
+      {
+        "picker_id": "HEART_RATE_MONITOR_SIZE",
+        "picker_name": "Talle",
+        "products": [
+          {
+            "product_id": "MLB51658113",
+            "picker_label": "42 mm",
+            "picture_id": "",
+            "thumbnail": "",
+            "tags": [],
+            "changes": [
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "42 mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Preto - 42 mm",
+            "auto_completed": false
+          },
+          {
+            "product_id": "MLB51160740",
+            "picker_label": "47 mm",
+            "picture_id": "",
+            "thumbnail": "",
+            "tags": [
+              "selected"
+            ],
+            "changes": [],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Preto - 47 mm",
+            "auto_completed": false
+          },
+          {
+            "product_id": "MLB63134493",
+            "picker_label": "47mm",
+            "picture_id": "",
+            "thumbnail": "",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Amarelo"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "47mm"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Amarelo - 47mm",
+            "auto_completed": false
+          },
+          {
+            "product_id": "MLB50872439",
+            "picker_label": "M/EG",
+            "picture_id": "",
+            "thumbnail": "",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Branco"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "M/EG"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Branco - M/EG",
+            "auto_completed": false
+          },
+          {
+            "product_id": "MLB50872139",
+            "picker_label": "PP/P",
+            "picture_id": "",
+            "thumbnail": "",
+            "tags": [
+              "change-multiple-pickers"
+            ],
+            "changes": [
+              [
+                "COLOR",
+                "Água"
+              ],
+              [
+                "HEART_RATE_MONITOR_SIZE",
+                "PP/P"
+              ]
+            ],
+            "permalink": "",
+            "product_name": "Garmin Forerunner 570 - Água - PP/P",
+            "auto_completed": false
+          }
+        ],
+        "tags": [],
+        "attributes": [
+          {
+            "attribute_id": "HEART_RATE_MONITOR_SIZE",
+            "template": "",
+            "position": 1
+          }
+        ],
+        "value_name_delimiter": "",
+        "hide_extra_decoration": false,
+        "secondary_picker_name": ""
+      }
+    ],
     "settings": {
       "content": "fixed",
       "listing_strategy": "catalog_required",
@@ -191,6 +507,3557 @@
       "with_enhanced_pictures": false,
       "base_site_product_id": null,
       "ttr": "2026-10-04T04:43:22.547247893"
+    }
+  },
+  "product_items": {
+    "http": 200,
+    "body": {
+      "paging": {
+        "total": 14,
+        "offset": 0,
+        "limit": 100
+      },
+      "results": [
+        {
+          "item_id": "MLB4899051925",
+          "site_id": "MLB",
+          "seller_id": 3522739042,
+          "accepts_mercadopago": true,
+          "price": 3320,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 1 anos",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "drop_off",
+            "tags": [
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTcyOTU",
+              "name": "Guarulhos"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQlBPTjcxNzM",
+              "name": "Ponte Grande"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 1,
+                "unit": "anos"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "1 anos",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU4314828141",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB5145446199",
+          "site_id": "MLB",
+          "seller_id": 3505494627,
+          "accepts_mercadopago": true,
+          "price": 3399.99,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 90 dias",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "fulfillment",
+            "tags": [
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTIzNTE",
+              "name": "São Paulo"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQlZJTGwzZ3N0",
+              "name": "Vila Ede"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            },
+            {
+              "value_struct": {
+                "number": 90,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "90 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU4960051763",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4994713883",
+          "site_id": "MLB",
+          "seller_id": 3522739042,
+          "accepts_mercadopago": true,
+          "price": 3499,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 1 anos",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "drop_off",
+            "tags": [
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTcyOTU",
+              "name": "Guarulhos"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQlBPTjcxNzM",
+              "name": "Ponte Grande"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 1,
+                "unit": "anos"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "1 anos",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU4314828141",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4646129827",
+          "site_id": "MLB",
+          "seller_id": 3344523174,
+          "accepts_mercadopago": true,
+          "price": 3520,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 1 anos",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "dynamic_standard_price",
+            "user_product_unify",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "xd_drop_off",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTE2NDE",
+              "name": "São Bernardo do Campo"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQkpBUjY2NTY",
+              "name": "Jardim Cristiane"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 1,
+                "unit": "anos"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "1 anos",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU3940528812",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB5233093441",
+          "site_id": "MLB",
+          "seller_id": 2675860248,
+          "accepts_mercadopago": true,
+          "price": 3699,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 30 dias",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "xd_drop_off",
+            "tags": [
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1RFUjMwZTA0",
+              "name": "Terra Boa"
+            },
+            "state": {
+              "id": "TUxCUFBBUkExODBlZA",
+              "name": "Paraná"
+            },
+            "neighborhood": {
+              "id": "",
+              "name": ""
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            },
+            {
+              "value_struct": {
+                "number": 30,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "30 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU5163160741",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB7030939374",
+          "site_id": "MLB",
+          "seller_id": 3401053985,
+          "accepts_mercadopago": true,
+          "price": 3699,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 30 dias",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "user_product_unify",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "drop_off",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTIzNTE",
+              "name": "São Paulo"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQkNBUnRycDhr",
+              "name": "Carandiru"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            },
+            {
+              "value_struct": {
+                "number": 30,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "30 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU4142637083",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB7646536508",
+          "site_id": "MLB",
+          "seller_id": 219685718,
+          "accepts_mercadopago": true,
+          "price": 3800,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 7 dias",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "drop_off",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTkxMjE",
+              "name": "São Paulo"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQklORHduMDB0",
+              "name": "Indianópolis"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            },
+            {
+              "value_struct": {
+                "number": 7,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "7 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU5211945630",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB5525532406",
+          "site_id": "MLB",
+          "seller_id": 2515379560,
+          "accepts_mercadopago": true,
+          "price": 3989.04,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 3 meses",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": 4199,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "cross_docking",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "",
+              "name": "Ribeirão Preto"
+            },
+            "state": {
+              "id": "",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "",
+              "name": ""
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 3,
+                "unit": "meses"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "3 meses",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU3330504604",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4786835199",
+          "site_id": "MLB",
+          "seller_id": 3386012181,
+          "accepts_mercadopago": true,
+          "price": 3999,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 30 dias",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "user_product_unify",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "xd_drop_off",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TUxCQ1NQLTQzMzc",
+              "name": "São Paulo"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TUxCQkNJRDYxNDk",
+              "name": "Cidade Líder"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 30,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "30 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU4104779823",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4136480029",
+          "site_id": "MLB",
+          "seller_id": 1508980801,
+          "accepts_mercadopago": true,
+          "price": 4099,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 1 anos",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "user_product_unify",
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "xd_drop_off",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TVhYUmliZWlyw6NvIFByZXRvVFV4Q1VGTkJUM",
+              "name": "Ribeirão Preto"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TVhYSmFyZGltIEJvdMOibmljb1RWaFlVbWxpW",
+              "name": "Jardim Botânico"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": {
+                "number": 1,
+                "unit": "anos"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "1 anos",
+              "value_id": null
+            },
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            }
+          ],
+          "user_product_id": "MLBU3320493827",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4139502749",
+          "site_id": "MLB",
+          "seller_id": 2515379560,
+          "accepts_mercadopago": true,
+          "price": 4179.05,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 1 anos",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": 4399,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "cross_docking",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "",
+              "name": "Ribeirão Preto"
+            },
+            "state": {
+              "id": "",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "",
+              "name": ""
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 1,
+                "unit": "anos"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "1 anos",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU3324620907",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB4146775689",
+          "site_id": "MLB",
+          "seller_id": 664406551,
+          "accepts_mercadopago": true,
+          "price": 4648.39,
+          "category_id": "MLB135384",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 12 meses",
+          "condition": "new",
+          "listing_type_id": "gold_special",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "user_product_unify",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "cross_docking",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TVhYQmF1cnVUVXhDVUZOQlQwODVOMkU0",
+              "name": "Bauru"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TVhYQ2VudHJvVFZoWVFtRjFjblZVVlhoRFZVW",
+              "name": "Centro"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": {
+                "number": 12,
+                "unit": "meses"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "12 meses",
+              "value_id": null
+            },
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            }
+          ],
+          "user_product_id": "MLBU3331327989",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB5646011164",
+          "site_id": "MLB",
+          "seller_id": 664406551,
+          "accepts_mercadopago": true,
+          "price": 5096.01,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia do vendedor: 12 dias",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "user_product_unify",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": true,
+            "mode": "me2",
+            "logistic_type": "cross_docking",
+            "tags": [
+              "self_service_in",
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TVhYQmF1cnVUVXhDVUZOQlQwODVOMkU0",
+              "name": "Bauru"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TVhYQ2VudHJvVFZoWVFtRjFjblZVVlhoRFZVW",
+              "name": "Centro"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia do vendedor",
+              "value_id": "2230280"
+            },
+            {
+              "value_struct": {
+                "number": 12,
+                "unit": "dias"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "12 dias",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU3337263478",
+          "min_purchase_unit": 1
+        },
+        {
+          "item_id": "MLB6676858630",
+          "site_id": "MLB",
+          "seller_id": 1114388166,
+          "accepts_mercadopago": true,
+          "price": 4100,
+          "category_id": "MLB3886",
+          "currency_id": "BRL",
+          "warranty": "Garantia de fábrica: 6 meses",
+          "condition": "new",
+          "listing_type_id": "gold_pro",
+          "international_delivery_mode": "none",
+          "tier": "",
+          "inventory_id": "",
+          "tags": [
+            "kvs_primary",
+            "immediate_payment",
+            "cart_eligible"
+          ],
+          "deal_ids": [],
+          "official_store_id": null,
+          "original_price": null,
+          "shipping": {
+            "free_shipping": true,
+            "store_pick_up": false,
+            "local_pick_up": false,
+            "mode": "me2",
+            "logistic_type": "xd_drop_off",
+            "tags": [
+              "mandatory_free_shipping"
+            ],
+            "cost": 0
+          },
+          "seller_address": {
+            "city": {
+              "id": "TVhYUmliZWlyw6NvIFByZXRvVFV4Q1VGTkJUM",
+              "name": "Ribeirão Preto"
+            },
+            "state": {
+              "id": "TUxCUFNBT085N2E4",
+              "name": "São Paulo"
+            },
+            "neighborhood": {
+              "id": "TVhYQ2FtcG9zIEVsaXNlb3NUVmhZVW1saVpXb",
+              "name": "Campos Eliseos"
+            }
+          },
+          "sale_terms": [
+            {
+              "value_struct": null,
+              "id": "WARRANTY_TYPE",
+              "name": "Tipo de garantia",
+              "value_name": "Garantia de fábrica",
+              "value_id": "2230279"
+            },
+            {
+              "value_struct": {
+                "number": 6,
+                "unit": "meses"
+              },
+              "id": "WARRANTY_TIME",
+              "name": "Tempo de garantia",
+              "value_name": "6 meses",
+              "value_id": null
+            }
+          ],
+          "user_product_id": "MLBU3920519141",
+          "min_purchase_unit": 1
+        }
+      ],
+      "experiments": null
+    }
+  },
+  "product_search": {
+    "http": 200,
+    "body": {
+      "keywords": "Garmin Forerunner 570 47mm",
+      "paging": {
+        "last": "MLB74992007",
+        "limit": 10,
+        "offset": 0,
+        "total": 1986
+      },
+      "query_type": "KEYWORDS",
+      "results": [
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52049",
+              "value_name": "Preto",
+              "values": [
+                {
+                  "id": "52049",
+                  "name": "Preto"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "67568411",
+              "value_name": "47 mm",
+              "values": [
+                {
+                  "id": "67568411",
+                  "name": "47 mm"
+                }
+              ]
+            },
+            {
+              "id": "HEIGHT",
+              "name": "Altura",
+              "value_id": "8619606",
+              "value_name": "4.7 cm",
+              "values": [
+                {
+                  "id": "8619606",
+                  "name": "4.7 cm"
+                }
+              ]
+            },
+            {
+              "id": "WIDTH",
+              "name": "Largura",
+              "value_id": "16903671",
+              "value_name": "4.7 cm",
+              "values": [
+                {
+                  "id": "16903671",
+                  "name": "4.7 cm"
+                }
+              ]
+            },
+            {
+              "id": "WEIGHT",
+              "name": "Peso",
+              "value_id": "16076144",
+              "value_name": "50 g",
+              "values": [
+                {
+                  "id": "16076144",
+                  "name": "50 g"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_name": "318667004799, 315850215079",
+              "values": [
+                {
+                  "id": "67843602",
+                  "name": "318667004799"
+                },
+                {
+                  "id": "67846183",
+                  "name": "315850215079"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            },
+            {
+              "id": "PACKAGE_DATA_SOURCE",
+              "name": "Origem do dado do pacote de fábrica",
+              "value_id": "52228230",
+              "value_name": "CERTIFIED_MEASUREMENT",
+              "values": [
+                {
+                  "id": "52228230",
+                  "name": "CERTIFIED_MEASUREMENT"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB51160740",
+          "children_ids": [],
+          "date_created": "2025-06-12T15:58:14Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB51160740",
+          "last_updated": "2026-10-02T02:42:07Z",
+          "name": "Garmin Forerunner 570 Preto 47mm",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "661629-MLA85723026776_062025",
+              "max_height": "992",
+              "max_width": "854",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_661629-MLA85723026776_062025-F.jpg"
+            },
+            {
+              "id": "888872-MLA99498386376_112025",
+              "max_height": "991",
+              "max_width": "853",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_888872-MLA99498386376_112025-F.jpg"
+            },
+            {
+              "id": "889081-MLA85723126024_062025",
+              "max_height": "968",
+              "max_width": "647",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_889081-MLA85723126024_062025-F.jpg"
+            },
+            {
+              "id": "719637-MLA85723096278_062025",
+              "max_height": "979",
+              "max_width": "1019",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_719637-MLA85723096278_062025-F.jpg"
+            },
+            {
+              "id": "962211-MLA86034377961_062025",
+              "max_height": "992",
+              "max_width": "854",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_962211-MLA86034377961_062025-F.jpg"
+            },
+            {
+              "id": "821920-MLA85722412062_062025",
+              "max_height": "986",
+              "max_width": "933",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_821920-MLA85722412062_062025-F.jpg"
+            },
+            {
+              "id": "987905-MLA85722977180_062025",
+              "max_height": "991",
+              "max_width": "853",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_987905-MLA85722977180_062025-F.jpg"
+            },
+            {
+              "id": "625124-MLA85723066664_062025",
+              "max_height": "968",
+              "max_width": "647",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_625124-MLA85723066664_062025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "283162",
+              "value_name": "Índigo",
+              "values": [
+                {
+                  "id": "283162",
+                  "name": "Índigo"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "59656654",
+              "value_name": "47mm",
+              "values": [
+                {
+                  "id": "59656654",
+                  "name": "47mm"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "67961257",
+              "value_name": "321144852264",
+              "values": [
+                {
+                  "id": "67961257",
+                  "name": "321144852264"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB63134497",
+          "children_ids": [],
+          "date_created": "2025-12-13T12:20:30Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB63134497",
+          "last_updated": "2026-07-15T00:04:52Z",
+          "name": "Relógio Garmin Forerunner 570 Com Monitor Cardíaco 47mm Índigo 47mm",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "866096-MLA101246260593_122025",
+              "max_height": "979",
+              "max_width": "838",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_866096-MLA101246260593_122025-F.jpg"
+            },
+            {
+              "id": "954078-MLA100749970474_122025",
+              "max_height": "908",
+              "max_width": "941",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_954078-MLA100749970474_122025-F.jpg"
+            },
+            {
+              "id": "752760-MLA100749970476_122025",
+              "max_height": "935",
+              "max_width": "801",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_752760-MLA100749970476_122025-F.jpg"
+            },
+            {
+              "id": "703883-MLA100750187320_122025",
+              "max_height": "937",
+              "max_width": "876",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_703883-MLA100750187320_122025-F.jpg"
+            },
+            {
+              "id": "743760-MLA100749970490_122025",
+              "max_height": "1030",
+              "max_width": "676",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_743760-MLA100749970490_122025-F.jpg"
+            },
+            {
+              "id": "684388-MLA101246260623_122025",
+              "max_height": "926",
+              "max_width": "672",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_684388-MLA101246260623_122025-F.jpg"
+            },
+            {
+              "id": "628576-MLA100749960692_122025",
+              "max_height": "996",
+              "max_width": "654",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_628576-MLA100749960692_122025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "Relógio Garmin Forerunner 570 com Monitor Cardíaco, uma escolha ideal para atletas e entusiastas do fitness que buscam monitorar seu desempenho de forma eficaz. \n\nCom um design moderno de 47mm, este relógio é elegante e funcional, oferecendo uma ampla gama de recursos que incluem monitoramento cardíaco preciso e conectividade Bluetooth.\n\nA resistência à água de até 50 metros permite treinar em diversas condições, sem preocupações. A duração da bateria de até 11 dias garante confiança no dispositivo sem a necessidade constante de recarga, perfeito para aventuras prolongadas.\n\nCompatível com aplicações como Garmin Connect, o Forerunner 570 facilita o acompanhamento de suas estatísticas de desempenho, ajudando a atingir metas de forma eficiente. Feito com materiais de silicone de alta qualidade, oferece conforto e durabilidade para uso diário.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52007",
+              "value_name": "Amarelo",
+              "values": [
+                {
+                  "id": "52007",
+                  "name": "Amarelo"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "59656654",
+              "value_name": "47mm",
+              "values": [
+                {
+                  "id": "59656654",
+                  "name": "47mm"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB63134493",
+          "children_ids": [],
+          "date_created": "2025-12-13T12:17:27Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB63134493",
+          "last_updated": "2026-07-15T00:04:54Z",
+          "name": "Relógio Garmin Forerunner 570 Com Monitor Cardíaco 47mm Amarelo 47mm",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "648254-MLA101246257659_122025",
+              "max_height": "979",
+              "max_width": "839",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_648254-MLA101246257659_122025-F.jpg"
+            },
+            {
+              "id": "966413-MLA100749869112_122025",
+              "max_height": "925",
+              "max_width": "959",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_966413-MLA100749869112_122025-F.jpg"
+            },
+            {
+              "id": "873054-MLA101245864359_122025",
+              "max_height": "946",
+              "max_width": "808",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_873054-MLA101245864359_122025-F.jpg"
+            },
+            {
+              "id": "654623-MLA101245933949_122025",
+              "max_height": "942",
+              "max_width": "883",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_654623-MLA101245933949_122025-F.jpg"
+            },
+            {
+              "id": "952564-MLA100749957722_122025",
+              "max_height": "993",
+              "max_width": "654",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_952564-MLA100749957722_122025-F.jpg"
+            },
+            {
+              "id": "941278-MLA101246257701_122025",
+              "max_height": "971",
+              "max_width": "706",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_941278-MLA101246257701_122025-F.jpg"
+            },
+            {
+              "id": "661348-MLA100749869146_122025",
+              "max_height": "1012",
+              "max_width": "668",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_661348-MLA100749869146_122025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "Relógio Garmin Forerunner 570 com Monitor Cardíaco, ideal para atletas e entusiastas do fitness que buscam monitorar seu desempenho de forma eficaz. \n\nCom um design moderno de 47mm, este relógio é elegante e funcional, oferecendo uma ampla gama de recursos que incluem monitoramento cardíaco preciso e conectividade Bluetooth.\n\nA resistência à água de até 50 metros permite treinos em diversas condições. A duração da bateria de até 11 dias garante confiabilidade sem a necessidade constante de recarga, perfeito para aventuras prolongadas.\n\nCompatível com aplicações como Garmin Connect, o Forerunner 570 facilita o acompanhamento de suas estatísticas de desempenho, ajudando você a atingir suas metas de forma eficiente. \n\nFeito com materiais de silicone de alta qualidade, oferece conforto e durabilidade para uso diário.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "4146382",
+              "value_name": "Cinza ardósia",
+              "values": [
+                {
+                  "id": "4146382",
+                  "name": "Cinza ardósia"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "59656654",
+              "value_name": "47mm",
+              "values": [
+                {
+                  "id": "59656654",
+                  "name": "47mm"
+                }
+              ]
+            },
+            {
+              "id": "HEIGHT",
+              "name": "Altura",
+              "value_id": "8619606",
+              "value_name": "4.7 cm",
+              "values": [
+                {
+                  "id": "8619606",
+                  "name": "4.7 cm"
+                }
+              ]
+            },
+            {
+              "id": "WIDTH",
+              "name": "Largura",
+              "value_id": "16903671",
+              "value_name": "4.7 cm",
+              "values": [
+                {
+                  "id": "16903671",
+                  "name": "4.7 cm"
+                }
+              ]
+            },
+            {
+              "id": "WEIGHT",
+              "name": "Peso",
+              "value_id": "16076144",
+              "value_name": "50 g",
+              "values": [
+                {
+                  "id": "16076144",
+                  "name": "50 g"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "67909188",
+              "value_name": "753759349776",
+              "values": [
+                {
+                  "id": "67909188",
+                  "name": "753759349776"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB63134496",
+          "children_ids": [],
+          "date_created": "2025-12-13T12:19:29Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB63134496",
+          "last_updated": "2026-07-15T00:04:52Z",
+          "name": "Relógio Garmin Forerunner 570 Com Monitor Cardíaco 47mm Cinza Ardósia 47mm",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "680242-MLA100750127350_122025",
+              "max_height": "979",
+              "max_width": "837",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_680242-MLA100750127350_122025-F.jpg"
+            },
+            {
+              "id": "952448-MLA100750215778_122025",
+              "max_height": "909",
+              "max_width": "941",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_952448-MLA100750215778_122025-F.jpg"
+            },
+            {
+              "id": "808398-MLA100750186226_122025",
+              "max_height": "973",
+              "max_width": "831",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_808398-MLA100750186226_122025-F.jpg"
+            },
+            {
+              "id": "790868-MLA100750186230_122025",
+              "max_height": "943",
+              "max_width": "885",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_790868-MLA100750186230_122025-F.jpg"
+            },
+            {
+              "id": "916483-MLA101246132115_122025",
+              "max_height": "912",
+              "max_width": "601",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_916483-MLA101246132115_122025-F.jpg"
+            },
+            {
+              "id": "665454-MLA101246132123_122025",
+              "max_height": "949",
+              "max_width": "689",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_665454-MLA101246132123_122025-F.jpg"
+            },
+            {
+              "id": "630293-MLA100749959652_122025",
+              "max_height": "965",
+              "max_width": "638",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_630293-MLA100749959652_122025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "Relógio Garmin Forerunner 570 com Monitor Cardíaco, ideal para atletas e entusiastas do fitness que buscam monitorar seu desempenho de forma eficaz. \n\nCom um design moderno de 47mm, este relógio é elegante e funcional, oferecendo uma ampla gama de recursos que incluem monitoramento cardíaco preciso e conectividade Bluetooth.\n\nA resistência à água de até 50 metros permite treinos em diversas condições. A duração da bateria de até 11 dias garante confiabilidade sem a necessidade constante de recarga, perfeito para aventuras prolongadas.\n\nCompatível com aplicações como Garmin Connect, o Forerunner 570 facilita o acompanhamento de suas estatísticas de desempenho, ajudando a atingir metas de forma eficiente. Feito com materiais de silicone de alta qualidade, oferece conforto e durabilidade para uso diário.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "23251911",
+              "value_name": "Forerunner",
+              "values": [
+                {
+                  "id": "23251911",
+                  "name": "Forerunner"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52049",
+              "value_name": "Preto",
+              "values": [
+                {
+                  "id": "52049",
+                  "name": "Preto"
+                }
+              ]
+            },
+            {
+              "id": "WEIGHT",
+              "name": "Peso",
+              "value_id": "16091256",
+              "value_name": "53 g",
+              "values": [
+                {
+                  "id": "16091256",
+                  "name": "53 g"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "67498979",
+              "value_name": "23 dias",
+              "values": [
+                {
+                  "id": "67498979",
+                  "name": "23 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "23251925",
+              "value_name": "753759113421",
+              "values": [
+                {
+                  "id": "23251925",
+                  "name": "753759113421"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "43325749",
+              "value_name": "010-02863-31",
+              "values": [
+                {
+                  "id": "43325749",
+                  "name": "010-02863-31"
+                }
+              ]
+            },
+            {
+              "id": "PACKAGE_DATA_SOURCE",
+              "name": "Origem do dado do pacote de fábrica",
+              "value_id": "52228230",
+              "value_name": "CERTIFIED_MEASUREMENT",
+              "values": [
+                {
+                  "id": "52228230",
+                  "name": "CERTIFIED_MEASUREMENT"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY",
+            "INTERNAL"
+          ],
+          "catalog_product_id": "MLB29723733",
+          "children_ids": [],
+          "date_created": "2024-01-15T15:03:15Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "enhanced_content_template_id": "c43e671c-06c9-4a4e-a87c-1fabfaa812ac",
+          "id": "MLB29723733",
+          "last_updated": "2026-10-02T16:55:48Z",
+          "name": "Garmin Forerunner 965 Preto Amoled 47mm Touchscreen",
+          "parent_id": "MLB26266240",
+          "pictures": [
+            {
+              "id": "729158-MLA99912319605_112025",
+              "max_height": "1199",
+              "max_width": "971",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_729158-MLA99912319605_112025-F.jpg"
+            },
+            {
+              "id": "984150-MLA81997313689_012025",
+              "max_height": "739",
+              "max_width": "763",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_984150-MLA81997313689_012025-F.jpg"
+            },
+            {
+              "id": "727323-MLA81997224655_012025",
+              "max_height": "798",
+              "max_width": "532",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_727323-MLA81997224655_012025-F.jpg"
+            },
+            {
+              "id": "930207-MLA81721541584_012025",
+              "max_height": "805",
+              "max_width": "800",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_930207-MLA81721541584_012025-F.jpg"
+            },
+            {
+              "id": "681992-MLA81997224667_012025",
+              "max_height": "757",
+              "max_width": "531",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_681992-MLA81997224667_012025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "O Relógio Garmin Forerunner 965 é a escolha ideal para atletas e entusiastas do fitness que buscam um dispositivo completo e confiável. Com um design elegante e robusto, este relógio possui um GPS integrado de 47 mm, permitindo rastrear suas atividades ao ar livre com precisão. A resistência à água de até 50 metros garante que você possa usá-lo em diversas condições, seja na piscina ou em dias de chuva.\n\nA duração da bateria de até 23 dias proporciona liberdade para treinos prolongados sem a preocupação de recarregar constantemente. O Forerunner 965 é compatível com a aplicação Garmin Connect, permitindo que você monitore seu desempenho e compartilhe suas conquistas com amigos e familiares. Além disso, a conexão Bluetooth e ANT+ facilita a sincronização com outros dispositivos, ampliando suas possibilidades de treino.\n\nFabricado em silicone, o relógio é leve e confortável, ideal para uso diário e atividades intensas. Seu design de cinta de braço se adapta perfeitamente ao seu estilo de vida ativo, garantindo que você esteja sempre conectado e informado. O Garmin Forerunner 965 é mais do que um relógio; é um parceiro de treino que ajuda a alcançar seus objetivos de forma eficiente e prática.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52049",
+              "value_name": "Preto",
+              "values": [
+                {
+                  "id": "52049",
+                  "name": "Preto"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "67603587",
+              "value_name": "42 mm",
+              "values": [
+                {
+                  "id": "67603587",
+                  "name": "42 mm"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "67843604",
+              "value_name": "357436080886",
+              "values": [
+                {
+                  "id": "67843604",
+                  "name": "357436080886"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            },
+            {
+              "id": "PACKAGE_DATA_SOURCE",
+              "name": "Origem do dado do pacote de fábrica",
+              "value_id": "52228230",
+              "value_name": "CERTIFIED_MEASUREMENT",
+              "values": [
+                {
+                  "id": "52228230",
+                  "name": "CERTIFIED_MEASUREMENT"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB51658113",
+          "children_ids": [],
+          "date_created": "2025-06-26T05:52:16Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB51658113",
+          "last_updated": "2026-10-02T08:30:09Z",
+          "name": "Monitor Garmin Forerunner 570 Preto 42 mm",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "784570-MLA100024441107_122025",
+              "max_height": "986",
+              "max_width": "831",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_784570-MLA100024441107_122025-F.jpg"
+            },
+            {
+              "id": "848523-MLA86757038169_062025",
+              "max_height": "986",
+              "max_width": "831",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_848523-MLA86757038169_062025-F.jpg"
+            },
+            {
+              "id": "775337-MLA86437113288_062025",
+              "max_height": "986",
+              "max_width": "830",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_775337-MLA86437113288_062025-F.jpg"
+            },
+            {
+              "id": "684298-MLA86757145343_062025",
+              "max_height": "1008",
+              "max_width": "1004",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_684298-MLA86757145343_062025-F.jpg"
+            },
+            {
+              "id": "633193-MLA86437229986_062025",
+              "max_height": "949",
+              "max_width": "604",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_633193-MLA86437229986_062025-F.jpg"
+            },
+            {
+              "id": "714786-MLA86437113304_062025",
+              "max_height": "980",
+              "max_width": "902",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_714786-MLA86437113304_062025-F.jpg"
+            },
+            {
+              "id": "690516-MLA86437181394_062025",
+              "max_height": "949",
+              "max_width": "604",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_690516-MLA86437181394_062025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "O Monitor Garmin Forerunner 570 Preto 42 Mm é a escolha ideal para quem busca um dispositivo que combina estilo e funcionalidade. Com um design elegante na cor preta e um tamanho de 42 mm, ele se adapta perfeitamente ao seu pulso, proporcionando conforto durante todo o dia. Este modelo é resistente à água, permitindo que você o utilize em diversas condições, seja durante uma corrida sob chuva ou em atividades aquáticas.\n\nEquipado com GPS, o Forerunner 570 oferece precisão em suas medições de distância e ritmo, tornando-o um aliado indispensável para atletas e entusiastas do fitness. A pulseira preta é não apenas estilosa, mas também projetada para garantir um ajuste seguro e confortável. Com embalagem adicional, o produto é ideal para quem valoriza a apresentação e a proteção do item.\n\nCom dimensões compactas de 19 cm de altura, 10 cm de comprimento e 18 cm de largura, e um peso de apenas 255 g, o monitor é fácil de transportar e usar em qualquer lugar. A tecnologia Garmin garante que você tenha acesso a recursos avançados que ajudam a monitorar seu desempenho e a alcançar seus objetivos de forma eficaz.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "22655460",
+              "value_name": "Forerunner 965",
+              "values": [
+                {
+                  "id": "22655460",
+                  "name": "Forerunner 965"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52055",
+              "value_name": "Branco",
+              "values": [
+                {
+                  "id": "52055",
+                  "name": "Branco"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "59656654",
+              "value_name": "47mm",
+              "values": [
+                {
+                  "id": "59656654",
+                  "name": "47mm"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "35497033",
+              "value_name": "De braço",
+              "values": [
+                {
+                  "id": "35497033",
+                  "name": "De braço"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "46483058",
+              "value_name": "Garmin Connect",
+              "values": [
+                {
+                  "id": "46483058",
+                  "name": "Garmin Connect"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "67498979",
+              "value_name": "23 dias",
+              "values": [
+                {
+                  "id": "67498979",
+                  "name": "23 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": true
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "65888066",
+              "value_name": "383056775529",
+              "values": [
+                {
+                  "id": "65888066",
+                  "name": "383056775529"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "59656653",
+              "value_name": "010-02809-31",
+              "values": [
+                {
+                  "id": "59656653",
+                  "name": "010-02809-31"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB54151181",
+          "children_ids": [],
+          "date_created": "2025-08-29T16:17:57Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "enhanced_content_template_id": "2d8c9a90-c049-40f1-877b-b85c083db8ef",
+          "id": "MLB54151181",
+          "last_updated": "2025-12-02T01:40:21Z",
+          "name": "Relógio Garmin Forerunner 965 Com Gps 47mm Branco",
+          "parent_id": "MLB54151180",
+          "pictures": [
+            {
+              "id": "738187-MLA91280612425_082025",
+              "max_height": "932",
+              "max_width": "759",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_738187-MLA91280612425_082025-F.jpg"
+            },
+            {
+              "id": "781057-MLA91280523693_082025",
+              "max_height": "935",
+              "max_width": "772",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_781057-MLA91280523693_082025-F.jpg"
+            },
+            {
+              "id": "953581-MLA90890296702_082025",
+              "max_height": "970",
+              "max_width": "665",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_953581-MLA90890296702_082025-F.jpg"
+            },
+            {
+              "id": "685419-MLA91280553233_082025",
+              "max_height": "1020",
+              "max_width": "1000",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_685419-MLA91280553233_082025-F.jpg"
+            },
+            {
+              "id": "952114-MLA91280553189_082025",
+              "max_height": "999",
+              "max_width": "960",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_952114-MLA91280553189_082025-F.jpg"
+            },
+            {
+              "id": "610731-MLA91280651657_082025",
+              "max_height": "932",
+              "max_width": "820",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_610731-MLA91280651657_082025-F.jpg"
+            },
+            {
+              "id": "624071-MLA113201826178_072026",
+              "max_height": "845",
+              "max_width": "589",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_624071-MLA113201826178_072026-F.jpg"
+            },
+            {
+              "id": "984541-MLA113201624370_072026",
+              "max_height": "845",
+              "max_width": "589",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_984541-MLA113201624370_072026-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "O Garmin Forerunner 965 é um dispositivo avançado de 47mm, projetado para atletas que buscam precisão e durabilidade em seus treinamentos. Com uma estrutura elegante na cor branca e pulseira de silicone, este modelo oferece um design sofisticado e confortável para uso prolongado.\n\nA bateria possui uma duração estendida de até 23 dias, permitindo um monitoramento contínuo sem interrupções frequentes para carregamento. Equipado com tecnologias Bluetooth e ANT+, o relógio integra-se facilmente aos seus dispositivos móveis. A sincronização com o aplicativo Garmin Connect facilita a análise detalhada dos seus dados de desempenho e atividades físicas.\n\nEste equipamento possui resistência à água de até 50 metros, garantindo desempenho em diferentes condições climáticas ou ambientes aquáticos. A construção robusta assegura a integridade do dispositivo em treinos de alta intensidade. O modelo 010-02809-31 reflete o padrão de excelência da fabricante Garmin, sendo a escolha ideal para quem prioriza tecnologia de ponta.",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "MODEL",
+              "name": "Modelo",
+              "value_id": "67410240",
+              "value_name": "Forerunner 570",
+              "values": [
+                {
+                  "id": "67410240",
+                  "name": "Forerunner 570"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52047",
+              "value_name": "Violeta-escuro",
+              "values": [
+                {
+                  "id": "52047",
+                  "name": "Violeta-escuro"
+                }
+              ]
+            },
+            {
+              "id": "HEART_RATE_MONITOR_SIZE",
+              "name": "Tamanho",
+              "value_id": "67568411",
+              "value_name": "47 mm",
+              "values": [
+                {
+                  "id": "67568411",
+                  "name": "47 mm"
+                }
+              ]
+            },
+            {
+              "id": "STRAP_TYPE",
+              "name": "Tipo de correia",
+              "value_id": "44048640",
+              "value_name": "pulseira",
+              "values": [
+                {
+                  "id": "44048640",
+                  "name": "pulseira"
+                }
+              ]
+            },
+            {
+              "id": "MATERIALS",
+              "name": "Materiais",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "COMPATIBLE_APPLICATIONS",
+              "name": "Aplicações compatíveis",
+              "value_id": "35497035",
+              "value_name": "Strava",
+              "values": [
+                {
+                  "id": "35497035",
+                  "name": "Strava"
+                }
+              ]
+            },
+            {
+              "id": "RECOMMENDED_DEVICES",
+              "name": "Dispositivos recomendados",
+              "value_id": "168365",
+              "value_name": "Celulares",
+              "values": [
+                {
+                  "id": "168365",
+                  "name": "Celulares"
+                }
+              ]
+            },
+            {
+              "id": "BATTERY_LIFE",
+              "name": "Duração da bateria",
+              "value_id": "7467559",
+              "value_name": "11 dias",
+              "values": [
+                {
+                  "id": "7467559",
+                  "name": "11 dias"
+                }
+              ]
+            },
+            {
+              "id": "WATER_RESISTANCE_TYPE",
+              "name": "Tipo de resistência à água",
+              "value_id": "39364290",
+              "value_name": "5 ATM",
+              "values": [
+                {
+                  "id": "39364290",
+                  "name": "5 ATM"
+                }
+              ]
+            },
+            {
+              "id": "MAX_WATER_RESISTANCE_DEPTH",
+              "name": "Profundidade máxima de resistência à água",
+              "value_id": "7128152",
+              "value_name": "50 m",
+              "values": [
+                {
+                  "id": "7128152",
+                  "name": "50 m"
+                }
+              ]
+            },
+            {
+              "id": "WITH_ANT_CONNECTION",
+              "meta": {
+                "value": false
+              },
+              "name": "Com conexão ANT+",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WITH_BLUETOOTH",
+              "meta": {
+                "value": true
+              },
+              "name": "Com Bluetooth",
+              "value_id": "242085",
+              "value_name": "Sim",
+              "values": [
+                {
+                  "id": "242085",
+                  "name": "Sim"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "67843597",
+              "value_name": "350890615038",
+              "values": [
+                {
+                  "id": "67843597",
+                  "name": "350890615038"
+                }
+              ]
+            },
+            {
+              "id": "MANUFACTURER",
+              "name": "Fabricante",
+              "value_id": "9785",
+              "value_name": "Garmin",
+              "values": [
+                {
+                  "id": "9785",
+                  "name": "Garmin"
+                }
+              ]
+            },
+            {
+              "id": "ALPHANUMERIC_MODELS",
+              "name": "Modelo alfanumérico",
+              "value_id": "84727442",
+              "value_name": "753759349806",
+              "values": [
+                {
+                  "id": "84727442",
+                  "name": "753759349806"
+                }
+              ]
+            },
+            {
+              "id": "PACKAGE_DATA_SOURCE",
+              "name": "Origem do dado do pacote de fábrica",
+              "value_id": "52228230",
+              "value_name": "CERTIFIED_MEASUREMENT",
+              "values": [
+                {
+                  "id": "52228230",
+                  "name": "CERTIFIED_MEASUREMENT"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB51333593",
+          "children_ids": [],
+          "date_created": "2025-06-17T14:54:31Z",
+          "domain_id": "MLB-HEART_RATE_MONITORS",
+          "id": "MLB51333593",
+          "last_updated": "2026-10-02T09:13:51Z",
+          "name": "Monitor Garmin Forerunner 570 47 mm Violeta Escuro",
+          "parent_id": "MLB51658112",
+          "pictures": [
+            {
+              "id": "601344-MLA99926895615_112025",
+              "max_height": "968",
+              "max_width": "647",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_601344-MLA99926895615_112025-F.jpg"
+            },
+            {
+              "id": "779982-MLA92299424290_092025",
+              "max_height": "1200",
+              "max_width": "1035",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_779982-MLA92299424290_092025-F.jpg"
+            },
+            {
+              "id": "896191-MLA92299570424_092025",
+              "max_height": "1200",
+              "max_width": "1036",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_896191-MLA92299570424_092025-F.jpg"
+            },
+            {
+              "id": "696472-MLA85962310500_062025",
+              "max_height": "968",
+              "max_width": "647",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_696472-MLA85962310500_062025-F.jpg"
+            },
+            {
+              "id": "659156-MLA92299493156_092025",
+              "max_height": "1200",
+              "max_width": "1134",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_659156-MLA92299493156_092025-F.jpg"
+            },
+            {
+              "id": "981405-MLA92707054895_092025",
+              "max_height": "1155",
+              "max_width": "1200",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_981405-MLA92707054895_092025-F.jpg"
+            },
+            {
+              "id": "781018-MLA92706912231_092025",
+              "max_height": "1200",
+              "max_width": "1035",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_781018-MLA92706912231_092025-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "23889482",
+              "value_name": "Love Watch",
+              "values": [
+                {
+                  "id": "23889482",
+                  "name": "Love Watch"
+                }
+              ]
+            },
+            {
+              "id": "BAND_STYLE",
+              "name": "Estilo da pulseira",
+              "value_id": "63210573",
+              "value_name": "Pulseira",
+              "values": [
+                {
+                  "id": "63210573",
+                  "name": "Pulseira"
+                }
+              ]
+            },
+            {
+              "id": "COLOR",
+              "name": "Cor",
+              "value_id": "52000",
+              "value_name": "Laranja",
+              "values": [
+                {
+                  "id": "52000",
+                  "name": "Laranja"
+                }
+              ]
+            },
+            {
+              "id": "BAND_WIDTH",
+              "name": "Largura da pulseira",
+              "value_id": "56957",
+              "value_name": "2.2 cm",
+              "values": [
+                {
+                  "id": "56957",
+                  "name": "2.2 cm"
+                }
+              ]
+            },
+            {
+              "id": "BAND_LENGTH",
+              "name": "Comprimento da pulseira",
+              "value_id": "54232558",
+              "value_name": "22 mm",
+              "values": [
+                {
+                  "id": "54232558",
+                  "name": "22 mm"
+                }
+              ]
+            },
+            {
+              "id": "SALE_FORMAT",
+              "name": "Formato de venda",
+              "value_id": "1359391",
+              "value_name": "Unidade",
+              "values": [
+                {
+                  "id": "1359391",
+                  "name": "Unidade"
+                }
+              ]
+            },
+            {
+              "id": "UNITS_PER_PACK",
+              "name": "Unidades por kit",
+              "value_id": "2726554",
+              "value_name": "1",
+              "values": [
+                {
+                  "id": "2726554",
+                  "name": "1"
+                }
+              ]
+            },
+            {
+              "id": "CASE_SIZE",
+              "name": "Tamanho da caixa",
+              "value_id": "8977142",
+              "value_name": "47 mm",
+              "values": [
+                {
+                  "id": "8977142",
+                  "name": "47 mm"
+                }
+              ]
+            },
+            {
+              "id": "BAND_TYPE",
+              "name": "Tipo da pulseira",
+              "value_id": "18175342",
+              "value_name": "Smartwatch",
+              "values": [
+                {
+                  "id": "18175342",
+                  "name": "Smartwatch"
+                }
+              ]
+            },
+            {
+              "id": "BAND_MATERIAL",
+              "name": "Material da pulseira",
+              "value_id": "2466987",
+              "value_name": "Silicone",
+              "values": [
+                {
+                  "id": "2466987",
+                  "name": "Silicone"
+                }
+              ]
+            },
+            {
+              "id": "CLASP_TYPE",
+              "name": "Tipo de fecho",
+              "value_id": "10646719",
+              "value_name": "Dobrável",
+              "values": [
+                {
+                  "id": "10646719",
+                  "name": "Dobrável"
+                }
+              ]
+            },
+            {
+              "id": "BUCKLE_MATERIAL",
+              "name": "Material da fivela",
+              "value_id": "5676179",
+              "value_name": "Aço",
+              "values": [
+                {
+                  "id": "5676179",
+                  "name": "Aço"
+                }
+              ]
+            },
+            {
+              "id": "IS_WATERPROOF",
+              "meta": {
+                "value": false
+              },
+              "name": "É à prova d'água",
+              "value_id": "242084",
+              "value_name": "Não",
+              "values": [
+                {
+                  "id": "242084",
+                  "name": "Não"
+                }
+              ]
+            },
+            {
+              "id": "WEIGHT",
+              "name": "Peso",
+              "value_id": "7782878",
+              "value_name": "23 g",
+              "values": [
+                {
+                  "id": "7782878",
+                  "name": "23 g"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB65573881",
+          "children_ids": [],
+          "date_created": "2026-02-12T19:01:11Z",
+          "domain_id": "MLB-SMARTWATCH_AND_WATCH_BANDS",
+          "id": "MLB65573881",
+          "last_updated": "2026-07-08T15:02:36Z",
+          "name": "Pulseira de Silicone Laranja para Garmin Forerunner 570 47mm",
+          "parent_id": "MLB67684840",
+          "pictures": [
+            {
+              "id": "675545-MLA107190723445_022026",
+              "max_height": "1200",
+              "max_width": "925",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_675545-MLA107190723445_022026-F.jpg"
+            },
+            {
+              "id": "698912-MLA106543082716_022026",
+              "max_height": "778",
+              "max_width": "701",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_698912-MLA106543082716_022026-F.jpg"
+            },
+            {
+              "id": "977996-MLA107190603533_022026",
+              "max_height": "763",
+              "max_width": "762",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_977996-MLA107190603533_022026-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "COMPLETE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        },
+        {
+          "attributes": [
+            {
+              "id": "BRAND",
+              "name": "Marca",
+              "value_id": "43910897",
+              "value_name": "EKSIL",
+              "values": [
+                {
+                  "id": "43910897",
+                  "name": "EKSIL"
+                }
+              ]
+            },
+            {
+              "id": "BAND_TYPE",
+              "name": "Tipo da pulseira",
+              "value_id": "18175342",
+              "value_name": "Smartwatch",
+              "values": [
+                {
+                  "id": "18175342",
+                  "name": "Smartwatch"
+                }
+              ]
+            },
+            {
+              "id": "GTIN",
+              "name": "Código universal de produto",
+              "value_id": "84271846",
+              "value_name": "09183728117456",
+              "values": [
+                {
+                  "id": "84271846",
+                  "name": "09183728117456"
+                }
+              ]
+            }
+          ],
+          "authority_types": [
+            "COMMUNITY"
+          ],
+          "catalog_product_id": "MLB74992007",
+          "children_ids": [],
+          "date_created": "2026-07-06T16:57:35Z",
+          "domain_id": "MLB-SMARTWATCH_AND_WATCH_BANDS",
+          "id": "MLB74992007",
+          "last_updated": "2026-07-06T17:02:16Z",
+          "name": "Eksil - Pulseira de silicone para Garmin Forerunner 235, compatível com Garmin Forerunner 220/230/235/620/630/735xt/235lite (cor: B, tamanho: 735 735xt)",
+          "pictures": [
+            {
+              "id": "709401-MLA114212411869_072026",
+              "max_height": "912",
+              "max_width": "867",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_709401-MLA114212411869_072026-F.jpg"
+            },
+            {
+              "id": "985899-MLA114212411877_072026",
+              "max_height": "1081",
+              "max_width": "1073",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_985899-MLA114212411877_072026-F.jpg"
+            },
+            {
+              "id": "650106-MLA114212235977_072026",
+              "max_height": "910",
+              "max_width": "865",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_650106-MLA114212235977_072026-F.jpg"
+            },
+            {
+              "id": "948316-MLA112995913232_072026",
+              "max_height": "976",
+              "max_width": "888",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_948316-MLA112995913232_072026-F.jpg"
+            },
+            {
+              "id": "810959-MLA114212787795_072026",
+              "max_height": "735",
+              "max_width": "761",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_810959-MLA114212787795_072026-F.jpg"
+            },
+            {
+              "id": "823165-MLA114212471735_072026",
+              "max_height": "875",
+              "max_width": "851",
+              "url": "https://http2.mlstatic.com/D_NQ_NP_823165-MLA114212471735_072026-F.jpg"
+            }
+          ],
+          "product_standard": false,
+          "quality_type": "PRIMITIVE",
+          "search_type": "KEYWORD",
+          "settings": {
+            "content": "fixed",
+            "exclusive": false,
+            "listing_strategy": "catalog_required"
+          },
+          "short_description": {
+            "content": "",
+            "type": "plaintext"
+          },
+          "status": "active",
+          "tags": []
+        }
+      ]
     }
   },
   "item": {
@@ -213,7 +4080,7 @@
   },
   "public_product_page": {
     "http": 200,
-    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=b883840d-83b1-41df-8a66-5ccf5ce728e9",
+    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=c0a42fb6-eed5-4782-98c3-1a41800c0b09",
     "title": "Mercado Libre",
     "html_bytes": 41637,
     "price_candidates": [],
