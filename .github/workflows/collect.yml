@@ -8,6 +8,7 @@ on:
     paths:
       - "data/watchlist.json"
       - "scripts/collect_watchlist.py"
+      - "scripts/apply_watchlist_preferences.py"
       - "scripts/validate_ml_selection.py"
       - ".github/workflows/collect.yml"
 permissions:
@@ -30,6 +31,8 @@ jobs:
           ML_ACCESS_TOKEN: ${{ secrets.ML_ACCESS_TOKEN }}
           ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
         run: python scripts/collect_watchlist.py
+      - name: Aplicar preferencias da watchlist
+        run: python scripts/apply_watchlist_preferences.py
       - name: Validar selecao Mercado Livre
         run: python scripts/validate_ml_selection.py
       - name: Commit historico
