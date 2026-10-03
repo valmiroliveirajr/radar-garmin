@@ -10,7 +10,7 @@ PRODUCTS={
  "forerunner-570": {"name":"Forerunner 570 47 mm","sku":"010-02971-00","product_id":"MLB51160740","query":"Garmin Forerunner 570 47 mm","terms":["forerunner","570"]},
  "forerunner-970": {"name":"Forerunner 970 47 mm","sku":"010-02969-00","query":"Garmin Forerunner 970 47 mm","terms":["forerunner","970"]},
  "venu-4": {"name":"Venu 4 45 mm","sku":"010-03014-00","query":"Garmin Venu 4 45 mm","terms":["venu","4","45"]},
- "hrm600": {"name":"HRM 600 M/GG","sku":"010-13383-00","query":"Garmin HRM 600 M GG","terms":["hrm","600"]},
+ "hrm600": {"name":"HRM 600 M/GG","sku":"010-13383-00","query":"Garmin HRM 600 010-13383-00","terms":["hrm","600"],"preferred":["m gg","m xl"],"forbidden":["pp p","xs s","pp","xs"]},
 }
 
 POLICY=[
@@ -46,13 +46,21 @@ def resolve_product(cfg,tok):
  terms=[norm(x) for x in cfg.get("terms",[])]
  matches=[]
  for p in results:
-  text=norm(" ".join([str(p.get("name") or ""),str(p.get("id") or "")]))
-  if all(term in text for term in terms): matches.append(p)
+  attrs=" ".join(str((a or {}).get("value_name") or (a or {}).get("value_id") or "") for a in (p.get("attributes") or []))
+  text=norm(" ".join([str(p.get("name") or ""),str(p.get("id") or ""),attrs]))
+  if all(term in text for term in terms):
+   p["_radar_text"]=text; matches.append(p)
  if not matches:
   sample=[{"id":p.get("id"),"name":p.get("name")} for p in results[:8]]
   raise RuntimeError(f"catalogo nao resolvido para {cfg['query']}; amostra={sample}")
- # prefere nome Garmin e o resultado mais curto/especifico
- matches.sort(key=lambda p:("garmin" not in norm(p.get("name")),len(norm(p.get("name")))))
+ sku=norm(cfg.get("sku")); preferred=[norm(x) for x in cfg.get("preferred",[])]; forbidden=[norm(x) for x in cfg.get("forbidden",[])]
+ matches.sort(key=lambda p:(
+  any(x and x in p.get("_radar_text","") for x in forbidden),
+  not bool(sku and sku in p.get("_radar_text","")),
+  not bool(preferred and any(x and x in p.get("_radar_text","") for x in preferred)),
+  "garmin" not in norm(p.get("name")),
+  len(norm(p.get("name")))
+ ))
  p=matches[0]
  return p.get("id"),p.get("name")
 
