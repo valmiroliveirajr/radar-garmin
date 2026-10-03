@@ -20,11 +20,24 @@ def ml_token():
  token=os.environ.get("ML_ACCESS_TOKEN")
  if not token: raise RuntimeError("ML_ACCESS_TOKEN nao configurado")
  return token
+def ml_get(path, token):
+ req=urllib.request.Request("https://api.mercadolibre.com"+path,headers={"Authorization":"Bearer "+token,"Accept":"application/json"})
+ try:
+  with urllib.request.urlopen(req,timeout=25) as r:
+   return json.loads(r.read().decode()), None
+ except urllib.error.HTTPError as e:
+  body=e.read().decode("utf-8","ignore")
+  return None, f"HTTP {e.code}: {body[:800]}"
+
 def ml_item(item_id):
  # Para ofertas do Mercado Livre, consulta o item_id da oferta em vez de raspar a pagina do catalogo.
  token=ml_token()
- req=urllib.request.Request(f"https://api.mercadolibre.com/items/{item_id}",headers={"Authorization":"Bearer "+token})
- with urllib.request.urlopen(req,timeout=25) as r: data=json.loads(r.read().decode())
+ me, me_error=ml_get("/users/me",token)
+ data, item_error=ml_get(f"/items/{item_id}",token)
+ if item_error:
+  raise RuntimeError(f"ML item bloqueado; users_me={'ok' if me else me_error}; item={item_error}")
+ data["_auth_user_id"]=(me or {}).get("id")
+ data["_auth_nickname"]=(me or {}).get("nickname")
  try:
   reqp=urllib.request.Request(f"https://api.mercadolibre.com/items/{item_id}/sale_price?context=channel_marketplace",headers={"Authorization":"Bearer "+token})
   with urllib.request.urlopen(reqp,timeout=25) as r: sale=json.loads(r.read().decode())
@@ -42,7 +55,9 @@ def ml_item(item_id):
   "permalink":data.get("permalink"),
   "currency_id":data.get("currency_id"),
   "free_shipping":(data.get("shipping") or {}).get("free_shipping"),
-  "warranty":next((x.get("value_name") for x in data.get("sale_terms",[]) if x.get("id") in ("WARRANTY_TYPE","WARRANTY_TIME")),None)
+  "warranty":next((x.get("value_name") for x in data.get("sale_terms",[]) if x.get("id") in ("WARRANTY_TYPE","WARRANTY_TIME")),None),
+  "auth_user_id":data.get("_auth_user_id"),
+  "auth_nickname":data.get("_auth_nickname")
  }
 def price_from_html(html):
  pats=[r'"price"\s*:\s*"?([0-9]+(?:[.,][0-9]+)?)',r'R\$\s*([0-9\.]+,[0-9]{2})']
