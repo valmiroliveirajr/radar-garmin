@@ -1,4 +1,4 @@
-import os, json, datetime, urllib.request, urllib.error
+import os, json, datetime, urllib.request, urllib.error, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,14 +19,61 @@ POLICY = [
 ]
 
 
+def worker_base():
+    return (os.environ.get("RADAR_ML_API") or "").rstrip("/")
+
+
+def worker_key():
+    return os.environ.get("RADAR_API_ADMIN_KEY") or ""
+
+
+def worker_ready():
+    return bool(worker_base() and worker_key())
+
+
 def token():
+    if worker_ready():
+        return None
     value = os.environ.get("ML_ACCESS_TOKEN")
     if not value:
-        raise RuntimeError("ML_ACCESS_TOKEN nao configurado")
+        raise RuntimeError("Nem Worker autenticado nem ML_ACCESS_TOKEN foram configurados")
     return value
 
 
+def worker_route(path):
+    match = re.fullmatch(r"/products/(MLB\d+)/items", path)
+    if match:
+        return f"/offers/{match.group(1)}"
+    match = re.fullmatch(r"/products/(MLB\d+)", path)
+    if match:
+        return f"/catalog/{match.group(1)}"
+    match = re.fullmatch(r"/users/(\d+)", path)
+    if match:
+        return f"/seller/{match.group(1)}"
+    return None
+
+
+def worker_get(path):
+    route = worker_route(path)
+    if not route:
+        return None, f"Rota ML nao mapeada no Worker: {path}"
+    req = urllib.request.Request(
+        worker_base() + route,
+        headers={"x-admin-key": worker_key(), "Accept": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=35) as response:
+            return json.loads(response.read().decode("utf-8")), None
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", "ignore")
+        return None, f"Worker HTTP {exc.code}: {body[:1000]}"
+    except Exception as exc:
+        return None, f"Worker {type(exc).__name__}: {exc}"
+
+
 def ml_get(path, access_token):
+    if worker_ready():
+        return worker_get(path)
     req = urllib.request.Request(
         "https://api.mercadolibre.com" + path,
         headers={"Authorization": "Bearer " + access_token, "Accept": "application/json"},
@@ -326,6 +373,8 @@ def main():
         raise SystemExit("watchlist sem produtos ativos")
 
     access_token = token()
+    source_mode = "Worker" if worker_ready() else "token direto"
+    print(f"Fonte de autenticacao ML: {source_mode}")
     products = []
     errors = []
     for entry in entries:
