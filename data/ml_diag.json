@@ -210,5 +210,14 @@
       "status": 403,
       "cause": []
     }
+  },
+  "public_product_page": {
+    "http": 200,
+    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=b883840d-83b1-41df-8a66-5ccf5ce728e9",
+    "title": "Mercado Libre",
+    "html_bytes": 41637,
+    "price_candidates": [],
+    "has_item_id": true,
+    "blocked_hint": false
   }
 }
