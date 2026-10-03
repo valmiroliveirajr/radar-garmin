@@ -25,7 +25,15 @@ def ml_token():
   return json.loads(r.read().decode())["access_token"]
 def ml_item(item_id):
  # Para ofertas do Mercado Livre, consulta o item_id da oferta em vez de raspar a pagina do catalogo.
- data=json.loads(fetch(f"https://api.mercadolibre.com/items/{item_id}"))
+ token=ml_token()
+ req=urllib.request.Request(f"https://api.mercadolibre.com/items/{item_id}",headers={"Authorization":"Bearer "+token})
+ with urllib.request.urlopen(req,timeout=25) as r: data=json.loads(r.read().decode())
+ try:
+  reqp=urllib.request.Request(f"https://api.mercadolibre.com/items/{item_id}/sale_price?context=channel_marketplace",headers={"Authorization":"Bearer "+token})
+  with urllib.request.urlopen(reqp,timeout=25) as r: sale=json.loads(r.read().decode())
+  if sale.get("amount") is not None: data["price"]=sale["amount"]
+ except Exception:
+  pass
  p=data.get("price")
  return {
   "price":float(p) if p is not None else None,
