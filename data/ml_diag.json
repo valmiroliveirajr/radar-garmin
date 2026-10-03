@@ -75,6 +75,108 @@
     ],
     "url": "http://apps.mercadolivre.com.br/radar-garmin-hh"
   },
+  "application_grants": {
+    "http": 200,
+    "body": {
+      "grants": [
+        {
+          "user_id": 81846506,
+          "app_id": 7204008163635554,
+          "date_created": "2026-10-02T20:36:53.000-04:00",
+          "date_updated": "2026-10-02T20:36:53.000-04:00",
+          "scopes": [
+            "urn:global:admin:users:/read-only",
+            "urn:ml:mktp:metrics:/read-only",
+            "urn:ml:all:comunication:/read-only",
+            "urn:ml:mktp:offers:/read-only",
+            "urn:global:admin:oauth:/read-write",
+            "urn:ml:mktp:ads:/read-only",
+            "urn:global:admin:info:/read-write",
+            "urn:ml:mktp:comunication:/read-only",
+            "urn:ml:mktp:publish-sync:/read-only",
+            "urn:global:admin:oauth:/read-only",
+            "urn:global:admin:users:/read-write",
+            "urn:ml:all:publish-sync:/read-only",
+            "urn:ml:mktp:invoices:/read-only",
+            "read",
+            "urn:global:admin:info:/read-only",
+            "write",
+            "urn:ml:mktp:orders-shipments:/read-only"
+          ]
+        }
+      ],
+      "paging": {
+        "total": 1,
+        "limit": 50,
+        "offset": 0
+      }
+    }
+  },
+  "user_applications": {
+    "http": 200,
+    "body": [
+      {
+        "user_id": 81846506,
+        "app_id": 7204008163635554,
+        "date_created": "2026-10-02T20:36:53.000-04:00",
+        "date_updated": "2026-10-02T20:36:53.000-04:00",
+        "scopes": [
+          "urn:global:admin:users:/read-only",
+          "urn:ml:mktp:metrics:/read-only",
+          "urn:ml:all:comunication:/read-only",
+          "urn:ml:mktp:offers:/read-only",
+          "urn:global:admin:oauth:/read-write",
+          "urn:ml:mktp:ads:/read-only",
+          "urn:global:admin:info:/read-write",
+          "urn:ml:mktp:comunication:/read-only",
+          "urn:ml:mktp:publish-sync:/read-only",
+          "urn:global:admin:oauth:/read-only",
+          "urn:global:admin:users:/read-write",
+          "urn:ml:all:publish-sync:/read-only",
+          "urn:ml:mktp:invoices:/read-only",
+          "read",
+          "urn:global:admin:info:/read-only",
+          "write",
+          "urn:ml:mktp:orders-shipments:/read-only"
+        ]
+      },
+      {
+        "user_id": 81846506,
+        "app_id": 6828529201373865,
+        "date_created": "2021-06-16T14:24:09.000-04:00",
+        "date_updated": "2021-06-16T14:24:09.000-04:00",
+        "scopes": [
+          "offline_access",
+          "write",
+          "read"
+        ]
+      },
+      {
+        "user_id": 81846506,
+        "app_id": 5318373260396472,
+        "date_created": "2019-10-28T01:22:40.000-04:00",
+        "date_updated": "2019-10-28T01:22:40.000-04:00",
+        "scopes": [
+          "offline_access",
+          "payments",
+          "read",
+          "write"
+        ]
+      },
+      {
+        "user_id": 81846506,
+        "app_id": 1596438061034492,
+        "date_created": "2019-10-28T09:08:29.000-04:00",
+        "date_updated": "2019-10-28T09:08:29.000-04:00",
+        "scopes": [
+          "offline_access",
+          "payments",
+          "read",
+          "write"
+        ]
+      }
+    ]
+  },
   "product": {
     "http": 200,
     "id": "MLB51160740",
