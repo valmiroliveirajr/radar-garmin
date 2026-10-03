@@ -28,6 +28,18 @@ for model in data.get("models",[]):
     if not ml.get("catalog_product_id"):
         raise SystemExit(f"FAIL {mid}: catalog_product_id ausente")
 
+    catalog_name=(ml.get("catalog_product_name") or "").lower()
+    if mid=="forerunner-570" and not ("570" in catalog_name and "47" in catalog_name):
+        raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
+    if mid=="forerunner-970" and not ("970" in catalog_name and "47" in catalog_name):
+        raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
+    if mid=="venu-4" and not ("venu 4" in catalog_name and "45" in catalog_name):
+        raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
+    if mid=="hrm600":
+        wrong=("pp/p","pp p","xs/s","xs s")
+        if "hrm 600" not in catalog_name or any(x in catalog_name for x in wrong):
+            raise SystemExit(f"FAIL {mid}: catalogo/variante inesperado: {ml.get('catalog_product_name')}")
+
     offers=ml.get("market_offers") or []
     if not offers:
         raise SystemExit(f"FAIL {mid}: market_offers vazio")
@@ -58,9 +70,9 @@ for model in data.get("models",[]):
     if float(ml.get("price")) != min_price:
         raise SystemExit(f"FAIL {mid}: vencedor nao e o menor preco do grupo prioritario: {ml.get('price')} != {min_price}")
 
-    print(f"PASS {mid}: {ml.get('catalog_product_id')} | item={ml.get('winner_item_id')} | R$ {float(ml.get('price')):.2f} | {ml.get('seller_nickname')} | {ml.get('selection_tier')}")
+    print(f"PASS {mid}: {ml.get('catalog_product_id')} | {ml.get('catalog_product_name')} | item={ml.get('winner_item_id')} | R$ {float(ml.get('price')):.2f} | {ml.get('seller_nickname')} | {ml.get('selection_tier')}")
 
 missing=EXPECTED-seen
 if missing:
     raise SystemExit("FAIL: modelos ML ausentes: "+", ".join(sorted(missing)))
-print("PASS: regra Mercado Livre validada para todos os produtos")
+print("PASS: regra Mercado Livre e variantes validadas para todos os produtos")
