@@ -63,6 +63,36 @@ def pick(obj, keys):
     if not isinstance(body,dict): return obj
     return {"http":obj.get("http"),**{k:body.get(k) for k in keys if k in body}}
 
+def compact_endpoint(obj):
+    out={"http":obj.get("http") if isinstance(obj,dict) else None}
+    body=obj.get("body") if isinstance(obj,dict) else None
+    if isinstance(body,dict):
+        out["keys"]=list(body.keys())[:30]
+        if "message" in body: out["message"]=body.get("message")
+        if "error" in body: out["error"]=body.get("error")
+        results=body.get("results")
+        if isinstance(results,list):
+            out["results_count"]=len(results)
+            if results:
+                r=results[0]
+                if isinstance(r,dict):
+                    keep=["id","name","status","catalog_product_id","item_id","seller_id","price","currency_id","permalink","condition","official_store_id","domain_id","site_id"]
+                    out["first_result"]={k:r.get(k) for k in keep if k in r}
+        elif isinstance(body.get("items"),list):
+            items=body.get("items")
+            out["items_count"]=len(items)
+            if items and isinstance(items[0],dict):
+                r=items[0]
+                keep=["id","item_id","seller_id","price","currency_id","permalink","condition","official_store_id","status"]
+                out["first_item"]={k:r.get(k) for k in keep if k in r}
+        else:
+            for k in ["id","name","status","buy_box_winner","buy_box_winner_price_range"]:
+                if k in body: out[k]=body.get(k)
+    elif body is not None:
+        out["body"]=str(body)[:1000]
+    if isinstance(obj,dict) and obj.get("error") and "error" not in out: out["error"]=obj.get("error")
+    return out
+
 if not TOKEN:
     raise SystemExit("ML_ACCESS_TOKEN ausente")
 
@@ -90,5 +120,14 @@ diag={
     "search":search,
     "public_product_page":page,
 }
+summary={
+    "product":compact_endpoint(product),
+    "product_items":compact_endpoint(product_items),
+    "product_search":compact_endpoint(product_search),
+    "item":compact_endpoint(item),
+    "legacy_search":compact_endpoint(search),
+    "public_product_page":page,
+}
 (DATA/"ml_diag.json").write_text(json.dumps(diag,ensure_ascii=False,indent=2),encoding="utf-8")
-print(json.dumps(diag,ensure_ascii=False,indent=2))
+(DATA/"ml_diag_summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding="utf-8")
+print(json.dumps(summary,ensure_ascii=False,indent=2))
