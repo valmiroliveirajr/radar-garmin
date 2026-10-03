@@ -1,5 +1,5 @@
 {
   "admin_api": "https://radar-ml-api.valmirvalray.workers.dev",
-  "admin_api_status": "active",
-  "notes": "Backend Radar ML publicado no Cloudflare Worker. O front-end deve usar esta URL para busca e cadastro; a ADMIN_KEY permanece apenas no navegador do proprietario."
+  "admin_api_status": "active_refresh_pending",
+  "notes": "Backend publicado e conectado ao painel. Busca/cadastro funcionam enquanto o token atual estiver valido. A renovacao automatica ja esta implementada no codigo e depende apenas de ML_TOKEN_STORE + credenciais OAuth com refresh token no Worker e da mesma ADMIN_KEY no GitHub Secret RADAR_API_ADMIN_KEY."
 }
