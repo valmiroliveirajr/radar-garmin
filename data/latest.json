@@ -2,7 +2,11 @@
   "schema_version": 2,
   "source": "Mercado Livre",
   "site_id": "MLB",
+<<<<<<< Updated upstream
   "collected_at": "2026-10-03T03:14:19.567346-03:00",
+=======
+  "collected_at": "2026-10-03T03:14:31.637321-03:00",
+>>>>>>> Stashed changes
   "products": [
     {
       "id": "forerunner-570",
@@ -140,7 +144,11 @@
         }
       ],
       "added_at": "2026-10-02",
+<<<<<<< Updated upstream
       "collected_at": "2026-10-03T03:14:19.567346-03:00",
+=======
+      "collected_at": "2026-10-03T03:14:31.637321-03:00",
+>>>>>>> Stashed changes
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -760,7 +768,11 @@
         }
       ],
       "added_at": "2026-10-02",
+<<<<<<< Updated upstream
       "collected_at": "2026-10-03T03:14:19.567346-03:00",
+=======
+      "collected_at": "2026-10-03T03:14:31.637321-03:00",
+>>>>>>> Stashed changes
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1701,7 +1713,11 @@
         }
       ],
       "added_at": "2026-10-02",
+<<<<<<< Updated upstream
       "collected_at": "2026-10-03T03:14:19.567346-03:00",
+=======
+      "collected_at": "2026-10-03T03:14:31.637321-03:00",
+>>>>>>> Stashed changes
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -2009,7 +2025,11 @@
         }
       ],
       "added_at": "2026-10-02",
+<<<<<<< Updated upstream
       "collected_at": "2026-10-03T03:14:19.567346-03:00",
+=======
+      "collected_at": "2026-10-03T03:14:31.637321-03:00",
+>>>>>>> Stashed changes
       "source": "Mercado Livre",
       "available": true,
       "error": null,
