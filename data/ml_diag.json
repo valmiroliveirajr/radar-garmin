@@ -740,8 +740,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "kvs_primary",
             "dynamic_standard_price",
+            "kvs_primary",
             "user_product_unify",
             "immediate_payment",
             "cart_eligible"
@@ -881,8 +881,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "kvs_primary",
             "user_product_unify",
+            "kvs_primary",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -1304,8 +1304,8 @@
           "tier": "",
           "inventory_id": "",
           "tags": [
-            "kvs_primary",
             "user_product_unify",
+            "kvs_primary",
             "immediate_payment",
             "cart_eligible"
           ],
@@ -4080,7 +4080,7 @@
   },
   "public_product_page": {
     "http": 200,
-    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=c0a42fb6-eed5-4782-98c3-1a41800c0b09",
+    "final_url": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgarmin-forerunner-570-preto-47mm%2Fp%2FMLB51160740%3Fwid%3DMLB5145446199&tid=b89529fa-8a75-4b50-8d95-5cabbd9e6921",
     "title": "Mercado Libre",
     "html_bytes": 41637,
     "price_candidates": [],
