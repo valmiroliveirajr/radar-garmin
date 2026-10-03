@@ -29,23 +29,70 @@ def ml_get(path, token):
   body=e.read().decode("utf-8","ignore")
   return None, f"HTTP {e.code}: {body[:800]}"
 
-def ml_item(item_id):
- # Para ofertas do Mercado Livre, consulta o item_id da oferta em vez de raspar a pagina do catalogo.
+def ml_seller(seller_id, token):
+ if not seller_id:return {}
+ data, err=ml_get(f"/users/{seller_id}",token)
+ if err:return {"seller_lookup_error":err}
+ rep=(data or {}).get("seller_reputation") or {}
+ tx=rep.get("transactions") or {}
+ ratings=tx.get("ratings") or {}
+ return {
+  "seller_nickname":(data or {}).get("nickname"),
+  "seller_status":(data or {}).get("status",{}).get("site_status") if isinstance((data or {}).get("status"),dict) else (data or {}).get("status"),
+  "seller_reputation_level":rep.get("level_id"),
+  "power_seller_status":rep.get("power_seller_status"),
+  "seller_transactions_completed":tx.get("completed"),
+  "seller_transactions_canceled":tx.get("canceled"),
+  "seller_rating_positive":ratings.get("positive"),
+  "seller_rating_neutral":ratings.get("neutral"),
+  "seller_rating_negative":ratings.get("negative")
+ }
+
+def ml_offer(src):
  token=ml_token()
  me, me_error=ml_get("/users/me",token)
- data, item_error=ml_get(f"/items/{item_id}",token)
+ product_id=src.get("product_id")
+ if product_id:
+  product, product_error=ml_get(f"/products/{product_id}",token)
+  if not product_error and product:
+   winner=product.get("buy_box_winner") or {}
+   seller_id=winner.get("seller_id")
+   item_id=winner.get("item_id")
+   price=winner.get("price")
+   permalink=product.get("permalink") or src.get("url")
+   if item_id and permalink:
+    sep="&" if "?" in permalink else "?"
+    permalink=f"{permalink}{sep}wid={item_id}"
+   out={
+    "price":float(price) if price is not None else None,
+    "title":product.get("name"),
+    "seller_id":seller_id,
+    "official_store_id":winner.get("official_store_id"),
+    "condition":winner.get("condition"),
+    "status":"active" if product.get("status")=="active" and winner else product.get("status"),
+    "permalink":permalink,
+    "currency_id":winner.get("currency_id"),
+    "free_shipping":(winner.get("shipping") or {}).get("free_shipping"),
+    "warranty":None,
+    "catalog_product_id":product_id,
+    "winner_item_id":item_id,
+    "collection_source":"catalog_buy_box",
+    "auth_user_id":(me or {}).get("id"),
+    "auth_nickname":(me or {}).get("nickname"),
+    "auth_error":me_error,
+    "product_error":None
+   }
+   out.update(ml_seller(seller_id,token))
+   return out
+  product_diag=product_error
+ else:
+  product_diag="product_id ausente"
+ item_id=src.get("item_id")
+ data, item_error=ml_get(f"/items/{item_id}",token) if item_id else (None,"item_id ausente")
  if item_error:
-  raise RuntimeError(f"ML item bloqueado; users_me={'ok' if me else me_error}; item={item_error}")
- data["_auth_user_id"]=(me or {}).get("id")
- data["_auth_nickname"]=(me or {}).get("nickname")
- try:
-  reqp=urllib.request.Request(f"https://api.mercadolibre.com/items/{item_id}/sale_price?context=channel_marketplace",headers={"Authorization":"Bearer "+token})
-  with urllib.request.urlopen(reqp,timeout=25) as r: sale=json.loads(r.read().decode())
-  if sale.get("amount") is not None: data["price"]=sale["amount"]
- except Exception:
-  pass
+  raise RuntimeError(f"ML bloqueado; users_me={'ok' if me else me_error}; product={product_diag}; item={item_error}")
  p=data.get("price")
- return {
+ out={
   "price":float(p) if p is not None else None,
   "title":data.get("title"),
   "seller_id":data.get("seller_id"),
@@ -56,9 +103,14 @@ def ml_item(item_id):
   "currency_id":data.get("currency_id"),
   "free_shipping":(data.get("shipping") or {}).get("free_shipping"),
   "warranty":next((x.get("value_name") for x in data.get("sale_terms",[]) if x.get("id") in ("WARRANTY_TYPE","WARRANTY_TIME")),None),
-  "auth_user_id":data.get("_auth_user_id"),
-  "auth_nickname":data.get("_auth_nickname")
+  "collection_source":"item",
+  "auth_user_id":(me or {}).get("id"),
+  "auth_nickname":(me or {}).get("nickname"),
+  "product_error":product_diag
  }
+ out.update(ml_seller(data.get("seller_id"),token))
+ return out
+
 def price_from_html(html):
  pats=[r'"price"\s*:\s*"?([0-9]+(?:[.,][0-9]+)?)',r'R\$\s*([0-9\.]+,[0-9]{2})']
  vals=[]
@@ -74,8 +126,9 @@ offers=[]
 for src in SOURCES:
  o={**src,"collected_at":now.isoformat(),"price":None,"effective_price":None,"available":None,"error":None}
  try:
-  if src["store"]=="Mercado Livre" and src.get("item_id"):
-   ml=ml_item(src["item_id"]); p=ml.pop("price"); o.update(ml)
+  if src["store"]=="Mercado Livre":
+   ml=ml_offer(src); p=ml.pop("price"); o.update(ml)
+   if o.get("permalink"):o["url"]=o["permalink"]
    o["price"]=p; o["available"]=p is not None and o.get("status")=="active"
   else:
    html=fetch(src["url"]); p=price_from_html(html); o["price"]=p; o["available"]=p is not None
