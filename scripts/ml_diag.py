@@ -33,7 +33,10 @@ if not TOKEN:
     raise SystemExit("ML_ACCESS_TOKEN ausente")
 
 me=get("/users/me")
+user_id=((me.get("body") or {}).get("id") if isinstance(me,dict) else None)
 app=get(f"/applications/{APP_ID}") if APP_ID else {"error":"ML_CLIENT_ID ausente"}
+grants=get(f"/applications/{APP_ID}/grants") if APP_ID else {"error":"ML_CLIENT_ID ausente"}
+user_apps=get(f"/users/{user_id}/applications") if user_id else {"error":"user_id ausente"}
 product=get("/products/MLB51160740")
 item=get("/items/MLB5145446199")
 search=get("/sites/MLB/search?"+urllib.parse.urlencode({"q":"Garmin Forerunner 570 47mm","limit":1}))
@@ -41,6 +44,8 @@ search=get("/sites/MLB/search?"+urllib.parse.urlencode({"q":"Garmin Forerunner 5
 diag={
     "users_me":pick(me,["id","nickname","status","site_id"]),
     "application":pick(app,["id","site_id","active","sandbox_mode","certification_status","scopes","redirect_uri","url"]),
+    "application_grants":grants,
+    "user_applications":user_apps,
     "product":pick(product,["id","status","name","buy_box_winner","children_ids","settings"]),
     "item":item,
     "search":search,
