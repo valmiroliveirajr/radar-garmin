@@ -33,11 +33,80 @@ function requireAdmin(request, env) {
   if (!isAdmin(request, env)) throw new Response('Chave administrativa inválida.', { status: 401 });
 }
 
-async function ml(path, env) {
-  if (!env.ML_ACCESS_TOKEN) throw new Error('ML_ACCESS_TOKEN não configurado no Worker');
-  const response = await fetch(ML_API + path, {
-    headers: { authorization: `Bearer ${env.ML_ACCESS_TOKEN}`, accept: 'application/json' },
+async function tokenStoreGet(env, key) {
+  if (!env.ML_TOKEN_STORE) return null;
+  try { return await env.ML_TOKEN_STORE.get(key); } catch { return null; }
+}
+
+async function tokenStorePut(env, key, value) {
+  if (!env.ML_TOKEN_STORE || value == null) return;
+  await env.ML_TOKEN_STORE.put(key, String(value));
+}
+
+async function refreshMlToken(env, refreshToken) {
+  if (!refreshToken) throw new Error('Refresh token do Mercado Livre não configurado');
+  if (!env.ML_CLIENT_ID || !env.ML_CLIENT_SECRET) throw new Error('Credenciais OAuth do Mercado Livre não configuradas para renovação');
+
+  const form = new URLSearchParams();
+  form.set('grant_type', 'refresh_token');
+  form.set('client_id', env.ML_CLIENT_ID);
+  form.set('client_secret', env.ML_CLIENT_SECRET);
+  form.set('refresh_token', refreshToken);
+
+  const response = await fetch(`${ML_API}/oauth/token`, {
+    method: 'POST',
+    headers: { accept: 'application/json', 'content-type': 'application/x-www-form-urlencoded' },
+    body: form.toString(),
   });
+  const text = await response.text();
+  let body;
+  try { body = JSON.parse(text); } catch { body = { raw: text }; }
+  if (!response.ok || !body?.access_token) {
+    const err = new Error(`Falha ao renovar token Mercado Livre HTTP ${response.status}`);
+    err.status = response.status;
+    err.detail = body;
+    throw err;
+  }
+
+  const expiresIn = Number(body.expires_in || 21600);
+  const expiresAt = Date.now() + Math.max(60, expiresIn - 120) * 1000;
+  await tokenStorePut(env, 'access_token', body.access_token);
+  await tokenStorePut(env, 'access_token_expires_at', expiresAt);
+  if (body.refresh_token) await tokenStorePut(env, 'refresh_token', body.refresh_token);
+  return { token: body.access_token, expiresAt, mode: 'refresh' };
+}
+
+async function getMlToken(env, forceRefresh = false) {
+  const storedToken = await tokenStoreGet(env, 'access_token');
+  const storedExpiry = Number(await tokenStoreGet(env, 'access_token_expires_at') || 0);
+  if (!forceRefresh && storedToken && (!storedExpiry || storedExpiry > Date.now() + 60000)) {
+    return { token: storedToken, expiresAt: storedExpiry || null, mode: 'kv' };
+  }
+
+  const storedRefresh = await tokenStoreGet(env, 'refresh_token');
+  const refreshToken = storedRefresh || env.ML_REFRESH_TOKEN || '';
+  if (env.ML_TOKEN_STORE && refreshToken && env.ML_CLIENT_ID && env.ML_CLIENT_SECRET) {
+    return refreshMlToken(env, refreshToken);
+  }
+
+  if (env.ML_ACCESS_TOKEN) return { token: env.ML_ACCESS_TOKEN, expiresAt: null, mode: 'static' };
+  throw new Error('ML_ACCESS_TOKEN não configurado no Worker');
+}
+
+async function mlRequest(path, env, tokenInfo) {
+  return fetch(ML_API + path, {
+    headers: { authorization: `Bearer ${tokenInfo.token}`, accept: 'application/json' },
+  });
+}
+
+async function ml(path, env) {
+  let tokenInfo = await getMlToken(env, false);
+  let response = await mlRequest(path, env, tokenInfo);
+  if (response.status === 401 && env.ML_TOKEN_STORE) {
+    tokenInfo = await getMlToken(env, true);
+    response = await mlRequest(path, env, tokenInfo);
+  }
+
   const text = await response.text();
   let body;
   try { body = JSON.parse(text); } catch { body = { raw: text }; }
@@ -218,6 +287,41 @@ async function deleteProduct(productId, env) {
   return json({ ok: true, catalog_product_id: pid });
 }
 
+async function health(env) {
+  let mlOk = false;
+  let githubOk = false;
+  let tokenMode = 'unconfigured';
+  let mlStatus = null;
+  let githubStatus = null;
+  try {
+    const tokenInfo = await getMlToken(env, false);
+    tokenMode = tokenInfo.mode;
+    const response = await mlRequest('/users/me', env, tokenInfo);
+    mlStatus = response.status;
+    mlOk = response.ok;
+  } catch (error) {
+    mlStatus = error.status || 'error';
+  }
+  try {
+    await github(`/contents/${WATCHLIST_PATH}?ref=main`, env);
+    githubStatus = 200;
+    githubOk = true;
+  } catch (error) {
+    githubStatus = error.status || 'error';
+  }
+  const storedRefresh = await tokenStoreGet(env, 'refresh_token');
+  return {
+    ok: mlOk && githubOk,
+    service: 'radar-ml-api',
+    ml: mlOk,
+    github: githubOk,
+    ml_status: mlStatus,
+    github_status: githubStatus,
+    token_mode: tokenMode,
+    auto_refresh_ready: Boolean(env.ML_TOKEN_STORE && env.ML_CLIENT_ID && env.ML_CLIENT_SECRET && (storedRefresh || env.ML_REFRESH_TOKEN)),
+  };
+}
+
 export default {
   async fetch(request, env) {
     const cors = corsHeaders(request, env);
@@ -226,7 +330,8 @@ export default {
     try {
       const url = new URL(request.url);
       if (url.pathname === '/health') {
-        return json({ ok: true, service: 'radar-ml-api', ml: Boolean(env.ML_ACCESS_TOKEN), github: Boolean(env.GITHUB_TOKEN) }, 200, cors);
+        const result = await health(env);
+        return json(result, result.ok ? 200 : 503, cors);
       }
 
       requireAdmin(request, env);
@@ -236,6 +341,24 @@ export default {
         if (q.length < 2) return json({ error: 'Informe pelo menos 2 caracteres.' }, 400, cors);
         const results = await searchProducts(q, env);
         return json({ query: q, count: results.length, results }, 200, cors);
+      }
+
+      if (request.method === 'GET' && url.pathname.startsWith('/catalog/')) {
+        const pid = url.pathname.split('/').pop().toUpperCase();
+        if (!/^MLB\d+$/.test(pid)) return json({ error: 'Produto inválido' }, 400, cors);
+        return json(await ml(`/products/${encodeURIComponent(pid)}`, env), 200, cors);
+      }
+
+      if (request.method === 'GET' && url.pathname.startsWith('/offers/')) {
+        const pid = url.pathname.split('/').pop().toUpperCase();
+        if (!/^MLB\d+$/.test(pid)) return json({ error: 'Produto inválido' }, 400, cors);
+        return json(await ml(`/products/${encodeURIComponent(pid)}/items`, env), 200, cors);
+      }
+
+      if (request.method === 'GET' && url.pathname.startsWith('/seller/')) {
+        const sellerId = url.pathname.split('/').pop();
+        if (!/^\d+$/.test(sellerId)) return json({ error: 'Vendedor inválido' }, 400, cors);
+        return json(await ml(`/users/${encodeURIComponent(sellerId)}`, env), 200, cors);
       }
 
       if (request.method === 'GET' && url.pathname.startsWith('/product/')) {
