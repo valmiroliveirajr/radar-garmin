@@ -2,7 +2,7 @@
   "schema_version": 2,
   "source": "Mercado Livre",
   "site_id": "MLB",
-  "collected_at": "2026-10-02T23:04:59.957727-03:00",
+  "collected_at": "2026-10-02T23:20:59.366438-03:00",
   "products": [
     {
       "id": "forerunner-570",
@@ -140,7 +140,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-02T23:04:59.957727-03:00",
+      "collected_at": "2026-10-02T23:20:59.366438-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -638,7 +638,9 @@
           "selection_tier": "fallback_price",
           "selection_rank": 14
         }
-      ]
+      ],
+      "origin_policy": "all",
+      "watchlist_name": "Forerunner 570 47 mm"
     },
     {
       "id": "forerunner-970",
@@ -758,7 +760,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-02T23:04:59.957727-03:00",
+      "collected_at": "2026-10-02T23:20:59.366438-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1245,7 +1247,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 268,
+          "seller_transactions_total": 269,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1373,7 +1375,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 268,
+          "seller_transactions_total": 269,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1608,7 +1610,9 @@
           "selection_tier": "fallback_price",
           "selection_rank": 25
         }
-      ]
+      ],
+      "origin_policy": "all",
+      "watchlist_name": "Forerunner 970 47 mm"
     },
     {
       "id": "venu-4",
@@ -1697,7 +1701,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-02T23:04:59.957727-03:00",
+      "collected_at": "2026-10-02T23:20:59.366438-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1875,7 +1879,9 @@
           "selection_tier": "fallback_price",
           "selection_rank": 4
         }
-      ]
+      ],
+      "origin_policy": "all",
+      "watchlist_name": "Venu 4 45 mm"
     },
     {
       "id": "hrm600",
@@ -2003,7 +2009,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-02T23:04:59.957727-03:00",
+      "collected_at": "2026-10-02T23:20:59.366438-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -2789,7 +2795,9 @@
           "selection_tier": "fallback_price",
           "selection_rank": 23
         }
-      ]
+      ],
+      "origin_policy": "all",
+      "watchlist_name": "HRM 600 M/GG"
     }
   ]
 }
