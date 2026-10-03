@@ -1,0 +1,13 @@
+name = "radar-ml-api"
+main = "src/index.js"
+compatibility_date = "2026-10-02"
+
+[vars]
+ALLOWED_ORIGIN = "https://valmiroliveirajr.github.io"
+GITHUB_REPOSITORY = "valmiroliveirajr/radar-garmin"
+ML_SITE_ID = "MLB"
+
+# Segredos obrigatórios (não versionar valores):
+# wrangler secret put ADMIN_KEY
+# wrangler secret put ML_ACCESS_TOKEN
+# wrangler secret put GITHUB_TOKEN
