@@ -1,0 +1,112 @@
+{
+  "users_me": {
+    "http": 200,
+    "id": 81846506,
+    "nickname": "VALRAY_VALMIR",
+    "status": {
+      "billing": {
+        "allow": true,
+        "codes": []
+      },
+      "buy": {
+        "allow": true,
+        "codes": [],
+        "immediate_payment": {
+          "reasons": [],
+          "required": false
+        }
+      },
+      "confirmed_email": true,
+      "shopping_cart": {
+        "buy": "allowed",
+        "sell": "allowed"
+      },
+      "immediate_payment": false,
+      "list": {
+        "allow": true,
+        "codes": [],
+        "immediate_payment": {
+          "reasons": [],
+          "required": false
+        }
+      },
+      "mercadoenvios": "not_accepted",
+      "mercadopago_account_type": "personal",
+      "mercadopago_tc_accepted": true,
+      "required_action": null,
+      "sell": {
+        "allow": true,
+        "codes": [],
+        "immediate_payment": {
+          "reasons": [],
+          "required": false
+        }
+      },
+      "site_status": "active",
+      "user_type": "complete_registration"
+    },
+    "site_id": "MLB"
+  },
+  "application": {
+    "http": 200,
+    "id": 7204008163635554,
+    "site_id": "MLB",
+    "active": true,
+    "sandbox_mode": true,
+    "certification_status": "not_certified",
+    "scopes": [
+      "urn:ml:mktp:comunication:/read-only",
+      "urn:ml:mktp:publish-sync:/read-only",
+      "urn:ml:mktp:ads:/read-only",
+      "urn:ml:mktp:invoices:/read-only",
+      "urn:ml:mktp:metrics:/read-only",
+      "urn:ml:mktp:offers:/read-only",
+      "urn:ml:mktp:orders-shipments:/read-only",
+      "read",
+      "urn:global:admin:info:/read-only",
+      "urn:global:admin:info:/read-write",
+      "urn:global:admin:oauth:/read-only",
+      "urn:global:admin:oauth:/read-write",
+      "urn:global:admin:users:/read-only",
+      "urn:global:admin:users:/read-write",
+      "write",
+      "urn:ml:all:comunication:/read-only",
+      "urn:ml:all:publish-sync:/read-only"
+    ],
+    "url": "http://apps.mercadolivre.com.br/radar-garmin-hh"
+  },
+  "product": {
+    "http": 200,
+    "id": "MLB51160740",
+    "status": "active",
+    "name": "Garmin Forerunner 570 Preto 47mm",
+    "buy_box_winner": null,
+    "children_ids": [],
+    "settings": {
+      "content": "fixed",
+      "listing_strategy": "catalog_required",
+      "exclusive": false,
+      "with_enhanced_pictures": false,
+      "base_site_product_id": null,
+      "ttr": "2026-10-04T04:43:22.547247893"
+    }
+  },
+  "item": {
+    "http": 403,
+    "body": {
+      "message": "Access to the requested resource is forbidden",
+      "error": "access_denied",
+      "status": 403,
+      "cause": null
+    }
+  },
+  "search": {
+    "http": 403,
+    "body": {
+      "message": "forbidden",
+      "error": "forbidden",
+      "status": 403,
+      "cause": []
+    }
+  }
+}
