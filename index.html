@@ -223,5 +223,42 @@ function specLabel(k){return k.replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperC
 function renderSpecs(m){if(!m.specs)return '';return '<section class="specs-section"><h2>Especificações</h2>'+Object.entries(m.specs).map(([g,rows])=>'<div class="spec-group"><h3>'+esc(g)+'</h3><table class="spec-table"><tbody>'+Object.entries(rows).map(([k,v])=>'<tr><th>'+esc(specLabel(k))+'<span class="spec-key">'+esc(k)+'</span></th><td>'+esc(v)+'</td></tr>').join('')+'</tbody></table></div>').join('')+'</section>'}
 function render(){const m=RADAR.modelos.find(x=>x.id===atual)||RADAR.modelos[0],lojas=(m.lojas||[]).map(l=>({...l,final:l.preco+(l.extra||0)})).sort((a,b)=>a.final-b.final),temDado=lojas.length>0,melhor=lojas[0],caro=lojas[lojas.length-1];let h='<header class="top"><div class="brand"><div class="bars"><i></i><i></i><i></i><i></i></div><b>Radar <span>Garmin</span></b></div><nav class="models" aria-label="Modelos">'+RADAR.modelos.map(x=>'<button type="button" data-m="'+x.id+'" aria-pressed="'+(x.id===m.id)+'">'+I('watch')+esc(innerWidth<=720?({fr970:'970',fr570:'570',venu4:'Venu 4',hrm600:'HRM600'}[x.id]||x.nome):x.nome)+'</button>').join('')+'</nav>'+(RADAR.coletaAtiva?'':'<span class="demo">'+I('info')+'<span class="txt-long">Demonstração · leitura manual</span></span>')+'</header><div class="hero '+((m.banner||m.id==='fr970')?'':'heroPlain')+'">'+((m.banner||m.id==='fr970')?'<img src="'+(m.banner||RADAR.headerImg)+'" alt="'+esc(m.nome)+'" referrerpolicy="no-referrer" crossorigin="anonymous">':'')+'<div class="t"><small>'+esc(m.linha||'')+'</small><strong>'+esc(m.nome)+'</strong></div></div>'+((m.galeria||[]).length?'<div class="gallery">'+m.galeria.map((src,i)=>'<img src="'+src+'" alt="'+esc(m.nome)+' — foto '+(i+1)+'" loading="lazy" onerror="this.style.visibility=\'hidden\'">').join('')+'</div>':'');
 if(!temDado){h+='<div class="content"><div class="empty" style="margin:0">'+I('radar')+'<div><b>'+esc(m.nome)+' — pesquisa de preços em preparação</b><span>A página do modelo já está ativa. Os preços só entram quando houver anúncio exato, vendedor e URL validados.</span></div></div><div class="feats">'+(m.recursos||[]).map(r=>'<span class="feat">'+I(r.ico)+esc(r.txt)+'</span>').join('')+'<a class="feat link" href="'+m.fichaUrl+'" target="_blank" rel="noopener">'+I('list')+'Fonte técnica Garmin</a></div></div>'}else{const d=(melhor.final-m.media30)/m.media30*100,favor=d<=0,vals=[m.min30,m.max30,...lojas.map(l=>l.final)].filter(v=>v!=null),lo=Math.min(...vals)*.97,hi=Math.max(...vals)*1.02,X=v=>((v-lo)/(hi-lo)*100).toFixed(2)+'%',corDot=l=>l===melhor?'var(--favor)':l===caro?'var(--acao)':'var(--ink-2)';h+='<div class="content"><div class="row1"><div class="best"><div class="store"><span class="chip-ico">'+I('tag')+'</span>'+esc(melhor.nome)+'</div><div class="price"><span class="v">R$ '+brl(melhor.final)+'</span><span class="delta '+(favor?'':'up')+'">'+I(favor?'down':'upa')+pct(Math.abs(d))+'%</span></div>'+(melhor.url?'<a class="cta" href="'+melhor.url+'" target="_blank" rel="noopener">Ver anúncio exato '+I('ext')+'</a>':'<div class="m warn">'+I('info')+'Link do anúncio ainda não validado</div>')+'</div><div class="kpis"><div class="kpi">'+I('chart')+'<b>'+brl(m.media30)+'</b><span>média 30 dias</span></div><div class="kpi">'+I('trend')+'<b>'+brl(m.max30)+'</b><span>maior 30 dias</span></div><div class="kpi">'+I('store')+'<b>'+lojas.length+'</b><span>lojas lidas</span></div><div class="ruler"><div class="track"></div><div class="range" style="left:'+X(m.min30)+';width:calc('+X(m.max30)+' - '+X(m.min30)+')"></div><div class="tick" style="left:'+X(m.media30)+';background:var(--roxo-6)"></div><div class="lbl" style="left:'+X(m.media30)+';top:12px;color:var(--roxo-6)">média</div>'+lojas.map(l=>l.estimativa?'<div class="dot est" style="left:'+X(l.final)+'"></div>':'<div class="dot '+(l===melhor?'win':'')+'" style="left:'+X(l.final)+';background:'+corDot(l)+'"></div>').join('')+'</div></div></div><div class="stores" style="--n:'+lojas.length+'">'+lojas.map((l,i)=>{const win=i===0,max=l===caro&&!win,icone=win?'star':l.estimativa?'plane':l.oficial?'shield':'store';let meta=win&&l.ate?'<div class="m">'+I('tag')+'até '+brl(l.ate)+'</div>':l.estimativa?'<div class="m warn">'+I('shield-x')+brl(l.preco)+' + viagem'+(l.semGarantiaBR?' · sem garantia BR':'')+'</div>':'<div class="m">'+I('trend')+'+'+brl(l.final-melhor.final)+(l.oficial?' · garantia':'')+'</div>';return '<div class="st '+(win?'win':'')+' '+(max?'max':'')+'"><div class="h"><span class="rank">'+(i+1)+'</span>'+I(icone)+'</div><span class="n">'+esc(l.nome)+'</span><span class="p">'+(l.estimativa?'~':'')+brl(l.final)+'</span>'+meta+(l.url?'<a class="cta" href="'+l.url+'" target="_blank" rel="noopener">'+I('search')+'</a>':'<div class="m warn">'+I('info')+'Link exato ainda não validado</div>')+'</div>'}).join('')+'</div><div class="feats">'+m.recursos.map(r=>'<span class="feat">'+I(r.ico)+esc(r.txt)+'</span>').join('')+'<a class="feat link" href="'+m.fichaUrl+'">'+I('list')+'Fonte Garmin</a></div>'+renderFeatures(m)+renderSpecs(m)+'</div>'}h+='<p class="legal">Garmin e os nomes dos modelos são marcas da Garmin Ltd. Este monitor indica preços públicos, sem vínculo com o fabricante ou com as lojas.</p>';$('#app').innerHTML=h}
-let lbIndex=0,lbImgs=[];function lbShow(i){if(!lbImgs.length)return;lbIndex=(i+lbImgs.length)%lbImgs.length;$('#lbimg').src=lbImgs[lbIndex];$('#lightbox').classList.add('open')}document.addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){atual=b.dataset.m;history.replaceState(null,'','?m='+atual);render();return}const g=e.target.closest('.gallery img');if(g){lbImgs=[...document.querySelectorAll('.gallery img')].map(x=>x.src);lbShow(lbImgs.indexOf(g.src));return}if(e.target.closest('.lbclose')||e.target.id==='lightbox')$('#lightbox').classList.remove('open');if(e.target.closest('.lbprev'))lbShow(lbIndex-1);if(e.target.closest('.lbnext'))lbShow(lbIndex+1)});document.addEventListener('keydown',e=>{if(!$('#lightbox').classList.contains('open'))return;if(e.key==='Escape')$('#lightbox').classList.remove('open');if(e.key==='ArrowLeft')lbShow(lbIndex-1);if(e.key==='ArrowRight')lbShow(lbIndex+1)});render();
+let lbIndex=0,lbImgs=[];function lbShow(i){if(!lbImgs.length)return;lbIndex=(i+lbImgs.length)%lbImgs.length;$('#lbimg').src=lbImgs[lbIndex];$('#lightbox').classList.add('open')}document.addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){atual=b.dataset.m;history.replaceState(null,'','?m='+atual);render();return}const g=e.target.closest('.gallery img');if(g){lbImgs=[...document.querySelectorAll('.gallery img')].map(x=>x.src);lbShow(lbImgs.indexOf(g.src));return}if(e.target.closest('.lbclose')||e.target.id==='lightbox')$('#lightbox').classList.remove('open');if(e.target.closest('.lbprev'))lbShow(lbIndex-1);if(e.target.closest('.lbnext'))lbShow(lbIndex+1)});document.addEventListener('keydown',e=>{if(!$('#lightbox').classList.contains('open'))return;if(e.key==='Escape')$('#lightbox').classList.remove('open');if(e.key==='ArrowLeft')lbShow(lbIndex-1);if(e.key==='ArrowRight')lbShow(lbIndex+1)});async function loadLiveData(){
+  try{
+    const r=await fetch('data/latest.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('latest.json HTTP '+r.status);
+    const data=await r.json();
+    const liveModel=(data.models||[]).find(x=>x.id==='forerunner-570');
+    const ml=((liveModel||{}).offers||[]).find(x=>x.store==='Mercado Livre'&&x.available&&x.price&&x.url);
+    if(!ml)return;
+    const m=RADAR.modelos.find(x=>x.id==='fr570');
+    if(!m)return;
+    m.lojas=(m.lojas||[]).filter(x=>!String(x.nome||'').startsWith('Mercado Livre'));
+    const nome=['Mercado Livre',ml.seller_nickname,ml.factory_warranty?'garantia fábrica':null].filter(Boolean).join(' · ');
+    m.lojas.unshift({
+      nome,
+      preco:Number(ml.price),
+      url:ml.url,
+      mercadoLivre:true,
+      vendedor:ml.seller_nickname||'',
+      reputacao:ml.seller_reputation_level||'',
+      garantia:ml.warranty||'',
+      vendas:ml.seller_transactions_total||0,
+      itemId:ml.winner_item_id||'',
+      coletadoEm:ml.collected_at||data.collected_at||''
+    });
+    m.mlLive={
+      itemId:ml.winner_item_id||'',
+      vendedor:ml.seller_nickname||'',
+      reputacao:ml.seller_reputation_level||'',
+      garantia:ml.warranty||'',
+      vendas:ml.seller_transactions_total||0,
+      ofertas:ml.market_offer_count||0,
+      coletadoEm:ml.collected_at||data.collected_at||''
+    };
+  }catch(e){
+    console.warn('Radar Garmin: não foi possível carregar a oferta viva do Mercado Livre',e);
+  }
+}
+loadLiveData().finally(render);
 </script></body></html>
