@@ -1,5 +1,5 @@
 {
-  "admin_api": "",
-  "admin_api_status": "code_ready",
-  "notes": "O backend esta implementado em worker/. Publique o Cloudflare Worker e informe a URL pelo botao Configurar API ou neste campo."
+  "admin_api": "https://radar-ml-api.valmirvalray.workers.dev",
+  "admin_api_status": "active",
+  "notes": "Backend Radar ML publicado no Cloudflare Worker. O front-end deve usar esta URL para busca e cadastro; a ADMIN_KEY permanece apenas no navegador do proprietario."
 }
