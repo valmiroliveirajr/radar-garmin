@@ -1,6 +1,11 @@
 name: Deploy Radar ML API
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "worker/**"
+      - ".github/workflows/deploy-worker.yml"
 permissions:
   contents: read
 jobs:
