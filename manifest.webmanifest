@@ -1,0 +1,10 @@
+{
+  "name": "Radar ML",
+  "short_name": "Radar ML",
+  "description": "Radar de preços e ofertas do Mercado Livre",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f2",
+  "theme_color": "#6d28d9"
+}
