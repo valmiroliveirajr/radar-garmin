@@ -334,13 +334,23 @@ export default {
         return json(result, result.ok ? 200 : 503, cors);
       }
 
-      requireAdmin(request, env);
-
       if (request.method === 'GET' && url.pathname === '/search') {
         const q = (url.searchParams.get('q') || '').trim();
         if (q.length < 2) return json({ error: 'Informe pelo menos 2 caracteres.' }, 400, cors);
         const results = await searchProducts(q, env);
         return json({ query: q, count: results.length, results }, 200, cors);
+      }
+
+      if (request.method === 'GET' && url.pathname.startsWith('/product/')) {
+        const pid = url.pathname.split('/').pop().toUpperCase();
+        if (!/^MLB\d+$/.test(pid)) return json({ error: 'Produto inválido' }, 400, cors);
+        return json(normalizeProduct(await ml(`/products/${encodeURIComponent(pid)}`, env)), 200, cors);
+      }
+
+      requireAdmin(request, env);
+
+      if (request.method === 'GET' && url.pathname === '/session/check') {
+        return json({ ok: true, admin: true }, 200, cors);
       }
 
       if (request.method === 'GET' && url.pathname.startsWith('/catalog/')) {
@@ -359,12 +369,6 @@ export default {
         const sellerId = url.pathname.split('/').pop();
         if (!/^\d+$/.test(sellerId)) return json({ error: 'Vendedor inválido' }, 400, cors);
         return json(await ml(`/users/${encodeURIComponent(sellerId)}`, env), 200, cors);
-      }
-
-      if (request.method === 'GET' && url.pathname.startsWith('/product/')) {
-        const pid = url.pathname.split('/').pop().toUpperCase();
-        if (!/^MLB\d+$/.test(pid)) return json({ error: 'Produto inválido' }, 400, cors);
-        return json(normalizeProduct(await ml(`/products/${encodeURIComponent(pid)}`, env)), 200, cors);
       }
 
       if (request.method === 'POST' && url.pathname === '/watchlist') {
