@@ -59,7 +59,7 @@ def worker_get(path):
         return None, f"Rota ML nao mapeada no Worker: {path}"
     req = urllib.request.Request(
         worker_base() + route,
-        headers={"x-admin-key": worker_key(), "Accept": "application/json"},
+        headers={"x-admin-key": worker_key(), "Accept": "application/json", "User-Agent": "Mozilla/5.0 RadarGarmin/1.0"},
     )
     try:
         with urllib.request.urlopen(req, timeout=35) as response:
