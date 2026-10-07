@@ -7,6 +7,7 @@ Backend seguro para o fluxo de busca, cadastro e coleta de produtos do Radar ML.
 - `GET /health`: valida de verdade o acesso ao Mercado Livre e a leitura do GitHub; não apenas a existência dos secrets.
 - `GET /search?q=...`: pesquisa o catálogo do Mercado Livre e devolve variantes, atributos e imagens.
 - `GET /product/:id`: lê um produto específico do catálogo em formato normalizado para o painel.
+- `GET /resolve?url=...`: recebe um link do Mercado Livre e identifica o produto. Devolve `kind: "product"` quando acha o produto de catálogo, ou `kind: "search"` com candidatos quando o link é de um anúncio avulso. Só segue redirecionamentos dentro de domínios do Mercado Livre.
 - `GET /catalog/:id`: devolve o produto bruto do catálogo para a coleta automatizada.
 - `GET /offers/:id`: devolve as ofertas reais do produto para a coleta automatizada.
 - `GET /seller/:id`: devolve os dados do vendedor para a coleta automatizada.

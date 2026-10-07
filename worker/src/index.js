@@ -167,6 +167,130 @@ async function searchProducts(query, env) {
   return detailed;
 }
 
+// ---- Identificar produto a partir de um link do Mercado Livre ----
+
+const ML_LINK_HOST = /(^|\.)(mercadolivre\.com(\.br)?|mercadolibre\.com|meli\.la)$/i;
+
+function mlLinkUrl(raw) {
+  let text = String(raw || '').trim();
+  if (text && !/^https?:\/\//i.test(text)) text = `https://${text}`;
+  let url;
+  try { url = new URL(text); } catch { return null; }
+  if (url.protocol === 'http:') url.protocol = 'https:';
+  if (url.protocol !== 'https:' || url.username || url.password || url.port) return null;
+  return ML_LINK_HOST.test(url.hostname) ? url : null;
+}
+
+function slugToQuery(slug) {
+  return String(slug || '')
+    .replace(/_JM$/i, '')
+    .replace(/[-_+]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Extrai do endereco o que der para saber sem abrir a pagina:
+// produto de catalogo (/p/MLB...), anuncio (MLB-123...) e o texto do nome.
+function parseMlLink(url) {
+  let path = url.pathname;
+  try { path = decodeURIComponent(path); } catch { /* mantem como veio */ }
+  const out = { productId: null, itemId: null, query: '' };
+  const segments = path.split('/').filter(Boolean);
+
+  const catalog = path.match(/\/p\/(MLB\d+)(?:\/|$)/i);
+  if (catalog) out.productId = catalog[1].toUpperCase();
+
+  const item = path.match(/^\/(MLB)-?(\d{6,})(?:-([^/]*))?/i);
+  if (item) {
+    out.itemId = `MLB${item[2]}`;
+    out.query = slugToQuery(item[3]);
+  }
+  if (!out.itemId) {
+    for (const name of ['wid', 'item_id']) {
+      const value = (url.searchParams.get(name) || '').match(/^MLB-?(\d{6,})$/i);
+      if (value) { out.itemId = `MLB${value[1]}`; break; }
+    }
+  }
+  if (!out.query && segments.length > 1 && /^(p|up)$/i.test(segments[1]) && !/^MLB/i.test(segments[0])) {
+    out.query = slugToQuery(segments[0]);
+  }
+  if (!out.query && /^lista\./i.test(url.hostname) && segments.length) {
+    out.query = slugToQuery(segments[segments.length - 1]);
+  }
+  return out;
+}
+
+// Links curtos (compartilhar do aplicativo) so revelam o produto depois do redirecionamento.
+// Segue no maximo 5 saltos, sempre dentro de dominios do Mercado Livre.
+async function followMlLink(start) {
+  let url = start;
+  let parsed = parseMlLink(url);
+  for (let hop = 0; hop < 5 && !parsed.productId && !parsed.itemId && !parsed.query; hop++) {
+    let response;
+    try {
+      response = await fetch(url.toString(), {
+        redirect: 'manual',
+        headers: { accept: 'text/html,application/xhtml+xml', 'accept-language': 'pt-BR,pt;q=0.9', 'user-agent': 'Mozilla/5.0 RadarML/1.0' },
+      });
+    } catch { break; }
+    const location = response.headers.get('location');
+    if (response.status >= 300 && response.status < 400 && location) {
+      let next;
+      try { next = mlLinkUrl(new URL(location, url).toString()); } catch { next = null; }
+      if (!next) break;
+      url = next;
+      parsed = parseMlLink(url);
+      continue;
+    }
+    if (response.ok && /text\/html/i.test(response.headers.get('content-type') || '')) {
+      // Ultimo recurso: a pagina de destino nao traz o produto no endereco.
+      const html = (await response.text()).slice(0, 400000);
+      const found = html.match(/\/p\/(MLB\d+)/i) || html.match(/"catalog_product_id"\s*:\s*"(MLB\d+)"/i);
+      if (found) { parsed.productId = found[1].toUpperCase(); parsed.fromPage = true; }
+    }
+    break;
+  }
+  return { url, parsed };
+}
+
+async function resolveLink(raw, env) {
+  const start = mlLinkUrl(raw);
+  if (!start) return json({ error: 'Cole um link do Mercado Livre (mercadolivre.com.br).' }, 400);
+
+  const { parsed } = await followMlLink(start);
+
+  if (parsed.productId) {
+    try {
+      const product = normalizeProduct(await ml(`/products/${encodeURIComponent(parsed.productId)}`, env));
+      if (product.id) return json({ kind: 'product', via: parsed.fromPage ? 'pagina' : 'link', product });
+    } catch { /* tenta os proximos caminhos */ }
+  }
+
+  if (parsed.itemId) {
+    try {
+      const item = await ml(`/items/${encodeURIComponent(parsed.itemId)}`, env);
+      if (item?.catalog_product_id) {
+        const product = normalizeProduct(await ml(`/products/${encodeURIComponent(item.catalog_product_id)}`, env));
+        if (product.id) return json({ kind: 'product', via: 'anuncio', product });
+      }
+      if (!parsed.query && item?.title) parsed.query = item.title;
+    } catch { /* anuncio de terceiro costuma responder 403: cai na busca pelo nome */ }
+  }
+
+  const words = parsed.query.split(' ').filter(Boolean);
+  if (words.length && parsed.query.length >= 2) {
+    let query = words.slice(0, 10).join(' ');
+    let results = await searchProducts(query, env);
+    if (!results.length && words.length > 4) {
+      query = words.slice(0, 4).join(' ');
+      results = await searchProducts(query, env);
+    }
+    return json({ kind: 'search', query, count: results.length, results });
+  }
+
+  return json({ error: 'Não consegui identificar o produto nesse link. Abra o anúncio e copie o endereço da página do produto.' }, 422);
+}
+
 function utf8ToBase64(value) {
   const bytes = new TextEncoder().encode(value);
   let binary = '';
@@ -339,6 +463,13 @@ export default {
         if (q.length < 2) return json({ error: 'Informe pelo menos 2 caracteres.' }, 400, cors);
         const results = await searchProducts(q, env);
         return json({ query: q, count: results.length, results }, 200, cors);
+      }
+
+      if (request.method === 'GET' && url.pathname === '/resolve') {
+        const response = await resolveLink(url.searchParams.get('url'), env);
+        const headers = new Headers(response.headers);
+        Object.entries(cors).forEach(([k, v]) => headers.set(k, v));
+        return new Response(response.body, { status: response.status, headers });
       }
 
       if (request.method === 'GET' && url.pathname.startsWith('/product/')) {
