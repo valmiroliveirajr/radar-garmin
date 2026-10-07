@@ -2,7 +2,7 @@
   "schema_version": 2,
   "source": "Mercado Livre",
   "site_id": "MLB",
-  "collected_at": "2026-10-06T22:51:17.633602-03:00",
+  "collected_at": "2026-10-06T23:03:02.340516-03:00",
   "products": [
     {
       "id": "forerunner-570",
@@ -140,7 +140,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-06T22:51:17.633602-03:00",
+      "collected_at": "2026-10-06T23:03:02.340516-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -595,7 +595,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 14976,
+          "seller_transactions_total": 14985,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -627,7 +627,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 14976,
+          "seller_transactions_total": 14985,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -824,7 +824,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-06T22:51:17.633602-03:00",
+      "collected_at": "2026-10-06T23:03:02.340516-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1605,7 +1605,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-06T22:51:17.633602-03:00",
+      "collected_at": "2026-10-06T23:03:02.340516-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -1913,7 +1913,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-06T22:51:17.633602-03:00",
+      "collected_at": "2026-10-06T23:03:02.340516-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
