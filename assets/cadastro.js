@@ -5,7 +5,6 @@
 (function () {
   let pending = null;
   const baseSave = save;
-  const baseSaveAdmin = saveAdmin;
   const baseClose = close;
 
   save = async function () {
@@ -13,18 +12,58 @@
       const origin = $('#draftOrigin');
       if (origin) state.draft.origin_policy = origin.value;
       const product = state.draft;
-      admin('Para cadastrar, informe a chave do Radar. É pedida uma única vez neste aparelho; em seguida o produto é adicionado automaticamente.');
+      admin('Este aparelho ainda não tem a chave do Radar. Informe uma única vez: ela fica guardada aqui e não será pedida nos próximos produtos. Em seguida este produto é adicionado automaticamente.');
       pending = product; // depois de admin(), que pode fechar/abrir telas
       return;
     }
     return baseSave();
   };
 
+  // A chave so e apagada quando o servidor responde, com todas as letras, que ela esta errada.
+  // Antes, qualquer falha passageira na verificacao (rede, servidor reiniciando) apagava a
+  // chave guardada, e o aparelho voltava a pedir a chave do nada.
+  async function adminCheck(k) {
+    if (!k || !api()) return 'unknown';
+    try {
+      const r = await fetch(api() + '/session/check', { headers: { 'x-admin-key': k }, cache: 'no-store' });
+      if (r.ok || r.status === 404) return 'ok'; // 404 = Worker antigo, sem a rota, mas a chave passou
+      if (r.status === 401 || r.status === 403) return 'rejected';
+      return 'unknown';
+    } catch { return 'unknown'; }
+  }
+  adminOk = async function (k) { return (await adminCheck(k)) !== 'rejected'; };
+
   saveAdmin = async function () {
     const product = pending;
-    await baseSaveAdmin();
-    if (!product) return;
-    if (!key()) { pending = product; return; } // chave recusada: a tela de chave continua aberta
+    const url = $('#adminApiInput').value.trim().replace(/\/$/, '');
+    const k = $('#adminKeyInput').value.trim();
+    url ? localStorage.setItem('radarMlApi', url) : localStorage.removeItem('radarMlApi');
+    $('#modalFoot').innerHTML = '<button class="primary" disabled>Testando…</button>';
+    await health();
+    if (!k) {
+      localStorage.removeItem('radarMlAdminKey');
+      close();
+      toast('API salva para consulta.');
+      return;
+    }
+    const result = await adminCheck(k);
+    if (result === 'rejected') {
+      localStorage.removeItem('radarMlAdminKey');
+      admin('A chave foi recusada. Confira se é a chave atual do Radar.');
+      pending = product;
+      return;
+    }
+    localStorage.setItem('radarMlAdminKey', k);
+    if (result === 'unknown') {
+      admin('Não consegui testar a chave agora (servidor sem resposta). Ela ficou guardada neste aparelho; tente de novo em instantes.');
+      pending = product;
+      return;
+    }
+    if (!product) {
+      close();
+      toast('Chave guardada neste aparelho. Não será pedida de novo.');
+      return;
+    }
     pending = null;
     state.draft = product;
     draft();
