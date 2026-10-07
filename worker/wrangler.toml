@@ -1,17 +1,24 @@
 name = "radar-ml-api"
 main = "src/index.js"
 compatibility_date = "2026-10-02"
+account_id = "ecbf963d7e338dd24286038b7990b66e"
 
 [vars]
 ALLOWED_ORIGIN = "https://valmiroliveirajr.github.io"
 GITHUB_REPOSITORY = "valmiroliveirajr/radar-garmin"
 ML_SITE_ID = "MLB"
+ML_CLIENT_ID = "7204008163635554"
+
+# Cofre de tokens do Mercado Livre (access token atual, expiracao e refresh token rotativo).
+[[kv_namespaces]]
+binding = "ML_TOKEN_STORE"
+id = "d7fbd301397c443e9d2cc214b5316e7d"
 
 # Segredos obrigatorios (nao versionar valores):
 # wrangler secret put ADMIN_KEY
 # wrangler secret put GITHUB_TOKEN
 # wrangler secret put ML_ACCESS_TOKEN
-# wrangler secret put ML_CLIENT_ID
+# (ML_CLIENT_ID nao e segredo: fica em [vars] acima)
 # wrangler secret put ML_CLIENT_SECRET
 # wrangler secret put ML_REFRESH_TOKEN
 #
