@@ -11,7 +11,7 @@ Backend seguro para o fluxo de busca, cadastro e coleta de produtos do Radar ML.
 - `GET /catalog/:id`: devolve o produto bruto do catálogo para a coleta automatizada.
 - `GET /offers/:id`: devolve as ofertas reais do produto para a coleta automatizada.
 - `GET /seller/:id`: devolve os dados do vendedor para a coleta automatizada.
-- `POST /watchlist`: grava o produto escolhido em `data/watchlist.json`, incluindo capa, galeria e política de origem.
+- `POST /watchlist`: grava o produto escolhido em `data/watchlist.json`, incluindo capa, galeria e política de origem. Não exige chave quando o pedido vem da página do Radar (`ALLOWED_ORIGIN`), dentro de limites: 40 produtos na lista e 15 cadastros por dia (contador no KV). Com `x-admin-key` válida não há limite.
 - `DELETE /watchlist/:id`: remove um produto da watchlist.
 
 Todas as rotas, exceto `/health`, exigem o header `x-admin-key`.

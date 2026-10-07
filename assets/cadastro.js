@@ -1,32 +1,52 @@
-// Cadastro sem perder o produto quando o aparelho ainda nao tem a chave.
-// Antes: "Adicionar ao Radar" sem chave abria a Administracao e, ao salvar a chave, a tela
-// fechava e o produto escolhido era descartado - nada era cadastrado e nada avisava isso.
-// Agora: a chave e pedida uma unica vez e o cadastro continua sozinho logo depois.
+// Cadastro de produto sem chave.
+// O Worker aceita o cadastro vindo desta pagina dentro de limites (40 produtos na lista,
+// 15 cadastros por dia). A chave administrativa continua existindo para o coletor e para
+// manutencao, mas ninguem precisa digita-la para acompanhar um produto.
 (function () {
-  let pending = null;
-  const baseSave = save;
-  const baseClose = close;
-
   save = async function () {
-    if (state.draft && !key()) {
-      const origin = $('#draftOrigin');
-      if (origin) state.draft.origin_policy = origin.value;
-      const product = state.draft;
-      admin('Este aparelho ainda não tem a chave do Radar. Informe uma única vez: ela fica guardada aqui e não será pedida nos próximos produtos. Em seguida este produto é adicionado automaticamente.');
-      pending = product; // depois de admin(), que pode fechar/abrir telas
-      return;
+    const p = state.draft;
+    if (!p) return;
+    const origin = $('#draftOrigin');
+    if (origin) p.origin_policy = origin.value;
+    $('#modalFoot').innerHTML = '<button class="primary" disabled>Adicionando…</button>';
+    try {
+      const d = await req('/watchlist', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ catalog_product_id: p.id, name: p.name, cover_image: p.cover_image, gallery_images: p.gallery_images, origin_policy: p.origin_policy }),
+      });
+      const e = d.product;
+      const list = products();
+      const current = list.find(x => x.catalog_product_id === e.catalog_product_id);
+      if (!current) {
+        const images = e.gallery_images || [];
+        list.push({
+          catalog_product_id: e.catalog_product_id, name: e.name, watchlist_name: e.name,
+          cover_image: e.cover_image, thumbnail: e.cover_image, images, gallery_images: images,
+          origin_policy: e.origin_policy, attributes: p.attributes || [],
+          selected_offer: null, market: { offer_count: 0, min_price: null, trusted_count: 0 }, market_offers: [],
+        });
+      }
+      state.current = e.catalog_product_id;
+      state.img = 0;
+      close();
+      render();
+      if (d.already) { toast('Esse produto já está no Radar.'); return; }
+      toast('Produto adicionado. A primeira coleta foi solicitada.');
+      poll(e.catalog_product_id);
+    } catch (e) {
+      toast('Não foi possível adicionar: ' + e.message);
+      if (state.draft) draft();
     }
-    return baseSave();
   };
 
-  // A chave so e apagada quando o servidor responde, com todas as letras, que ela esta errada.
-  // Antes, qualquer falha passageira na verificacao (rede, servidor reiniciando) apagava a
-  // chave guardada, e o aparelho voltava a pedir a chave do nada.
+  // A chave guardada (quando existir) so e apagada se o servidor disser que esta errada;
+  // falha passageira de rede nao apaga nada.
   async function adminCheck(k) {
     if (!k || !api()) return 'unknown';
     try {
       const r = await fetch(api() + '/session/check', { headers: { 'x-admin-key': k }, cache: 'no-store' });
-      if (r.ok || r.status === 404) return 'ok'; // 404 = Worker antigo, sem a rota, mas a chave passou
+      if (r.ok || r.status === 404) return 'ok';
       if (r.status === 401 || r.status === 403) return 'rejected';
       return 'unknown';
     } catch { return 'unknown'; }
@@ -34,40 +54,18 @@
   adminOk = async function (k) { return (await adminCheck(k)) !== 'rejected'; };
 
   saveAdmin = async function () {
-    const product = pending;
     const url = $('#adminApiInput').value.trim().replace(/\/$/, '');
     const k = $('#adminKeyInput').value.trim();
     url ? localStorage.setItem('radarMlApi', url) : localStorage.removeItem('radarMlApi');
     $('#modalFoot').innerHTML = '<button class="primary" disabled>Testando…</button>';
     await health();
-    if (!k) {
-      localStorage.removeItem('radarMlAdminKey');
-      close();
-      toast('API salva para consulta.');
-      return;
-    }
+    if (!k) { localStorage.removeItem('radarMlAdminKey'); close(); toast('Configuração salva. O cadastro de produtos não precisa de chave.'); return; }
     const result = await adminCheck(k);
-    if (result === 'rejected') {
-      localStorage.removeItem('radarMlAdminKey');
-      admin('A chave foi recusada. Confira se é a chave atual do Radar.');
-      pending = product;
-      return;
-    }
+    if (result === 'rejected') { localStorage.removeItem('radarMlAdminKey'); admin('A chave foi recusada. Ela não é necessária para cadastrar produtos; pode deixar o campo vazio.'); return; }
     localStorage.setItem('radarMlAdminKey', k);
-    if (result === 'unknown') {
-      admin('Não consegui testar a chave agora (servidor sem resposta). Ela ficou guardada neste aparelho; tente de novo em instantes.');
-      pending = product;
-      return;
-    }
-    if (!product) {
-      close();
-      toast('Chave guardada neste aparelho. Não será pedida de novo.');
-      return;
-    }
-    pending = null;
-    state.draft = product;
-    draft();
-    await baseSave();
+    if (result === 'unknown') { admin('Não consegui testar a chave agora (servidor sem resposta). Ela ficou guardada neste aparelho.'); return; }
+    close();
+    toast('Chave guardada neste aparelho.');
   };
 
   // Produto recem-cadastrado continua na lateral depois de recarregar a pagina: ele ja esta
@@ -96,10 +94,4 @@
     render();
   }
   showWaitingProducts();
-
-  // Fechar ou cancelar a tela desiste do cadastro pendente.
-  close = function () {
-    pending = null;
-    return baseClose.apply(this, arguments);
-  };
 })();

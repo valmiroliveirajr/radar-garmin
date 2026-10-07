@@ -458,10 +458,37 @@ function slugId(product) {
   return `mlb-${tail || crypto.randomUUID().slice(0, 8)}`;
 }
 
-async function addProduct(request, env) {
-  const body = await request.json();
+// Cadastro sem chave: a pagina do Radar pode incluir produtos, dentro de limites.
+// Com a chave administrativa (coletor, manutencao) nao ha limite.
+const PUBLIC_MAX_PRODUCTS = 40;
+const PUBLIC_MAX_ADDS_PER_DAY = 15;
+
+function fromRadarPage(request, env) {
+  const allowed = (env.ALLOWED_ORIGIN || 'https://valmiroliveirajr.github.io').replace(/\/$/, '');
+  return (request.headers.get('origin') || '') === allowed;
+}
+
+function publicAddsKey() {
+  return `public_adds:${new Date().toISOString().slice(0, 10)}`;
+}
+
+async function addProduct(request, env, publicMode = false) {
+  if (publicMode) {
+    if (!fromRadarPage(request, env)) return json({ error: 'Cadastro permitido somente a partir da página do Radar.' }, 403);
+    if (!env.ML_TOKEN_STORE) return json({ error: 'Cadastro sem chave indisponível: contador diário não configurado.' }, 503);
+  }
+  let body;
+  try { body = await request.json(); } catch { return json({ error: 'Pedido inválido' }, 400); }
   const pid = String(body.catalog_product_id || '').trim().toUpperCase();
   if (!/^MLB\d+$/.test(pid)) return json({ error: 'catalog_product_id inválido' }, 400);
+
+  let addsToday = 0;
+  if (publicMode) {
+    addsToday = Number(await tokenStoreGet(env, publicAddsKey()) || 0);
+    if (addsToday >= PUBLIC_MAX_ADDS_PER_DAY) {
+      return json({ error: `Limite de ${PUBLIC_MAX_ADDS_PER_DAY} cadastros por dia atingido. Tente amanhã.` }, 429);
+    }
+  }
 
   const product = await ml(`/products/${encodeURIComponent(pid)}`, env);
   if (!product || product.status === 'inactive') return json({ error: 'Produto de catálogo indisponível' }, 400);
@@ -475,6 +502,10 @@ async function addProduct(request, env) {
 
   const today = new Date().toISOString().slice(0, 10);
   const current = data.products.find(x => x.catalog_product_id === pid);
+  if (publicMode && current) return json({ ok: true, already: true, product: current });
+  if (publicMode && data.products.length >= PUBLIC_MAX_PRODUCTS) {
+    return json({ error: `A lista chegou ao limite de ${PUBLIC_MAX_PRODUCTS} produtos.` }, 409);
+  }
   const entry = {
     id: current?.id || slugId(product),
     catalog_product_id: pid,
@@ -491,6 +522,9 @@ async function addProduct(request, env) {
   else data.products.push(entry);
 
   await writeWatchlist(data, sha, `${current ? 'Atualizar' : 'Adicionar'} ${entry.name} no Radar ML`, env);
+  if (publicMode) {
+    try { await env.ML_TOKEN_STORE.put(publicAddsKey(), String(addsToday + 1), { expirationTtl: 3 * 86400 }); } catch { /* contador e aproximado */ }
+  }
   return json({ ok: true, product: entry, collection_trigger: 'push:data/watchlist.json' });
 }
 
@@ -571,6 +605,14 @@ export default {
         return json(normalizeProduct(await ml(`/products/${encodeURIComponent(pid)}`, env)), 200, cors);
       }
 
+      if (request.method === 'POST' && url.pathname === '/watchlist') {
+        // Chave valida = sem limites. Sem chave (ou chave antiga) = cadastro publico com limites.
+        const response = await addProduct(request, env, !isAdmin(request, env));
+        const headers = new Headers(response.headers);
+        Object.entries(cors).forEach(([k, v]) => headers.set(k, v));
+        return new Response(response.body, { status: response.status, headers });
+      }
+
       requireAdmin(request, env);
 
       if (request.method === 'GET' && url.pathname === '/session/check') {
@@ -593,13 +635,6 @@ export default {
         const sellerId = url.pathname.split('/').pop();
         if (!/^\d+$/.test(sellerId)) return json({ error: 'Vendedor inválido' }, 400, cors);
         return json(await ml(`/users/${encodeURIComponent(sellerId)}`, env), 200, cors);
-      }
-
-      if (request.method === 'POST' && url.pathname === '/watchlist') {
-        const response = await addProduct(request, env);
-        const headers = new Headers(response.headers);
-        Object.entries(cors).forEach(([k, v]) => headers.set(k, v));
-        return new Response(response.body, { status: response.status, headers });
       }
 
       if (request.method === 'DELETE' && url.pathname.startsWith('/watchlist/')) {
