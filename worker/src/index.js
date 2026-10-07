@@ -156,15 +156,96 @@ function normalizeProduct(product) {
   };
 }
 
+// ---- Busca no catalogo com reordenacao por semelhanca ----
+// A busca do Mercado Livre devolve poucos itens (10 por padrao) numa ordem propria, que
+// nao acompanha o texto digitado. Aqui pedimos mais candidatos, em duas consultas (texto
+// completo e versao curta), e reordenamos pelo quanto o nome bate com o que foi pedido.
+
+const WEAK_WORDS = new Set([
+  'relogio', 'smartwatch', 'smart', 'watch', 'monitor', 'novo', 'nova', 'original', 'lacrado', 'oficial',
+  'de', 'da', 'do', 'das', 'dos', 'para', 'com', 'sem', 'e', 'o', 'a', 'em', 'cor', 'tela', 'kit',
+  'mm', 'cm', 'gb', 'tb', 'ml', 'kg', 'nf', 'gps',
+]);
+
+function foldText(value) {
+  return String(value || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
+// Grafias diferentes da mesma palavra nos anuncios.
+const SAME_WORD = { saphira: 'safira', saphire: 'safira', sapphire: 'safira', zafiro: 'safira', musica: 'music', titanio: 'titanium' };
+
+function tokensOf(value) {
+  return (foldText(value).match(/[a-z]+|\d+/g) || []).map(token => SAME_WORD[token] || token);
+}
+
+function tokenWeight(token) {
+  if (/^\d+$/.test(token)) return token.length <= 4 ? 3 : 1;
+  if (WEAK_WORDS.has(token) || token.length <= 1) return 0.4;
+  return 1;
+}
+
+function matchScore(queryTokens, name) {
+  const have = new Set(tokensOf(name));
+  let total = 0;
+  let hit = 0;
+  for (const token of queryTokens) {
+    const weight = tokenWeight(token);
+    total += weight;
+    if (have.has(token)) hit += weight;
+  }
+  return total ? hit / total : 0;
+}
+
+function shortQuery(query) {
+  const words = foldText(query).split(/[^a-z0-9]+/).filter(Boolean)
+    .filter(word => !WEAK_WORDS.has(word) && !/^\d{5,}$/.test(word));
+  return words.slice(0, 4).join(' ');
+}
+
+async function catalogSearch(query, env) {
+  const base = `/products/search?status=active&site_id=${encodeURIComponent(env.ML_SITE_ID || 'MLB')}&q=${encodeURIComponent(query)}`;
+  try {
+    return (await ml(`${base}&limit=50`, env))?.results || [];
+  } catch (error) {
+    if (error.status && error.status !== 400) throw error;
+    return (await ml(base, env))?.results || [];
+  }
+}
+
 async function searchProducts(query, env) {
-  const q = encodeURIComponent(query.trim());
-  const data = await ml(`/products/search?status=active&site_id=${encodeURIComponent(env.ML_SITE_ID || 'MLB')}&q=${q}`, env);
-  const base = (data?.results || []).filter(x => x?.id).slice(0, 12);
-  const detailed = await Promise.all(base.map(async item => {
-    try { return normalizeProduct(await ml(`/products/${encodeURIComponent(item.id)}`, env)); }
-    catch { return normalizeProduct(item); }
+  const text = String(query || '').trim();
+  const queryTokens = unique(tokensOf(text));
+  const queries = [text];
+  const short = shortQuery(text);
+  if (short && short !== foldText(text).replace(/[^a-z0-9]+/g, ' ').trim()) queries.push(short);
+
+  const found = new Map();
+  for (const q of queries) {
+    let items = [];
+    try { items = await catalogSearch(q, env); }
+    catch (error) { if (!found.size && q === queries[queries.length - 1]) throw error; }
+    for (const item of items) if (item?.id && !found.has(item.id)) found.set(item.id, item);
+  }
+
+  const ranked = [...found.values()]
+    .map((item, order) => ({ item, order, score: matchScore(queryTokens, item.name) }))
+    .sort((x, y) => y.score - x.score || x.order - y.order)
+    .slice(0, 12);
+
+  const results = await Promise.all(ranked.map(async ({ item, score }) => {
+    let product;
+    try { product = normalizeProduct(await ml(`/products/${encodeURIComponent(item.id)}`, env)); }
+    catch { product = normalizeProduct(item); }
+    product.match = Math.round(score * 100);
+    return product;
   }));
-  return detailed;
+
+  // "Bate" = o melhor candidato cobre a maior parte do texto e traz o numero do modelo
+  // (o primeiro numero curto do texto: Fenix 9, Forerunner 265, iPhone 16...).
+  const model = queryTokens.find(token => /^\d{1,4}$/.test(token)) || null;
+  const best = results[0];
+  const close = Boolean(best && best.match >= 60 && (!model || tokensOf(best.name).includes(model)));
+  return { results, close, model_token: model, candidates: found.size };
 }
 
 // ---- Identificar produto a partir de um link do Mercado Livre ----
@@ -194,7 +275,7 @@ function slugToQuery(slug) {
 function parseMlLink(url) {
   let path = url.pathname;
   try { path = decodeURIComponent(path); } catch { /* mantem como veio */ }
-  const out = { productId: null, itemId: null, query: '' };
+  const out = { productId: null, itemId: null, userProductId: null, query: '' };
   const segments = path.split('/').filter(Boolean);
 
   const catalog = path.match(/\/p\/(MLB\d+)(?:\/|$)/i);
@@ -205,10 +286,16 @@ function parseMlLink(url) {
     out.itemId = `MLB${item[2]}`;
     out.query = slugToQuery(item[3]);
   }
+  const userProduct = path.match(/\/up\/(MLBU\d+)(?:\/|$)/i);
+  if (userProduct) out.userProductId = userProduct[1].toUpperCase();
   if (!out.itemId) {
-    for (const name of ['wid', 'item_id']) {
-      const value = (url.searchParams.get(name) || '').match(/^MLB-?(\d{6,})$/i);
-      if (value) { out.itemId = `MLB${value[1]}`; break; }
+    // O anuncio pode vir em ?wid= / ?item_id= ou depois do # (links copiados da busca do site).
+    const fragment = new URLSearchParams(url.hash.replace(/^#/, ''));
+    for (const params of [url.searchParams, fragment]) {
+      for (const name of ['wid', 'item_id']) {
+        const value = (params.get(name) || '').match(/^MLB-?(\d{6,})$/i);
+        if (value && !out.itemId) out.itemId = `MLB${value[1]}`;
+      }
     }
   }
   if (!out.query && segments.length > 1 && /^(p|up)$/i.test(segments[1]) && !/^MLB/i.test(segments[0])) {
@@ -258,37 +345,43 @@ async function resolveLink(raw, env) {
   if (!start) return json({ error: 'Cole um link do Mercado Livre (mercadolivre.com.br).' }, 400);
 
   const { parsed } = await followMlLink(start);
+  // O que o Mercado Livre respondeu em cada tentativa (so codigos, nenhum dado sensivel).
+  const tried = { product_id: parsed.productId, item_id: parsed.itemId, user_product_id: parsed.userProductId };
 
   if (parsed.productId) {
     try {
       const product = normalizeProduct(await ml(`/products/${encodeURIComponent(parsed.productId)}`, env));
-      if (product.id) return json({ kind: 'product', via: parsed.fromPage ? 'pagina' : 'link', product });
-    } catch { /* tenta os proximos caminhos */ }
+      if (product.id) return json({ kind: 'product', via: parsed.fromPage ? 'pagina' : 'link', product, tried });
+    } catch (error) { tried.product_status = error.status || 'erro'; }
   }
 
-  if (parsed.itemId) {
+  const lookups = [];
+  if (parsed.itemId) lookups.push(['item', `/items/${encodeURIComponent(parsed.itemId)}`]);
+  if (parsed.userProductId) lookups.push(['user_product', `/user-products/${encodeURIComponent(parsed.userProductId)}`]);
+  for (const [name, path] of lookups) {
     try {
-      const item = await ml(`/items/${encodeURIComponent(parsed.itemId)}`, env);
-      if (item?.catalog_product_id) {
-        const product = normalizeProduct(await ml(`/products/${encodeURIComponent(item.catalog_product_id)}`, env));
-        if (product.id) return json({ kind: 'product', via: 'anuncio', product });
+      const data = await ml(path, env);
+      tried[`${name}_status`] = 200;
+      tried[`${name}_catalog`] = data?.catalog_product_id || null;
+      if (data?.catalog_product_id) {
+        const product = normalizeProduct(await ml(`/products/${encodeURIComponent(data.catalog_product_id)}`, env));
+        if (product.id) return json({ kind: 'product', via: 'anuncio', product, tried });
       }
-      if (!parsed.query && item?.title) parsed.query = item.title;
-    } catch { /* anuncio de terceiro costuma responder 403: cai na busca pelo nome */ }
+      if (!parsed.query && (data?.title || data?.name)) parsed.query = data.title || data.name;
+    } catch (error) {
+      // Anuncio de terceiro costuma responder 403: segue para a busca pelo nome.
+      if (!(`${name}_status` in tried)) tried[`${name}_status`] = error.status || 'erro';
+    }
   }
 
   const words = parsed.query.split(' ').filter(Boolean);
   if (words.length && parsed.query.length >= 2) {
-    let query = words.slice(0, 10).join(' ');
-    let results = await searchProducts(query, env);
-    if (!results.length && words.length > 4) {
-      query = words.slice(0, 4).join(' ');
-      results = await searchProducts(query, env);
-    }
-    return json({ kind: 'search', query, count: results.length, results });
+    const query = words.slice(0, 12).join(' ');
+    const found = await searchProducts(query, env);
+    return json({ kind: 'search', query, count: found.results.length, results: found.results, close: found.close, candidates: found.candidates, tried });
   }
 
-  return json({ error: 'Não consegui identificar o produto nesse link. Abra o anúncio e copie o endereço da página do produto.' }, 422);
+  return json({ error: 'Não consegui identificar o produto nesse link. Abra o anúncio e copie o endereço da página do produto.', tried }, 422);
 }
 
 function utf8ToBase64(value) {
@@ -461,8 +554,8 @@ export default {
       if (request.method === 'GET' && url.pathname === '/search') {
         const q = (url.searchParams.get('q') || '').trim();
         if (q.length < 2) return json({ error: 'Informe pelo menos 2 caracteres.' }, 400, cors);
-        const results = await searchProducts(q, env);
-        return json({ query: q, count: results.length, results }, 200, cors);
+        const found = await searchProducts(q, env);
+        return json({ query: q, count: found.results.length, results: found.results, close: found.close, candidates: found.candidates }, 200, cors);
       }
 
       if (request.method === 'GET' && url.pathname === '/resolve') {
