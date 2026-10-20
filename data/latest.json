@@ -2,7 +2,7 @@
   "schema_version": 2,
   "source": "Mercado Livre",
   "site_id": "MLB",
-  "collected_at": "2026-10-19T14:13:53.985808-03:00",
+  "collected_at": "2026-10-20T12:25:18.778534-03:00",
   "products": [
     {
       "id": "forerunner-570",
@@ -140,7 +140,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-19T14:13:53.985808-03:00",
+      "collected_at": "2026-10-20T12:25:18.778534-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -165,7 +165,7 @@
         "seller_status": "active",
         "seller_reputation_level": "5_green",
         "power_seller_status": null,
-        "seller_transactions_total": 511,
+        "seller_transactions_total": 527,
         "seller_transactions_completed": null,
         "seller_transactions_canceled": null,
         "seller_rating_positive": null,
@@ -183,10 +183,10 @@
         "selection_reason": "vendedor confiavel + garantia de fabrica + menor preco do melhor grupo"
       },
       "market": {
-        "offer_count": 20,
+        "offer_count": 17,
         "min_price": 3317.0,
-        "trusted_count": 17,
-        "trusted_factory_warranty_count": 12,
+        "trusted_count": 16,
+        "trusted_factory_warranty_count": 11,
         "selected_price_premium_vs_market_min": 0.0
       },
       "market_offers": [
@@ -211,7 +211,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 511,
+          "seller_transactions_total": 527,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -275,7 +275,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 2243,
+          "seller_transactions_total": 2254,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -307,7 +307,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 597,
+          "seller_transactions_total": 599,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -339,7 +339,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -403,7 +403,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 511,
+          "seller_transactions_total": 527,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -435,7 +435,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 2243,
+          "seller_transactions_total": 2254,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -445,38 +445,6 @@
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
           "selection_rank": 8
-        },
-        {
-          "item_id": "MLB4786835199",
-          "seller_id": 3386012181,
-          "price": 3999.0,
-          "original_price": null,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_special",
-          "official_store_id": null,
-          "warranty": "Garantia de fábrica: 30 dias",
-          "factory_warranty": true,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51160740?wid=MLB4786835199",
-          "images": [],
-          "seller_nickname": "BIEL_ULTILIDADES4",
-          "seller_status": "active",
-          "seller_reputation_level": "5_green",
-          "power_seller_status": null,
-          "seller_transactions_total": 4755,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/BIEL_ULTILIDADES4",
-          "trusted_seller_rule": true,
-          "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 9
         },
         {
           "item_id": "MLB4136480029",
@@ -499,7 +467,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 3165,
+          "seller_transactions_total": 3156,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -508,7 +476,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/NAATIVASPORTS",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 10
+          "selection_rank": 9
         },
         {
           "item_id": "MLB7835194582",
@@ -531,7 +499,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "gold",
-          "seller_transactions_total": 7366,
+          "seller_transactions_total": 7371,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -540,7 +508,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/GIGABAY",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 11
+          "selection_rank": 10
         },
         {
           "item_id": "MLB4139502749",
@@ -563,7 +531,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -572,7 +540,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/SCHIMIERSPORTS",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 12
+          "selection_rank": 11
         },
         {
           "item_id": "MLB5145446199",
@@ -595,7 +563,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 75,
+          "seller_transactions_total": 82,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -604,7 +572,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/HMGECOM",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 13
+          "selection_rank": 12
         },
         {
           "item_id": "MLB5233093441",
@@ -627,7 +595,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 871,
+          "seller_transactions_total": 874,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -636,7 +604,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/LOJAPRIMEBR1",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 14
+          "selection_rank": 13
         },
         {
           "item_id": "MLB7030939374",
@@ -659,7 +627,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 1069,
+          "seller_transactions_total": 1075,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -668,7 +636,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/TAHOE",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 15
+          "selection_rank": 14
         },
         {
           "item_id": "MLB4146775689",
@@ -691,7 +659,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 15244,
+          "seller_transactions_total": 15294,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -700,7 +668,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/PRO+SETUP",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 16
+          "selection_rank": 15
         },
         {
           "item_id": "MLB5646011164",
@@ -723,7 +691,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 15244,
+          "seller_transactions_total": 15294,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -732,39 +700,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/PRO+SETUP",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 17
-        },
-        {
-          "item_id": "MLB4646129827",
-          "seller_id": 3344523174,
-          "price": 3317.0,
-          "original_price": 3478.42,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_special",
-          "official_store_id": null,
-          "warranty": "Garantia de fábrica: 1 anos",
-          "factory_warranty": true,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51160740?wid=MLB4646129827",
-          "images": [],
-          "seller_nickname": "PETERELETRO",
-          "seller_status": "active",
-          "seller_reputation_level": "3_yellow",
-          "power_seller_status": null,
-          "seller_transactions_total": 442,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/PETERELETRO",
-          "trusted_seller_rule": false,
-          "selection_tier": "factory_warranty_untrusted_seller",
-          "selection_rank": 18
+          "selection_rank": 16
         },
         {
           "item_id": "MLB6676858630",
@@ -796,39 +732,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/MILDO+RP",
           "trusted_seller_rule": false,
           "selection_tier": "factory_warranty_untrusted_seller",
-          "selection_rank": 19
-        },
-        {
-          "item_id": "MLB5157256389",
-          "seller_id": 3100085413,
-          "price": 3602.54,
-          "original_price": null,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_special",
-          "official_store_id": null,
-          "warranty": "Sem garantia",
-          "factory_warranty": false,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51160740?wid=MLB5157256389",
-          "images": [],
-          "seller_nickname": "CF20251229115335",
-          "seller_status": "active",
-          "seller_reputation_level": "3_yellow",
-          "power_seller_status": null,
-          "seller_transactions_total": 118,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/CF20251229115335",
-          "trusted_seller_rule": false,
-          "selection_tier": "fallback_price",
-          "selection_rank": 20
+          "selection_rank": 17
         }
       ],
       "origin_policy": "all",
@@ -952,7 +856,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-19T14:13:53.985808-03:00",
+      "collected_at": "2026-10-20T12:25:18.778534-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -977,7 +881,7 @@
         "seller_status": "active",
         "seller_reputation_level": "5_green",
         "power_seller_status": null,
-        "seller_transactions_total": 576,
+        "seller_transactions_total": 575,
         "seller_transactions_completed": null,
         "seller_transactions_canceled": null,
         "seller_rating_positive": null,
@@ -995,10 +899,10 @@
         "selection_reason": "vendedor confiavel + garantia de fabrica + menor preco do melhor grupo"
       },
       "market": {
-        "offer_count": 28,
+        "offer_count": 26,
         "min_price": 4518.87,
-        "trusted_count": 23,
-        "trusted_factory_warranty_count": 11,
+        "trusted_count": 21,
+        "trusted_factory_warranty_count": 9,
         "selected_price_premium_vs_market_min": 0.0
       },
       "market_offers": [
@@ -1023,7 +927,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 576,
+          "seller_transactions_total": 575,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1087,7 +991,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1151,7 +1055,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 1298,
+          "seller_transactions_total": 1313,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1183,7 +1087,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1193,70 +1097,6 @@
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
           "selection_rank": 6
-        },
-        {
-          "item_id": "MLB4169879607",
-          "seller_id": 2162449474,
-          "price": 5199.0,
-          "original_price": null,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_special",
-          "official_store_id": null,
-          "warranty": "Garantia de fábrica: 12 meses",
-          "factory_warranty": true,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB4169879607",
-          "images": [],
-          "seller_nickname": "SPECIALBIKESHOPIMPORTMG",
-          "seller_status": "active",
-          "seller_reputation_level": "5_green",
-          "power_seller_status": null,
-          "seller_transactions_total": 4391,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/SPECIALBIKESHOPIMPORTMG",
-          "trusted_seller_rule": true,
-          "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 7
-        },
-        {
-          "item_id": "MLB5613391196",
-          "seller_id": 2162449474,
-          "price": 5249.0,
-          "original_price": null,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_pro",
-          "official_store_id": null,
-          "warranty": "Garantia de fábrica: 12 meses",
-          "factory_warranty": true,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB5613391196",
-          "images": [],
-          "seller_nickname": "SPECIALBIKESHOPIMPORTMG",
-          "seller_status": "active",
-          "seller_reputation_level": "5_green",
-          "power_seller_status": null,
-          "seller_transactions_total": 4391,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/SPECIALBIKESHOPIMPORTMG",
-          "trusted_seller_rule": true,
-          "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 8
         },
         {
           "item_id": "MLB4136569647",
@@ -1279,7 +1119,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 3165,
+          "seller_transactions_total": 3156,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1288,7 +1128,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/NAATIVASPORTS",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 9
+          "selection_rank": 7
         },
         {
           "item_id": "MLB7784727710",
@@ -1311,7 +1151,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 799,
+          "seller_transactions_total": 808,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1320,7 +1160,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/FGIMPORTS1014602",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 10
+          "selection_rank": 8
         },
         {
           "item_id": "MLB5732883356",
@@ -1352,7 +1192,39 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/IMPORTADORA_USABRASIL_LTDA",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_factory_warranty",
-          "selection_rank": 11
+          "selection_rank": 9
+        },
+        {
+          "item_id": "MLB5379324975",
+          "seller_id": 369609473,
+          "price": 4825.0,
+          "original_price": null,
+          "currency_id": "BRL",
+          "condition": "new",
+          "item_status": "active",
+          "listing_type_id": "gold_special",
+          "official_store_id": null,
+          "warranty": "Garantia do vendedor: 7 dias",
+          "factory_warranty": false,
+          "free_shipping": true,
+          "shipping_cost": 0,
+          "logistic_type": "drop_off",
+          "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB5379324975",
+          "images": [],
+          "seller_nickname": "MAVIMPORTS",
+          "seller_status": "active",
+          "seller_reputation_level": "5_green",
+          "power_seller_status": null,
+          "seller_transactions_total": 187,
+          "seller_transactions_completed": null,
+          "seller_transactions_canceled": null,
+          "seller_rating_positive": null,
+          "seller_rating_neutral": null,
+          "seller_rating_negative": null,
+          "seller_permalink": "http://perfil.mercadolivre.com.br/MAVIMPORTS",
+          "trusted_seller_rule": true,
+          "selection_tier": "trusted_seller",
+          "selection_rank": 10
         },
         {
           "item_id": "MLB5488929780",
@@ -1375,7 +1247,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 2042,
+          "seller_transactions_total": 2045,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1384,39 +1256,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/KEPLER_LABS",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 12
-        },
-        {
-          "item_id": "MLB5379324975",
-          "seller_id": 369609473,
-          "price": 4830.0,
-          "original_price": null,
-          "currency_id": "BRL",
-          "condition": "new",
-          "item_status": "active",
-          "listing_type_id": "gold_special",
-          "official_store_id": null,
-          "warranty": "Garantia do vendedor: 7 dias",
-          "factory_warranty": false,
-          "free_shipping": true,
-          "shipping_cost": 0,
-          "logistic_type": "drop_off",
-          "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB5379324975",
-          "images": [],
-          "seller_nickname": "MAVIMPORTS",
-          "seller_status": "active",
-          "seller_reputation_level": "5_green",
-          "power_seller_status": null,
-          "seller_transactions_total": 183,
-          "seller_transactions_completed": null,
-          "seller_transactions_canceled": null,
-          "seller_rating_positive": null,
-          "seller_rating_neutral": null,
-          "seller_rating_negative": null,
-          "seller_permalink": "http://perfil.mercadolivre.com.br/MAVIMPORTS",
-          "trusted_seller_rule": true,
-          "selection_tier": "trusted_seller",
-          "selection_rank": 13
+          "selection_rank": 11
         },
         {
           "item_id": "MLB4140260667",
@@ -1439,7 +1279,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 449,
+          "seller_transactions_total": 452,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1448,7 +1288,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/LINCOLN+ARENA",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 14
+          "selection_rank": 12
         },
         {
           "item_id": "MLB5337685055",
@@ -1480,7 +1320,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/MAXBYTE",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 15
+          "selection_rank": 13
         },
         {
           "item_id": "MLB5079404621",
@@ -1503,7 +1343,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 313,
+          "seller_transactions_total": 318,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1512,7 +1352,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/SW20250922174245",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 16
+          "selection_rank": 14
         },
         {
           "item_id": "MLB4522092643",
@@ -1535,7 +1375,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 16098,
+          "seller_transactions_total": 16106,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1544,7 +1384,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/FOTO_CENTRO",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 17
+          "selection_rank": 15
         },
         {
           "item_id": "MLB7798129252",
@@ -1567,7 +1407,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 183,
+          "seller_transactions_total": 187,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1576,7 +1416,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/MAVIMPORTS",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 18
+          "selection_rank": 16
         },
         {
           "item_id": "MLB5991669432",
@@ -1599,7 +1439,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 313,
+          "seller_transactions_total": 318,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1608,7 +1448,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/SW20250922174245",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 19
+          "selection_rank": 17
         },
         {
           "item_id": "MLB4456408271",
@@ -1631,7 +1471,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 340,
+          "seller_transactions_total": 342,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1640,7 +1480,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/IMPORTSPORTSBR",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 20
+          "selection_rank": 18
         },
         {
           "item_id": "MLB6439410116",
@@ -1663,7 +1503,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 16098,
+          "seller_transactions_total": 16106,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1672,7 +1512,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/FOTO_CENTRO",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 21
+          "selection_rank": 19
         },
         {
           "item_id": "MLB5234001261",
@@ -1695,7 +1535,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 871,
+          "seller_transactions_total": 874,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1704,7 +1544,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/LOJAPRIMEBR1",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 22
+          "selection_rank": 20
         },
         {
           "item_id": "MLB7512503732",
@@ -1736,7 +1576,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/ISAFE_TECH",
           "trusted_seller_rule": true,
           "selection_tier": "trusted_seller",
-          "selection_rank": 23
+          "selection_rank": 21
         },
         {
           "item_id": "MLB4625784177",
@@ -1768,7 +1608,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/GARMINTHE",
           "trusted_seller_rule": false,
           "selection_tier": "factory_warranty_untrusted_seller",
-          "selection_rank": 24
+          "selection_rank": 22
         },
         {
           "item_id": "MLB6845035408",
@@ -1784,14 +1624,14 @@
           "factory_warranty": false,
           "free_shipping": true,
           "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
+          "logistic_type": "cross_docking",
           "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB6845035408",
           "images": [],
           "seller_nickname": "VOCEQTECH",
           "seller_status": "active",
           "seller_reputation_level": "3_yellow",
           "power_seller_status": null,
-          "seller_transactions_total": 1451,
+          "seller_transactions_total": 1454,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1800,7 +1640,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/VOCEQTECH",
           "trusted_seller_rule": false,
           "selection_tier": "fallback_price",
-          "selection_rank": 25
+          "selection_rank": 23
         },
         {
           "item_id": "MLB7589302604",
@@ -1823,7 +1663,7 @@
           "seller_status": "active",
           "seller_reputation_level": "3_yellow",
           "power_seller_status": null,
-          "seller_transactions_total": 2655,
+          "seller_transactions_total": 2675,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1832,7 +1672,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/ABCD2030405060",
           "trusted_seller_rule": false,
           "selection_tier": "fallback_price",
-          "selection_rank": 26
+          "selection_rank": 24
         },
         {
           "item_id": "MLB5351691543",
@@ -1848,14 +1688,14 @@
           "factory_warranty": false,
           "free_shipping": true,
           "shipping_cost": 0,
-          "logistic_type": "xd_drop_off",
+          "logistic_type": "cross_docking",
           "url": "https://www.mercadolivre.com.br/p/MLB51491500?wid=MLB5351691543",
           "images": [],
           "seller_nickname": "MG20260505130741",
           "seller_status": "active",
           "seller_reputation_level": "3_yellow",
           "power_seller_status": null,
-          "seller_transactions_total": 683,
+          "seller_transactions_total": 705,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -1864,7 +1704,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/MG20260505130741",
           "trusted_seller_rule": false,
           "selection_tier": "fallback_price",
-          "selection_rank": 27
+          "selection_rank": 25
         },
         {
           "item_id": "MLB4132136475",
@@ -1896,7 +1736,7 @@
           "seller_permalink": "http://perfil.mercadolivre.com.br/HELMERSPORTS",
           "trusted_seller_rule": false,
           "selection_tier": "fallback_price",
-          "selection_rank": 28
+          "selection_rank": 26
         }
       ],
       "origin_policy": "all",
@@ -1989,7 +1829,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-19T14:13:53.985808-03:00",
+      "collected_at": "2026-10-20T12:25:18.778534-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -2265,7 +2105,7 @@
         }
       ],
       "added_at": "2026-10-02",
-      "collected_at": "2026-10-19T14:13:53.985808-03:00",
+      "collected_at": "2026-10-20T12:25:18.778534-03:00",
       "source": "Mercado Livre",
       "available": true,
       "error": null,
@@ -2290,7 +2130,7 @@
         "seller_status": "active",
         "seller_reputation_level": "5_green",
         "power_seller_status": "platinum",
-        "seller_transactions_total": 12902,
+        "seller_transactions_total": 12941,
         "seller_transactions_completed": null,
         "seller_transactions_canceled": null,
         "seller_rating_positive": null,
@@ -2336,7 +2176,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2368,7 +2208,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "platinum",
-          "seller_transactions_total": 12902,
+          "seller_transactions_total": 12941,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2464,7 +2304,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": "silver",
-          "seller_transactions_total": 1711,
+          "seller_transactions_total": 1717,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2496,7 +2336,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 2042,
+          "seller_transactions_total": 2045,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2510,7 +2350,7 @@
         {
           "item_id": "MLB4907297925",
           "seller_id": 3362638699,
-          "price": 1289.0,
+          "price": 1199.0,
           "original_price": null,
           "currency_id": "BRL",
           "condition": "new",
@@ -2592,7 +2432,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 24,
+          "seller_transactions_total": 26,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2624,7 +2464,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 1285,
+          "seller_transactions_total": 1287,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2688,7 +2528,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 24,
+          "seller_transactions_total": 26,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2720,7 +2560,7 @@
           "seller_status": "active",
           "seller_reputation_level": "5_green",
           "power_seller_status": null,
-          "seller_transactions_total": 1285,
+          "seller_transactions_total": 1287,
           "seller_transactions_completed": null,
           "seller_transactions_canceled": null,
           "seller_rating_positive": null,
@@ -2766,7 +2606,7 @@
         {
           "item_id": "MLB7840746230",
           "seller_id": 6120109,
-          "price": 1459.0,
+          "price": 1209.0,
           "original_price": null,
           "currency_id": "BRL",
           "condition": "new",
